@@ -1,6 +1,5 @@
 .hero {
     width: 100%;
-    // height: 100vh;
     position: relative;
     padding: 0 30px;
     background: url("/images/HeaderBg/bg-main.png") center center / cover no-repeat;
@@ -9,11 +8,12 @@
         content: "";
         height: 50px;
         width: 100%;
-        z-index: 10;
         position: absolute;
         bottom: 0;
         left: 0;
         background: linear-gradient(to bottom, #00000000, #000000);
+        pointer-events: none; // Разрешает клики сквозь элемент
+        z-index: 1; // Тень остается под контентом
     }
 
     &__wrapper {

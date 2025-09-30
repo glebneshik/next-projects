@@ -4,8 +4,8 @@ import "./quests.scss";
 import { TitleSection } from "@/shared/ui/title-section";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
+// import Link from "next/link";
+// import { useRouter } from "next/navigation";
 
 export interface CardsState {
   id: number;
@@ -57,7 +57,7 @@ export function Quests() {
   const contentCard = cards.map(item => {
     return (
       <Quest
-
+        key={item.id}
         id={item.id}
         nameQuest={item.nameQuest}
         descrQuest={item.descrQuest}

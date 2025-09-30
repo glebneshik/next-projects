@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 
 import "../globals.scss";
 import { Header } from "@/widgets/header";
-import { Footer } from "@/widgets/footer";
+// import { Footer } from "@/widgets/footer";
 import { Contacts } from "@/widgets/contacts";
 
 

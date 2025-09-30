@@ -15,7 +15,7 @@ export function Quest({
     locationQuest,
     priceQuest,
     maxPeople,
-    level,
+    // level,
     imageUrl,
     keys
 }: {

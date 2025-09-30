@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+// import Image from "next/image";
 import "./index.scss";
 import { list } from "@/shared/config/list";
 

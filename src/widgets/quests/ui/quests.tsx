@@ -30,7 +30,7 @@ export function Quests() {
 
   const FetchCards = async () => {
     try {
-      const { data } = await axios.get("http://localhost:8000/card");
+      const { data } = await axios.get("https://a38bc911a43f0aa6.mokky.dev/items");
       return data;
     } catch (err) {
       console.log(err);

@@ -1,11 +1,18 @@
-
+"use client"
 import { Menu } from "@/shared/ui/menu";
 import { Logo } from "@/shared/logo";
 
 import "./header.scss";
 import { navigations } from "@/shared/config/navigation";
 import Image from "next/image";
+import { useState } from "react";
 export function Header() {
+  const [isMenu, setIsMenu] = useState<boolean>(false)
+
+  const isToogeMenu = () => {
+    setIsMenu(!isMenu)
+  }
+
   return (
     <>
       <header className="header">
@@ -13,16 +20,16 @@ export function Header() {
           <Logo />
         </div>
 
-        <nav className="header__nav">
+        <nav className={`header__nav ${isMenu ? "active" : ""}`}>
           <Menu elementClass="header" navigations={navigations} />
-          <div className="hamburger__close">
-            <Image src={'/icons/hamburger-close.svg'} width={30} height={30} alt="открыть меню"></Image>
+          <div className="header__close">
+            <Image src={'/icons/hamburger-close.svg'} width={30} height={30} alt="закрыть меню" onClick={isToogeMenu}></Image>
           </div>
         </nav>
 
-        {/* <div className="header__hamburger">
-          <Image src={'/icons/hamburger-open.svg'} width={30} height={50} alt="открыть меню"></Image>
-        </div> */}
+        <div className="header__open">
+          <Image src={'/icons/hamburger-open.svg'} width={30} height={50} alt="открыть меню" onClick={isToogeMenu}></Image>
+        </div>
       </header>
     </>
   );

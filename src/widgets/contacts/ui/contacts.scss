@@ -164,7 +164,38 @@
 
             &_locations {
                 &-list {
-                    // padding-left: 20px;
+                    padding-left: 0px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .contacts {
+        .container {
+            width: 100%;
+            padding: 0 10px;
+        }
+
+        &__text {
+            &_title {
+                font-size: 32px;
+            }
+
+            &_number {
+                font-size: 30px;
+                padding-top: 40px;
+            }
+
+            &_email {
+                font-size: 28px;
+                padding-top: 10px;
+            }
+
+            &_locations {
+                &-list {
+                    padding-left: 0px;
                 }
             }
         }

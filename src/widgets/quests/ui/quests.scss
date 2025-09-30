@@ -63,3 +63,17 @@
         }
     }
 }
+
+@media (max-width: 567px) {
+    .quests {
+        &__title {
+            font-size: 36px;
+        }
+
+        &__wrapper {
+            grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+            grid-template-rows: repeat(2, 860px);
+            grid-auto-rows: 860px;
+        }
+    }
+}

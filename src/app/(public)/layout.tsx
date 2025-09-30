@@ -7,6 +7,7 @@ import "../globals.scss";
 import { Header } from "@/widgets/header";
 // import { Footer } from "@/widgets/footer";
 import { Contacts } from "@/widgets/contacts";
+import { Footer } from "@/widgets/footer";
 
 
 export const metadata: Metadata = {
@@ -25,7 +26,7 @@ export default async function Layout({
             <Header />
             {children}
             <Contacts />
-            {/* <Footer /> */}
+            <Footer />
         </>
     );
 }

@@ -97,3 +97,42 @@
         }
     }
 }
+
+
+@media (max-width: 992px) {
+    .footer {
+        padding: 40px 25px;
+
+        &__head {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        &__list {
+            flex-direction: column;
+            align-items: center;
+            row-gap: 40px;
+            margin-top: 60px;
+        }
+
+        &__wrapper {
+            flex-direction: column-reverse;
+            align-items: center;
+
+            &_other {
+                margin-top: 40px;
+
+                &-text {
+                    align-items: center;
+                }
+            }
+        }
+
+        &__image {
+            height: 100px;
+            margin-top: 20px; // img {
+            //     object-fit: cover;
+            // }
+        }
+    }
+}

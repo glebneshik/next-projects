@@ -48,11 +48,19 @@
 
 
 
+@media (max-width: 1500px) {
+    .hero {
+        &__wrapper {
+            padding-top: 35rem;
+        }
+    }
+}
+
 @media (max-width: 1400px) {
     .hero {
         &__wrapper {
             padding: 0 50px;
-            padding-top: 40rem;
+            padding-top: 30rem;
 
             &_about {
 
@@ -76,8 +84,7 @@
 @media (max-width: 1200px) {
     .hero {
         &__wrapper {
-            padding: 0 50px;
-            padding-top: 40rem;
+            padding-top: 28rem;
 
             &_about {
                 text-align: center;

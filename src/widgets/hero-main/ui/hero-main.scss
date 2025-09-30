@@ -1,0 +1,165 @@
+.hero {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    padding: 0 30px;
+    background: url("/images/HeaderBg/bg-main.png") center center / cover no-repeat;
+
+    &::after {
+        content: "";
+        height: 50px;
+        width: 100%;
+        z-index: 10;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(to bottom, #00000000, #000000);
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 0 50px;
+        padding-top: 40rem;
+
+        &_about {
+            color: #fff;
+            font-size: 22px;
+            width: 40%;
+        }
+
+        &_select {
+            margin-top: 30px;
+            width: 20%;
+            height: 90px;
+
+            p {
+                font-size: 18px;
+            }
+
+            &:hover {
+                margin-top: 20px;
+                color: #fff;
+            }
+        }
+    }
+}
+
+
+
+@media (max-width: 1400px) {
+    .hero {
+        &__wrapper {
+            padding: 0 50px;
+            padding-top: 40rem;
+
+            &_about {
+
+                font-size: 22px;
+                width: 60%;
+            }
+
+            &_select {
+                margin-top: 30px;
+                width: 30%;
+                height: 90px;
+
+                p {
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .hero {
+        &__wrapper {
+            padding: 0 50px;
+            padding-top: 40rem;
+
+            &_about {
+                text-align: center;
+                font-size: 22px;
+                width: 100%;
+            }
+
+            &_select {
+                display: block;
+                margin: 0 auto;
+            }
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .hero {
+        &__wrapper {
+            &_about {
+                line-height: 150%;
+                width: 100%;
+            }
+
+            &_select {
+
+                width: 60%;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 0 10px;
+
+
+        &__wrapper {
+            padding: 0 10px;
+            padding-top: 40rem;
+
+            &_about {
+
+                font-size: 20px;
+
+            }
+
+            &_select {
+                display: block;
+                margin: 0 auto;
+
+                .button-red_text {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 567px) {
+    .hero {
+        padding: 0 5px;
+        background: url("/images/HeaderBg/mobile-bg.png") center center / cover no-repeat;
+
+        &__wrapper {
+            padding: 0 5px;
+            padding-top: 40rem;
+
+            &_about {
+
+                font-size: 18px;
+                line-height: 140%;
+
+            }
+
+            &_select {
+                display: block;
+                margin: 0 auto;
+
+                .button-red_text {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}

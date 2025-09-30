@@ -1,0 +1,16 @@
+.record {
+    width: 100%;
+    height: auto;
+    padding: 60px 0;
+
+    &__title {
+        margin: 0 !important;
+        font-family: "Montserrat", sans-serif;
+        text-transform: uppercase;
+        color: #D3101F;
+        font-weight: 900;
+        font-size: 50px;
+        text-align: center;
+        padding-bottom: 50px;
+    }
+}

@@ -1,0 +1,150 @@
+.quests {
+    &__item {
+        text-decoration: none;
+        color: #fff;
+        border: 1px solid #2B2B2B;
+        width: 100%;
+        height: 100%;
+        font-family: "Montserrat", sans-serif;
+        cursor: pointer;
+        transition: 0.3s ease-in-out;
+        background: linear-gradient(to bottom, #ffffff00, #ffffff00, #ffffff00);
+
+        &:hover {
+            background: linear-gradient(to bottom, #ffffff00, #ffffff00, #ffffff11);
+        }
+
+        &_img {
+            width: 100%;
+
+            img {
+                width: 100%;
+                object-fit: cover;
+                height: 500px;
+            }
+        }
+
+        &_title {
+            padding: 10px 45px;
+            font-size: 24px;
+            color: #fff;
+            font-weight: 900;
+            text-transform: uppercase;
+
+        }
+
+        &_descr {
+            padding: 0px 45px;
+            font-size: 18px;
+            color: #909090;
+            font-weight: 400;
+            line-height: 180%;
+        }
+
+        &_settings {
+            display: flex;
+            align-items: center;
+            padding: 0px 45px;
+            justify-content: space-between;
+
+            &-count {
+                display: flex;
+                column-gap: 10px;
+                align-items: center;
+
+                &_text {}
+            }
+
+            &-complexity {
+                display: flex;
+                column-gap: 5px;
+            }
+
+            &-keys {
+                display: flex;
+                column-gap: 5px;
+            }
+        }
+
+        &_locate {
+            display: flex;
+            column-gap: 10px;
+            align-items: center;
+            padding: 15px 45px;
+
+            svg {
+                color: #D3101F;
+
+            }
+
+            &-text {
+                font-weight: 400;
+                font-size: 18px;
+            }
+        }
+
+        &_price {
+            display: flex;
+            column-gap: 10px;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 45px;
+
+            &-value {
+                font-size: 18px;
+                color: gray;
+                font-weight: 900;
+                text-transform: uppercase;
+            }
+
+            &-buy {
+                width: 50%;
+                height: 70px;
+            }
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .quests {
+        &__item {
+            &_title {
+                padding: 10px 45px;
+                font-size: 20px;
+
+            }
+
+            &_descr {
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .quests {
+        &__item {
+            &_title {
+                padding: 10px 30px;
+                font-size: 20px;
+            }
+
+            &_descr {
+                font-size: 16px;
+                padding: 0px 30px;
+            }
+
+            &_settings {
+                padding: 0px 30px;
+            }
+
+            &_price {
+                padding: 15 30px;
+            }
+
+            &_locate {
+                padding: 15px 30px;
+            }
+        }
+    }
+}

@@ -3,8 +3,7 @@
         text-decoration: none;
         color: #fff;
         border: 1px solid #2B2B2B;
-        width: 100%;
-        height: 100%;
+        width: 32%;
         font-family: "Montserrat", sans-serif;
         cursor: pointer;
         transition: 0.3s ease-in-out;
@@ -108,6 +107,8 @@
 @media (max-width: 1200px) {
     .quests {
         &__item {
+            width: 49%;
+
             &_title {
                 padding: 10px 45px;
                 font-size: 20px;
@@ -124,6 +125,8 @@
 @media (max-width: 992px) {
     .quests {
         &__item {
+            width: 100%;
+
             &_title {
                 padding: 10px 30px;
                 font-size: 20px;
@@ -153,12 +156,15 @@
     .quests {
         .container {
             width: 100%;
-            // padding: 0 10px;
         }
 
         &__item {
             &_img {
                 height: 400px;
+
+                img {
+                    height: 100%;
+                }
             }
 
             &_title {
@@ -204,7 +210,7 @@
             }
 
             &_price {
-                padding: 0px 20px;
+                padding: 20px 20px;
             }
 
             &_locate {

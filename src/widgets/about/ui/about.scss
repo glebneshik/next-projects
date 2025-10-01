@@ -140,6 +140,7 @@
     .about {
         .container {
             width: 95%;
+            padding: 0 10px;
         }
 
         &__title {
@@ -178,6 +179,32 @@
 
 @media (max-width: 768px) {
     .about {
+        &__scroll {
+            margin-top: 40px;
+        }
+
+        .swiper {
+            &-wrapper {
+                height: 200px;
+            }
+        }
+
+        &__wrapper {
+            &_link {
+                &-descr {
+                    width: 60%;
+                }
+
+                &-img {
+                    width: 80px;
+                    height: 80px;
+                }
+            }
+
+            &_text {
+                margin-top: 40px;
+            }
+        }
 
         &__title {
             h2 {

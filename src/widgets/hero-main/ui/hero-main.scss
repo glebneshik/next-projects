@@ -2,6 +2,7 @@
     width: 100%;
     position: relative;
     padding: 0 30px;
+    height: 100vh;
     background: url("/images/HeaderBg/bg-main.png") center center / cover no-repeat;
 
     &::after {
@@ -21,7 +22,9 @@
         flex-direction: column;
         width: 100%;
         padding: 0 50px;
-        padding-top: 40rem;
+        height: 100vh;
+        justify-content: flex-end;
+        padding-bottom: 50px;
 
         &_about {
             color: #fff;
@@ -39,7 +42,6 @@
             }
 
             &:hover {
-                margin-top: 20px;
                 color: #fff;
             }
         }
@@ -60,7 +62,7 @@
     .hero {
         &__wrapper {
             padding: 0 50px;
-            padding-top: 30rem;
+            padding-bottom: 60px;
 
             &_about {
 
@@ -84,7 +86,7 @@
 @media (max-width: 1200px) {
     .hero {
         &__wrapper {
-            padding-top: 28rem;
+            padding-bottom: 90px;
 
             &_about {
                 text-align: center;
@@ -123,7 +125,7 @@
 
         &__wrapper {
             padding: 0 10px;
-            padding-top: 40rem;
+            padding-bottom: 120px;
 
             &_about {
 
@@ -150,7 +152,7 @@
 
         &__wrapper {
             padding: 0 5px;
-            padding-top: 40rem;
+            padding-bottom: 100px;
 
             &_about {
 
@@ -162,6 +164,7 @@
             &_select {
                 display: block;
                 margin: 0 auto;
+                height: 70px;
 
                 .button-red_text {
                     font-size: 16px;

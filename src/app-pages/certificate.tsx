@@ -9,6 +9,8 @@ import 'swiper/css';
 import { SliderConfig } from "@/shared/config/slider";
 import { useRef, useState, useEffect } from "react";
 
+import Link from "next/link";
+
 interface SlideItem {
     id: number;
     urlImage: string;
@@ -34,6 +36,14 @@ export function CertificatePage() {
     return (
         <div className="certificate">
             <div className="container">
+                <div className="certificate__navigation">
+                    <Link href="/" className="certificate__navigation-link">
+                        Главная
+                    </Link>
+                    <span className="certificate__navigation-separator">›</span>
+                    <span className="certificate__navigation-current">Сертификаты</span>
+                </div>
+
                 <TitleSection classTitle={"certificate__title"} text={"сертификаты"} />
 
                 <div className="certificate__wrapper">

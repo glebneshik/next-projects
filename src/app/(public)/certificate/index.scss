@@ -107,6 +107,24 @@
 
         &_slider {
             width: 50%;
+            position: relative;
+
+            &-arrow {
+                position: absolute;
+                z-index: 5;
+                width: 20px;
+                height: 20px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+            .left {
+                left: -40px;
+            }
+
+            .right {
+                right: -40px;
+            }
 
             .swiper {
                 &-wrapper {

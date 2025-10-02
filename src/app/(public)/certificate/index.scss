@@ -107,6 +107,7 @@
             position: relative;
             display: flex;
             align-items: center;
+            
             &-arrow {
                 position: absolute;
                 z-index: 5;
@@ -115,6 +116,11 @@
                 top: 50%;
                 transform: translateY(-50%);
                 cursor: pointer;
+                transition: opacity 0.3s ease;
+
+                &:hover {
+                    opacity: 0.7;
+                }
             }
 
             .left {
@@ -126,9 +132,44 @@
             }
 
             .swiper {
+                width: 100%;
+                height: auto;
+                
                 &-wrapper {
                     display: flex;
+                    align-items: center;
                 }
+
+                &-slide {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    transition: transform 0.3s ease;
+                    
+                    // Активный слайд немного увеличен
+                    &.swiper-slide-active {
+                        transform: scale(1.05);
+                    }
+                }
+            }
+
+            // Стили для контейнера изображений
+            .slide-image-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+            }
+
+            // Адаптация изображений
+            img {
+                width: auto;
+                height: auto;
+                max-width: 100%;
+                object-fit: contain;
+                border-radius: 10px;
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+                transition: transform 0.3s ease;
             }
         }
     }
@@ -178,10 +219,24 @@
 
             &_slider {
                 width: 100%;
+                max-width: 700px;
+                margin: 0 auto;
                 
                 /* Убираем стрелки на планшетах */
                 &-arrow {
                     display: none;
+                }
+
+                .swiper {
+                    &-slide {
+                        &.swiper-slide-active {
+                            transform: scale(1.03);
+                        }
+                    }
+                }
+
+                img {
+                    max-width: 600px;
                 }
             }
         }
@@ -243,6 +298,19 @@
             &_slider {
                 &-arrow {
                     display: none;
+                }
+
+                .swiper {
+                    &-slide {
+                        &.swiper-slide-active {
+                            transform: scale(1.02);
+                        }
+                    }
+                }
+
+                img {
+                    max-width: 500px;
+                    border-radius: 8px;
                 }
             }
         }
@@ -312,7 +380,21 @@
             }
 
             &_slider {
-                /* Стрелки уже скрыты в медиа-запросе 768px */
+                .swiper {
+                    padding: 0 10px;
+                    
+                    &-slide {
+                        &.swiper-slide-active {
+                            transform: scale(1);
+                        }
+                    }
+                }
+
+                img {
+                    max-width: 400px;
+                    border-radius: 6px;
+                    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+                }
             }
         }
     }
@@ -356,7 +438,22 @@
             }
 
             &_slider {
-                /* Стрелки уже скрыты */
+                img {
+                    max-width: 320px;
+                }
+            }
+        }
+    }
+}
+
+/* Особо маленькие устройства (до 320px) */
+@media (max-width: 320px) {
+    .certificate {
+        &__wrapper {
+            &_slider {
+                img {
+                    max-width: 280px;
+                }
             }
         }
     }

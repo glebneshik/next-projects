@@ -7,7 +7,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Swiper as SwiperType } from 'swiper';
 import 'swiper/css';
 import { SliderConfig } from "@/shared/config/slider";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 
 interface SlideItem {
     id: number;
@@ -16,6 +16,20 @@ interface SlideItem {
 
 export function CertificatePage() {
     const swiperRef = useRef<SwiperType | null>(null);
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth <= 1024);
+        };
+
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+
+        return () => {
+            window.removeEventListener('resize', checkMobile);
+        };
+    }, []);
 
     return (
         <div className="certificate">
@@ -58,51 +72,59 @@ export function CertificatePage() {
                         />
                     </div>
                     <div className="certificate__wrapper_slider">
-                        <div
-                            className="certificate__wrapper_slider-arrow left"
-                            onClick={() => swiperRef.current?.slidePrev()}
-                            role="button"
-                            tabIndex={0}
-                            onKeyDown={(e: React.KeyboardEvent) => {
-                                if (e.key === 'Enter' || e.key === ' ') {
-                                    swiperRef.current?.slidePrev();
-                                }
-                            }}
-                        >
-                            <Image src={"/icons/left-arrow.svg"} width={20} height={20} alt="стрелка влево" />
-                        </div>
-                        <div
-                            className="certificate__wrapper_slider-arrow right"
-                            onClick={() => swiperRef.current?.slideNext()}
-                            role="button"
-                            tabIndex={0}
-                            onKeyDown={(e: React.KeyboardEvent) => {
-                                if (e.key === 'Enter' || e.key === ' ') {
-                                    swiperRef.current?.slideNext();
-                                }
-                            }}
-                        >
-                            <Image src={"/icons/right-arrow.svg"} width={20} height={20} alt="стрелка вправо" />
-                        </div>
+                        {!isMobile && (
+                            <>
+                                <div
+                                    className="certificate__wrapper_slider-arrow left"
+                                    onClick={() => swiperRef.current?.slidePrev()}
+                                    role="button"
+                                    tabIndex={0}
+                                    onKeyDown={(e: React.KeyboardEvent) => {
+                                        if (e.key === 'Enter' || e.key === ' ') {
+                                            swiperRef.current?.slidePrev();
+                                        }
+                                    }}
+                                >
+                                    <Image src={"/icons/left-arrow.svg"} width={20} height={20} alt="стрелка влево" />
+                                </div>
+                                <div
+                                    className="certificate__wrapper_slider-arrow right"
+                                    onClick={() => swiperRef.current?.slideNext()}
+                                    role="button"
+                                    tabIndex={0}
+                                    onKeyDown={(e: React.KeyboardEvent) => {
+                                        if (e.key === 'Enter' || e.key === ' ') {
+                                            swiperRef.current?.slideNext();
+                                        }
+                                    }}
+                                >
+                                    <Image src={"/icons/right-arrow.svg"} width={20} height={20} alt="стрелка вправо" />
+                                </div>
+                            </>
+                        )}
                         <Swiper
                             className="certificate__wrapper_slider-scroll"
                             slidesPerView={1}
-                            spaceBetween={0}
+                            spaceBetween={20}
                             centeredSlides={true}
                             allowTouchMove={true}
                             simulateTouch={true}
+                            loop={true}
                             onSwiper={(swiper: SwiperType) => {
                                 swiperRef.current = swiper;
                             }}
                         >
                             {SliderConfig.map((slide: SlideItem) => (
                                 <SwiperSlide key={slide.id}>
-                                    <Image
-                                        width={900}
-                                        height={900}
-                                        src={slide.urlImage}
-                                        alt={`Сертификат ${slide.id}`}
-                                    />
+                                    <div className="slide-image-container">
+                                        <Image
+                                            width={900}
+                                            height={900}
+                                            src={slide.urlImage}
+                                            alt={`Сертификат ${slide.id}`}
+                                            priority={slide.id === 1}
+                                        />
+                                    </div>
                                 </SwiperSlide>
                             ))}
                         </Swiper>

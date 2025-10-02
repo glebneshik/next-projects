@@ -30,7 +30,7 @@ export function Quests() {
 
   const FetchCards = async () => {
     try {
-      const { data } = await axios.get("https://a38bc911a43f0aa6.mokky.dev/items");
+      const { data } = await axios.get("https://68debd9a898434f41355def8.mockapi.io/products/items");
       return data;
     } catch (err) {
       console.log(err);

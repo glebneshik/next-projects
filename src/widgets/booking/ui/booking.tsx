@@ -32,6 +32,7 @@ export function Booking() {
           </div>
 
           <RedButton altImage={"забронировать"} classButton={"booking__form_submit"} textButton={"забронировать"} />
+          <p className="booking__form-cancel">Отменить</p>
         </form>
       </div>
     </div>

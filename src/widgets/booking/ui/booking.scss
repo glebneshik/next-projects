@@ -116,6 +116,19 @@
         row-gap: 20px;
         width: 60%;
 
+        &-cancel {
+            text-align: center;
+            color: #fff;
+            text-decoration: underline;
+            font-weight: 400;
+            font-size: 15px;
+            transition: all .4s ease-in-out;
+            cursor: pointer;
+            &:hover {
+                color: #ffffff9c;
+            }
+            }
+
         @media (max-width: 1600px) {
             width: 65%;
         }

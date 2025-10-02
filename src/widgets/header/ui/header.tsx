@@ -25,8 +25,12 @@ export function Header() {
           <div className="header__close">
             <Image src={'/icons/hamburger-close.svg'} width={30} height={30} alt="закрыть меню" onClick={isToogeMenu}></Image>
           </div>
-        </nav>
 
+
+        </nav>
+        {
+          isMenu ? <div className="header__overlay"></div> : null
+        }
         <div className="header__open">
           <Image src={'/icons/hamburger-open.svg'} width={30} height={50} alt="открыть меню" onClick={isToogeMenu}></Image>
         </div>

@@ -1,7 +1,6 @@
 .hero {
     width: 100%;
     position: relative;
-    padding: 0 30px;
     height: 100vh;
     background: url("/images/HeaderBg/bg-main.png") center center / cover no-repeat;
 
@@ -33,9 +32,9 @@
         }
 
         &_select {
-            margin-top: 30px;
-            width: 20%;
-            height: 90px;
+            margin-top: 20px;
+            width: 15%;
+            height: 80px;
 
             p {
                 font-size: 18px;
@@ -50,13 +49,13 @@
 
 
 
-@media (max-width: 1500px) {
-    .hero {
-        &__wrapper {
-            padding-top: 35rem;
-        }
-    }
-}
+// @media (max-width: 1500px) {
+//     .hero {
+//         &__wrapper {
+//             padding-top: 35rem;
+//         }
+//     }
+// }
 
 @media (max-width: 1400px) {
     .hero {
@@ -71,9 +70,8 @@
             }
 
             &_select {
-                margin-top: 30px;
-                width: 30%;
-                height: 90px;
+                width: 25%;
+                height: 80px;
 
                 p {
                     font-size: 18px;
@@ -112,7 +110,8 @@
 
             &_select {
 
-                width: 60%;
+                width: 45%;
+                height: 75px;
             }
         }
     }
@@ -125,7 +124,7 @@
 
         &__wrapper {
             padding: 0 10px;
-            padding-bottom: 120px;
+            padding-bottom: 50px;
 
             &_about {
 

@@ -223,3 +223,80 @@
         }
     }
 }
+
+@media (max-width: 400px) {
+    .quests {
+
+        &__item {
+            &_img {
+                height: 300px;
+            }
+
+            &_title {
+                padding: 10px 10px;
+                font-size: 18px;
+            }
+
+            &_descr {
+                font-size: 14px;
+                padding: 0px 10px;
+                line-height: 150%;
+            }
+
+            &_settings {
+                padding: 0px 10px;
+                flex-wrap: wrap;
+
+
+                &-count {
+                    column-gap: 5px;
+
+                    svg {
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
+
+                &-complexity {
+                    column-gap: 0px;
+
+                    svg {
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
+
+                &-keys {
+                    column-gap: 0px;
+
+                    svg {
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
+            }
+
+            &_price {
+                padding: 20px 10px;
+
+                &-value {
+                    font-size: 16px;
+                }
+
+                &-buy {
+                    width: 58%;
+                    height: 49px;
+                    font-size: 12px;
+                }
+            }
+
+            &_locate {
+                padding: 1px 10px;
+
+                &-text {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}

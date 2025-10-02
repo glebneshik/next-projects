@@ -35,7 +35,7 @@ export function Contacts() {
                         </div>
                     </div>
                     <div className="contacts__map">
-                        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A16f9c18041511b810d8c9c401bdf91fabdd7390f50c39e4242c55b760c7b9362&amp;source=constructor" width="903" height="600" frameBorder="0"></iframe>
+                        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A16f9c18041511b810d8c9c401bdf91fabdd7390f50c39e4242c55b760c7b9362&amp;source=constructor" width="903" height="667" frameBorder="0"></iframe>
                     </div>
                 </div>
             </div>

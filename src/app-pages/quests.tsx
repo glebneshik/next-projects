@@ -14,7 +14,7 @@ interface QuestPageProps {
 export function QuestPage({ quest }: QuestPageProps) {
     return (
         <div className="quest">
-            <QuestNavigate />
+            <QuestNavigate questName={quest.nameQuest} />
             <div className="quest__wrapper">
                 <div className="quest__info">
                     <QuestTitle title={quest.nameQuest} />

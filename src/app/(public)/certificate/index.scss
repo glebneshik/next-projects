@@ -57,14 +57,11 @@
                 padding-bottom: 50px;
                 border-bottom: 1px solid #242424;
 
-
                 &_title {
-
                     font-size: 18px;
                     font-weight: 400;
                     color: rgb(160, 160, 160);
                     margin: 0 !important;
-
                 }
 
                 &_item {
@@ -108,7 +105,8 @@
         &_slider {
             width: 50%;
             position: relative;
-
+            display: flex;
+            align-items: center;
             &-arrow {
                 position: absolute;
                 z-index: 5;
@@ -116,6 +114,7 @@
                 height: 20px;
                 top: 50%;
                 transform: translateY(-50%);
+                cursor: pointer;
             }
 
             .left {
@@ -133,6 +132,232 @@
             }
         }
     }
+}
 
+/* Планшеты (768px - 1024px) */
+@media (max-width: 1024px) {
+    .certificate {
+        padding: 100px 0;
 
+        &__title {
+            font-size: 32px;
+            text-align: center;
+        }
+
+        &__wrapper {
+            flex-direction: column;
+            gap: 60px;
+
+            &_info {
+                width: 100%;
+                row-gap: 40px;
+                padding-top: 40px;
+
+                &-block {
+                    &_descr {
+                        font-size: 24px;
+                    }
+                }
+
+                &-list {
+                    &_item {
+                        font-size: 20px;
+                    }
+                }
+
+                &-text {
+                    font-size: 18px;
+                }
+
+                &-btn {
+                    width: 50%;
+                    height: 70px;
+                    align-self: center;
+                }
+            }
+
+            &_slider {
+                width: 100%;
+                
+                /* Убираем стрелки на планшетах */
+                &-arrow {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+/* Мобильные устройства (576px - 768px) */
+@media (max-width: 768px) {
+    .certificate {
+        padding: 80px 0;
+
+        &__title {
+            font-size: 28px;
+        }
+
+        &__wrapper {
+            gap: 50px;
+
+            &_info {
+                row-gap: 35px;
+                padding-top: 35px;
+
+                &-block {
+                    &_title {
+                        font-size: 16px;
+                    }
+
+                    &_descr {
+                        font-size: 22px;
+                    }
+                }
+
+                &-list {
+                    &_title {
+                        font-size: 16px;
+                    }
+
+                    &_item {
+                        font-size: 18px;
+                        padding-left: 25px;
+                        
+                        &::before {
+                            width: 8px;
+                            height: 8px;
+                        }
+                    }
+                }
+
+                &-text {
+                    font-size: 16px;
+                }
+
+                &-btn {
+                    width: 60%;
+                    height: 60px;
+                }
+            }
+
+            &_slider {
+                &-arrow {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+/* Маленькие мобильные устройства (до 576px) */
+@media (max-width: 576px) {
+    .certificate {
+        padding: 60px 0;
+
+        .container {
+            width: 95%;
+        }
+
+        &__title {
+            font-size: 24px;
+        }
+
+        &__wrapper {
+            gap: 40px;
+
+            &_info {
+                row-gap: 30px;
+                padding-top: 30px;
+
+                &-block {
+                    &_title {
+                        font-size: 14px;
+                    }
+
+                    &_descr {
+                        font-size: 20px;
+                        padding-top: 8px;
+                    }
+                }
+
+                &-list {
+                    row-gap: 8px;
+                    padding-bottom: 40px;
+
+                    &_title {
+                        font-size: 14px;
+                    }
+
+                    &_item {
+                        font-size: 16px;
+                        margin-top: 12px;
+                        padding-left: 22px;
+                        
+                        &::before {
+                            width: 6px;
+                            height: 6px;
+                        }
+                    }
+                }
+
+                &-text {
+                    font-size: 14px;
+                    line-height: 160%;
+                }
+
+                &-btn {
+                    width: 80%;
+                    height: 55px;
+                }
+            }
+
+            &_slider {
+                /* Стрелки уже скрыты в медиа-запросе 768px */
+            }
+        }
+    }
+}
+
+/* Очень маленькие устройства (до 375px) */
+@media (max-width: 375px) {
+    .certificate {
+        padding: 40px 0;
+
+        &__title {
+            font-size: 20px;
+        }
+
+        &__wrapper {
+            gap: 30px;
+
+            &_info {
+                row-gap: 25px;
+
+                &-block {
+                    &_descr {
+                        font-size: 18px;
+                    }
+                }
+
+                &-list {
+                    &_item {
+                        font-size: 15px;
+                    }
+                }
+
+                &-text {
+                    font-size: 13px;
+                }
+
+                &-btn {
+                    width: 90%;
+                    height: 50px;
+                }
+            }
+
+            &_slider {
+                /* Стрелки уже скрыты */
+            }
+        }
+    }
 }

@@ -1,7 +1,8 @@
 .certificate {
     height: auto;
     padding: 20px 0;
-    .container {    
+
+    .container {
         width: 90%;
         display: block;
         margin: 0 auto;
@@ -106,7 +107,7 @@
             position: relative;
             display: flex;
             align-items: center;
-            
+
             &-arrow {
                 position: absolute;
                 z-index: 5;
@@ -133,7 +134,7 @@
             .swiper {
                 width: 100%;
                 height: auto;
-                
+
                 &-wrapper {
                     display: flex;
                     align-items: center;
@@ -144,7 +145,7 @@
                     justify-content: center;
                     align-items: center;
                     transition: transform 0.3s ease;
-                    
+
                     &.swiper-slide-active {
                         transform: scale(1.05);
                     }
@@ -170,13 +171,15 @@
         }
     }
 
-     &__navigation {
+    &__navigation {
         display: flex;
         align-items: center;
         gap: 12px;
+
         @media (max-width: 1200px) {
-           margin-top: 20px;
+            margin-top: 20px;
         }
+
         @media (max-width: 768px) {
             gap: 10px;
             display: none;
@@ -273,8 +276,9 @@
 
             &_slider {
                 width: 55%;
-                margin-top: -30px; /* Поднимаем слайдер выше */
-                
+                margin-top: -30px;
+                /* Поднимаем слайдер выше */
+
                 &-arrow {
                     width: 22px;
                     height: 22px;
@@ -305,7 +309,7 @@
 @media (min-width: 1500px) {
     .certificate {
         padding: 130px 0;
-        
+
         &__title {
             font-size: 48px;
             margin-bottom: 40px;
@@ -365,8 +369,8 @@
 
             &_slider {
                 width: 50%;
-                margin-top: -40px; 
-                
+                margin-top: -40px;
+
                 &-arrow {
                     width: 25px;
                     height: 25px;
@@ -385,7 +389,7 @@
                 }
 
                 img {
-                     max-width: 704px;
+                    max-width: 704px;
                     border-radius: 15px;
                     box-shadow: 0 6px 30px rgba(0, 0, 0, 0.4);
                 }
@@ -397,7 +401,7 @@
 @media (min-width: 1920px) {
     .certificate {
         padding: 200px 0;
-    
+
 
         &__title {
             font-size: 52px;
@@ -453,7 +457,8 @@
 
             &_slider {
                 width: 55%;
-                margin-top: -50px; /* Максимально поднимаем */
+                margin-top: -50px;
+                /* Максимально поднимаем */
 
                 &-arrow {
                     width: 30px;
@@ -494,7 +499,7 @@
         &__wrapper {
             &_info {
                 width: 40%;
-                
+
                 &-block {
                     &_descr {
                         font-size: 26px;
@@ -610,8 +615,9 @@
                 width: 100%;
                 max-width: 700px;
                 margin: 0 auto;
-                margin-top: 0; /* Сбрасываем поднятие на планшетах */
-            
+                margin-top: 0;
+                /* Сбрасываем поднятие на планшетах */
+
                 &-arrow {
                     display: none;
                 }
@@ -635,6 +641,7 @@
 
         &__title {
             font-size: 28px;
+            margin-top: 50px;
         }
 
         &__wrapper {
@@ -662,7 +669,7 @@
                     &_item {
                         font-size: 18px;
                         padding-left: 25px;
-                        
+
                         &::before {
                             width: 8px;
                             height: 8px;
@@ -733,7 +740,7 @@
                         font-size: 16px;
                         margin-top: 12px;
                         padding-left: 22px;
-                        
+
                         &::before {
                             width: 6px;
                             height: 6px;

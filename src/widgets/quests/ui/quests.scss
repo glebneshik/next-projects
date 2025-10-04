@@ -29,9 +29,31 @@
 
 }
 
-@media (max-width: 1500px) {
+@media (min-width: 2000px) {
     .quests {
-        &__wrapper {}
+        &__item {
+            width: 24%;
+
+            &_title {
+                padding: 10px 20px;
+            }
+
+            &_descr {
+                padding: 0 20px;
+            }
+
+            &_settings {
+                padding: 0 20px;
+            }
+
+            &_locate {
+                padding: 0 20px;
+            }
+
+            &_price {
+                padding: 20px 20px;
+            }
+        }
     }
 }
 
@@ -54,8 +76,15 @@
         &__title {
             font-size: 36px;
         }
+    }
+}
 
-        &__wrapper {}
+@media (max-width: 768px) {
+    .quests {
+        .container {
+            width: 85%;
+        }
+
     }
 }
 
@@ -70,7 +99,14 @@
         &__title {
             font-size: 36px;
         }
+    }
+}
 
-        &__wrapper {}
+@media (max-width: 400px) {
+    .quests {
+
+        &__title {
+            font-size: 24px;
+        }
     }
 }

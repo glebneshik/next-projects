@@ -4,9 +4,11 @@
     height: 100vh;
     background: url("/images/HeaderBg/bg-main.png") center center / cover no-repeat;
 
+
+
     &::after {
         content: "";
-        height: 50px;
+        height: 200px;
         width: 100%;
         position: absolute;
         bottom: 0;
@@ -35,6 +37,7 @@
             margin-top: 20px;
             width: 15%;
             height: 80px;
+            z-index: 10;
 
             p {
                 font-size: 18px;
@@ -49,16 +52,13 @@
 
 
 
-// @media (max-width: 1500px) {
-//     .hero {
-//         &__wrapper {
-//             padding-top: 35rem;
-//         }
-//     }
-// }
 
 @media (max-width: 1400px) {
     .hero {
+        background-size: contain;
+        background-position: center 0%;
+        background-repeat: no-repeat;
+
         &__wrapper {
             padding: 0 50px;
             padding-bottom: 60px;
@@ -83,6 +83,10 @@
 
 @media (max-width: 1200px) {
     .hero {
+
+        background-image: url("/images/HeaderBg/bg-main2.png");
+        background-position: center 70%;
+
         &__wrapper {
             padding-bottom: 90px;
 
@@ -102,6 +106,9 @@
 
 @media (max-width: 992px) {
     .hero {
+        background-position: center 50%;
+        background-image: url("/images/HeaderBg/bg-main3.png");
+
         &__wrapper {
             &_about {
                 line-height: 150%;
@@ -110,8 +117,8 @@
 
             &_select {
 
-                width: 45%;
-                height: 75px;
+                width: 40%;
+                height: 90px;
             }
         }
     }
@@ -119,6 +126,13 @@
 
 @media (max-width: 768px) {
     .hero {
+
+        background: url("/images/HeaderBg/mobile-bg-768.png");
+        background-size: cover;
+        background-position: center 0%;
+        background-repeat: no-repeat;
+
+
         padding: 0 10px;
 
 
@@ -135,6 +149,7 @@
             &_select {
                 display: block;
                 margin: 0 auto;
+                height: 70px;
 
                 .button-red_text {
                     font-size: 16px;
@@ -147,7 +162,7 @@
 @media (max-width: 567px) {
     .hero {
         padding: 0 5px;
-        background: url("/images/HeaderBg/mobile-bg.png") center center / cover no-repeat;
+
 
         &__wrapper {
             padding: 0 5px;
@@ -168,6 +183,49 @@
                 .button-red_text {
                     font-size: 16px;
                 }
+            }
+        }
+    }
+}
+
+@media (max-width: 580px) {
+    .hero {
+
+        &__wrapper {
+            &_select {
+                height: 75px;
+                width: 45%;
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        background: url("/images/HeaderBg/mobile-bg3.png");
+        background-position: center 0%;
+        background-repeat: no-repeat;
+        background-size: contain;
+
+        &__wrapper {
+            &_select {
+                width: 60%;
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+
+        &__wrapper {
+
+
+
+
+            &_select {
+                width: 70%;
+                height: 75px;
             }
         }
     }

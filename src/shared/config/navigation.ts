@@ -2,36 +2,25 @@ export const navigations = {
   quests: {
     text: "Квесты",
     id: "quests",
-    href: "/#quests",
+    href: "#quests", 
   },
   contacts: {
-    text: "Контакты",
+    text: "Контакты", 
     id: "contacts",
     href: "#contacts",
   },
-  // {
-  //     text: 'Заказать праздник',
-  //     id: 'Holiday',
-  //     href: '/holiday'
-  // },
-  // {
-  //     text: 'Выездные мероприятия',
-  //     id: 'Holiday',
-  //     href: '/holiday-2'
-  // },
   certificate: {
     text: "Сертификаты",
-    id: "certificate",
+    id: "certificate", 
     href: "/certificate",
   },
   franchising: {
     text: "Франшиза",
     id: "franchising",
-    href: "/franchising",
+    href: "/franchising", 
   },
   dubna: {
     text: "Дубна",
     id: "dubna",
-    href: "/dubna",
   }
 };

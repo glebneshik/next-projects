@@ -6,7 +6,7 @@ import { SortQuest } from "@/shared/ui/sort-quest"
 
 export function Contacts() {
     return (
-        <section className="contacts">
+        <section className="contacts" id="contacts">
             <div className="container">
                 <div className="contacts__wrapper">
                     <div className="contacts__text">

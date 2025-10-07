@@ -1,0 +1,35 @@
+.button-red {
+    position: relative;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    background-image: url("/images/SelectQuestBtn.png");
+    background-size: cover; // важно для правильного отображения
+    background-position: center;
+    background-repeat: no-repeat;
+
+    // Убираем &_img, так как фон уже установлен
+    &_text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 4;
+        color: #000000;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-family: "Montserrat", sans-serif;
+        margin: 0 !important;
+        white-space: nowrap; // лучше чем text-wrap: none
+        width: 100%;
+        transition: 0.3s ease-in-out;
+        text-align: center;
+    }
+
+    &:hover {
+        .button-red_text {
+            color: #fff;
+        }
+    }
+}

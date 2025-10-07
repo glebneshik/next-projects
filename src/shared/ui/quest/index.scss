@@ -1,0 +1,582 @@
+.quests {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: stretch; 
+    
+    &__item {
+        text-decoration: none;
+        color: #fff;
+        border: 1px solid #2B2B2B;
+        width: calc(33.333% - 14px);
+        font-family: "Montserrat", sans-serif;
+        cursor: pointer;
+        transition: 0.3s ease-in-out;
+        background: linear-gradient(to bottom, #ffffff00, #ffffff00, #ffffff00);
+        display: flex; 
+        flex-direction: column; 
+
+        &:hover {
+            background: linear-gradient(to bottom, #ffffff00, #ffffff00, #ffffff11);
+        }
+
+        &_img {
+            width: 100%;
+            flex-shrink: 0; 
+
+            img {
+                width: 100%;
+                object-fit: cover;
+                height: 500px;
+            }
+        }
+
+        &_title {
+            padding: 10px 45px;
+            font-size: 24px;
+            color: #fff;
+            font-weight: 900;
+            text-transform: uppercase;
+            word-wrap: break-word;
+            flex-shrink: 0; 
+        }
+
+        &_descr {
+            padding: 0px 45px;
+            font-size: 18px;
+            color: #909090;
+            font-weight: 400;
+            line-height: 180%;
+            word-wrap: break-word;
+            flex-grow: 1; 
+        }
+
+        &_settings {
+            display: flex;
+            align-items: center;
+            padding: 0px 45px;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            flex-shrink: 0; 
+
+            &-count {
+                display: flex;
+                column-gap: 10px;
+                align-items: center;
+
+                &_text {
+                    white-space: nowrap;
+                }
+            }
+
+            &-complexity {
+                display: flex;
+                column-gap: 5px;
+            }
+
+            &-keys {
+                display: flex;
+                column-gap: 5px;
+            }
+        }
+
+        &_locate {
+            display: flex;
+            column-gap: 10px;
+            align-items: center;
+            padding: 15px 45px;
+            flex-shrink: 0; 
+
+            svg {
+                color: #D3101F;
+                flex-shrink: 0;
+            }
+
+            &-text {
+                font-weight: 400;
+                font-size: 18px;
+                word-wrap: break-word;
+            }
+        }
+
+        &_price {
+            display: flex;
+            column-gap: 10px;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 45px;
+            flex-wrap: wrap;
+            flex-shrink: 0; 
+
+            &-value {
+                font-size: 18px;
+                color: gray;
+                font-weight: 900;
+                text-transform: uppercase;
+                white-space: nowrap;
+            }
+
+            &-buy {
+                width: 60%;
+                min-width: 120px;
+                max-width: 200px;
+                height: 58px;
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+        }
+    }
+}
+
+/* Новый медиа-запрос для 1330px */
+@media (max-width: 1330px) {
+    .quests {
+        &__item {
+            &_settings {
+                padding: 0px 35px;
+                gap: 10px;
+                
+                &-count,
+                &-complexity,
+                &-keys {
+                    column-gap: 3px;
+                    
+                    svg {
+                        width: 22px;
+                        height: 22px;
+                    }
+                }
+            }
+            
+            &_title {
+                padding: 10px 35px;
+            }
+            
+            &_descr {
+                padding: 0px 35px;
+            }
+            
+            &_locate {
+                padding: 15px 35px;
+            }
+            
+            &_price {
+                padding: 15px 35px;
+            }
+        }
+    }
+}
+
+@media (max-width: 1500px) {
+    .quests {
+        &__item {
+            &_price {
+                &-buy {
+                    width: 55%;
+                    height: 56px;
+                    background-size: cover;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1400px) {
+    .quests {
+        &__item {
+            &_price {
+                &-buy {
+                    width: 52%;
+                    height: 55px;
+                    background-size: cover;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .quests {
+        gap: 15px;
+        
+        &__item {
+            width: calc(50% - 8px);
+
+            &_title {
+                padding: 10px 35px;
+                font-size: 20px;
+            }
+
+            &_descr {
+                font-size: 16px;
+                padding: 0px 35px;
+            }
+
+            &_settings {
+                padding: 0px 35px;
+                
+                &-count,
+                &-complexity,
+                &-keys {
+                    column-gap: 5px;
+                    
+                    svg {
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
+            }
+
+            &_price {
+                padding: 15px 35px;
+
+                &-buy {
+                    width: 50%;
+                    height: 54px;
+                    min-width: 110px;
+                    background-size: cover;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                }
+            }
+            
+            &_locate {
+                padding: 15px 35px;
+            }
+        }
+    }
+}
+
+@media (max-width: 1100px) {
+    .quests {
+        &__item {
+            &_price {
+                &-buy {
+                    width: 48%;
+                    height: 53px;
+                    background-size: cover;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .quests {
+        &__item {
+            width: 100%;
+
+            &_title {
+                padding: 10px 30px;
+                font-size: 20px;
+            }
+
+            &_descr {
+                font-size: 16px;
+                padding: 0px 30px;
+            }
+
+            &_settings {
+                padding: 0px 30px;
+                
+                &-count,
+                &-complexity,
+                &-keys {
+                    column-gap: 8px;
+                    
+                    svg {
+                        width: 24px;
+                        height: 24px;
+                    }
+                }
+            }
+
+            &_price {
+                padding: 15px 30px;
+
+                &-buy {
+                    width: 45%;
+                    height: 52px;
+                    min-width: 100px;
+                    background-size: cover;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                }
+            }
+
+            &_locate {
+                padding: 15px 30px;
+            }
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    .quests {
+        &__item {
+            &_price {
+                &-buy {
+                    width: 43%;
+                    height: 51px;
+                    background-size: cover;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .quests {
+        &__item {
+            &_img {
+                img {
+                    height: 400px;
+                }
+            }
+
+            &_settings {
+                &-count,
+                &-complexity,
+                &-keys {
+                    svg {
+                        width: 25px;
+                        height: 25px;
+                    }
+                }
+            }
+
+            &_price {
+                &-buy {
+                    width: 48%;
+                    height: 50px;
+                    min-width: 90px;
+                    background-size: cover;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 650px) {
+    .quests {
+        &__item {
+            &_price {
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                gap: 15px;
+
+                &-buy {
+                    width: 48%;
+                    height: 50px;
+                    min-width: 90px;
+                    max-width: 180px;
+                    background-size: cover;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    margin-left: auto;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 567px) {
+    .quests {
+        .container {
+            width: 100%;
+        }
+
+        &__item {
+            &_img {
+                img {
+                    height: 350px;
+                }
+            }
+
+            &_title {
+                padding: 10px 20px;
+                font-size: 20px;
+            }
+
+            &_descr {
+                font-size: 16px;
+                padding: 0px 20px;
+                line-height: 160%;
+            }
+
+            &_settings {
+                padding: 0px 20px;
+
+                &-count {
+                    column-gap: 5px;
+
+                    svg {
+                        width: 25px;
+                        height: 25px;
+                    }
+                }
+
+                &-complexity {
+                    column-gap: 0px;
+
+                    svg {
+                        width: 25px;
+                        height: 25px;
+                    }
+                }
+
+                &-keys {
+                    column-gap: 0px;
+
+                    svg {
+                        width: 25px;
+                        height: 25px;
+                    }
+                }
+            }
+
+            &_price {
+                padding: 20px 20px;
+
+                &-buy {
+                    width: 50%;
+                    height: 49px;
+                    background-size: cover;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                }
+            }
+
+            &_locate {
+                padding: 15px 20px;
+
+                &-text {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .quests {
+        &__item {
+            &_price {
+                &-buy {
+                    width: 52%;
+                    height: 48px;
+                    background-size: cover;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .quests {
+        &__item {
+            &_img {
+                img {
+                    height: 300px;
+                }
+            }
+
+            &_title {
+                padding: 10px 10px;
+                font-size: 18px;
+            }
+
+            &_descr {
+                font-size: 14px;
+                padding: 0px 10px;
+                line-height: 150%;
+            }
+
+            &_settings {
+                padding: 0px 10px;
+                flex-wrap: wrap;
+
+                &-count {
+                    column-gap: 5px;
+
+                    svg {
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
+
+                &-complexity {
+                    column-gap: 0px;
+
+                    svg {
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
+
+                &-keys {
+                    column-gap: 0px;
+
+                    svg {
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
+            }
+
+            &_price {
+                padding: 20px 10px;
+
+                &-value {
+                    font-size: 16px;
+                }
+
+                &-buy {
+                    width: 55%;
+                    height: 47px;
+                    background-size: cover;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                }
+            }
+
+            &_locate {
+                padding: 15px 10px;
+
+                &-text {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 350px) {
+    .quests {
+        &__item {
+            &_price {
+                &-buy {
+                    width: 58%;
+                    height: 46px;
+                    background-size: cover;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                }
+            }
+        }
+    }
+}

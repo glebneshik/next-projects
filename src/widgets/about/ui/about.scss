@@ -1,0 +1,220 @@
+.about {
+    width: 100%;
+    height: auto;
+    padding: 50px 0;
+
+    .container {
+        width: 80%;
+        display: block;
+        margin: 0 auto;
+    }
+
+    &__title {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+
+        h2 {
+            margin: 0 !important;
+            font-family: "Montserrat", sans-serif;
+            text-transform: uppercase;
+            color: #D3101F;
+            font-weight: 700;
+            font-size: 50px;
+        }
+
+        &_one {
+            padding-left: 200px;
+        }
+
+        &_two {
+            padding-right: 200px;
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        margin-top: 100px;
+
+        &_img {
+            img {
+                object-fit: cover;
+            }
+        }
+
+        &_text {
+            width: 50%;
+
+            &-item {
+                color: #fff;
+                font-weight: 200;
+                font-size: 18px;
+                font-family: "Montserrat", sans-serif;
+                line-height: 200%;
+            }
+
+
+        }
+
+        &_link {
+            display: flex;
+            flex-direction: column;
+
+            &-descr {
+                font-size: 18px;
+                font-weight: 900;
+                line-height: 180%;
+                text-transform: uppercase;
+                width: 50%;
+            }
+
+            &-img {
+                width: 100px;
+                height: 100px;
+                border-radius: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 1px solid #242424;
+            }
+        }
+    }
+
+    .swiper {
+        &-wrapper {
+            display: flex;
+            transition-timing-function: linear !important;
+            display: flex;
+            align-items: center;
+            column-gap: 30px;
+        }
+
+        &-slide {
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+    }
+
+    &__scroll {
+        overflow: hidden;
+        width: 100%;
+        margin-top: 100px;
+
+        &_img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        &::-webkit-scrollbar {
+            width: 0px;
+        }
+    }
+}
+
+@media (max-width: 1400px) {
+    .about {
+
+        &__title {
+            align-items: flex-start;
+
+            h2 {
+                font-size: 40px;
+            }
+
+            &_one {
+                padding-left: 0px;
+            }
+
+            &_two {
+                padding-right: 0px;
+            }
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .about {
+        .container {
+            width: 95%;
+            padding: 0 10px;
+        }
+
+        &__title {
+
+            h2 {
+                font-size: 30px;
+            }
+        }
+
+        &__wrapper {
+            flex-direction: column;
+            margin-top: 20px;
+
+            &_text {
+                width: 100%;
+
+                &-item {
+                    line-height: 160%;
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .about {
+        .swiper {
+            &-wrapper {
+                height: 250px;
+            }
+        }
+
+        &__title {
+            h2 {
+                font-size: 30px;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .about {
+        &__scroll {
+            margin-top: 40px;
+        }
+
+        .swiper {
+            &-wrapper {
+                height: 200px;
+            }
+        }
+
+        &__wrapper {
+            &_link {
+                &-descr {
+                    width: 60%;
+                }
+
+                &-img {
+                    width: 80px;
+                    height: 80px;
+                }
+            }
+
+            &_text {
+                margin-top: 40px;
+            }
+        }
+
+        &__title {
+            h2 {
+                font-size: 24px;
+            }
+        }
+    }
+}

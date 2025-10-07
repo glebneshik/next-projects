@@ -1,0 +1,112 @@
+.quests {
+    width: 100%;
+    height: auto;
+    padding: 100px 0;
+
+    .container {
+        width: 95%;
+        display: block;
+        margin: 0 auto;
+    }
+
+    &__title {
+        margin: 0 !important;
+        font-family: "Montserrat", sans-serif;
+        text-transform: uppercase;
+        color: #D3101F;
+        font-weight: 700;
+        font-size: 50px;
+        text-align: center;
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        gap: 15px;
+        margin-top: 50px;
+    }
+
+}
+
+@media (min-width: 2000px) {
+    .quests {
+        &__item {
+            width: 24%;
+
+            &_title {
+                padding: 10px 20px;
+            }
+
+            &_descr {
+                padding: 0 20px;
+            }
+
+            &_settings {
+                padding: 0 20px;
+            }
+
+            &_locate {
+                padding: 0 20px;
+            }
+
+            &_price {
+                padding: 20px 20px;
+            }
+        }
+    }
+}
+
+@media (max-width: 1400px) {
+    .quests {
+        &__title {
+            font-size: 40px;
+        }
+
+        &__wrapper {}
+    }
+}
+
+@media (max-width: 992px) {
+    .quests {
+        .container {
+            width: 72%;
+        }
+
+        &__title {
+            font-size: 36px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .quests {
+        .container {
+            width: 85%;
+        }
+
+    }
+}
+
+@media (max-width: 567px) {
+    .quests {
+        padding: 50px 0;
+
+        .container {
+            width: 95%;
+        }
+
+        &__title {
+            font-size: 36px;
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .quests {
+
+        &__title {
+            font-size: 24px;
+        }
+    }
+}

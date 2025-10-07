@@ -1,0 +1,255 @@
+.hero {
+    width: 100%;
+    position: relative;
+    height: 100vh;
+    background: url("/images/HeaderBg/bg-main.png") center center / cover no-repeat;
+
+
+
+    &::after {
+        content: "";
+        height: 200px;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(to bottom, #00000000, #000000);
+        pointer-events: none; // Разрешает клики сквозь элемент
+        z-index: 1; // Тень остается под контентом
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 0 50px;
+        height: 100vh;
+        justify-content: flex-end;
+        padding-bottom: 50px;
+
+        &_about {
+            color: #fff;
+            font-size: 22px;
+            width: 40%;
+        }
+
+        &_select {
+            margin-top: 20px;
+            width: 16%;
+            height: 80px;
+            z-index: 4;
+
+            p {
+                font-size: 18px;
+            }
+
+            &:hover {
+                color: #fff;
+            }
+        }
+    }
+}
+
+
+
+@media (max-width: 1500px) {
+    .hero {
+         &__wrapper {
+             &_select {
+                width: 20%; /* Увеличиваем процент для лучшей адаптации */
+                min-width: 160px; /* Добавляем минимальную ширину */
+                height: 75px;
+            }
+        }
+    }
+}
+
+@media (max-width: 1400px) {
+    .hero {
+        // background-size: contain;
+        background-position: center 0%;
+        background-repeat: no-repeat;
+
+        &__wrapper {
+            padding: 0 50px;
+            padding-bottom: 60px;
+
+            &_about {
+
+                font-size: 22px;
+                width: 60%;
+            }
+
+            &_select {
+                width: 21%; 
+                min-width: 170px; 
+                height: 80px;
+
+                p {
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 1300px) {
+    .hero {
+        &__wrapper {
+            &_select {
+                width: 21%;
+                min-width: 160px;
+            }
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .hero {
+
+        background-image: url("/images/HeaderBg/bg-main2.png");
+        background-position: center 70%;
+
+        &__wrapper {
+            padding-bottom: 90px;
+
+            &_about {
+                text-align: center;
+                font-size: 22px;
+                width: 100%;
+            }
+
+            &_select {
+                display: block;
+                margin: 0 auto;
+                width: 26%; /* Увеличиваем для центрированной кнопки */
+                min-width: 150px;
+            }
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .hero {
+        background-position: center 50%;
+        background-image: url("/images/HeaderBg/bg-main3.png");
+
+        &__wrapper {
+            &_about {
+                line-height: 150%;
+                width: 100%;
+            }
+
+            &_select {
+
+                width: 39%;
+                height: 90px;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+
+        background: url("/images/HeaderBg/mobile-bg-768.png");
+        background-size: cover;
+        background-position: center 0%;
+        background-repeat: no-repeat;
+
+
+        padding: 0 10px;
+
+
+        &__wrapper {
+            padding: 0 10px;
+            padding-bottom: 50px;
+
+            &_about {
+
+                font-size: 20px;
+
+            }
+
+            &_select {
+                display: block;
+                margin: 0 auto;
+                height: 70px;
+
+                .button-red_text {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 567px) {
+    .hero {
+        padding: 0 5px;
+
+
+        &__wrapper {
+            padding: 0 5px;
+            padding-bottom: 100px;
+
+            &_about {
+
+                font-size: 18px;
+                line-height: 140%;
+
+            }
+
+            &_select {
+                display: block;
+                margin: 0 auto;
+                height: 70px;
+
+                .button-red_text {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 580px) {
+    .hero {
+
+        &__wrapper {
+            &_select {
+                height: 75px;
+                width: 45%;
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        background: url("/images/HeaderBg/mobile-bg3.png");
+        background-position: center 0%;
+        background-repeat: no-repeat;
+        background-size: contain;
+
+        &__wrapper {
+            &_select {
+                width: 60%;
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+
+        &__wrapper {
+
+            &_select {
+                width: 66%;
+                height: 75px;
+            }
+        }
+    }
+}

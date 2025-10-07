@@ -5,13 +5,43 @@ import { Logo } from "@/shared/logo";
 import "./header.scss";
 import { navigations } from "@/shared/config/navigation";
 import Image from "next/image";
-import { useState } from "react";
-export function Header() {
-  const [isMenu, setIsMenu] = useState<boolean>(false)
+import { useState, useRef, useEffect } from "react";
+import { usePathname } from "next/navigation";
 
-  const isToogeMenu = () => {
-    setIsMenu(!isMenu)
-  }
+export function Header() {
+  const [isMenu, setIsMenu] = useState<boolean>(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+  const pathname = usePathname();
+
+  const toggleMenu = () => {
+    setIsMenu(!isMenu);
+  };
+
+  const closeMenu = () => {
+    setIsMenu(false);
+  };
+
+  useEffect(() => {
+    closeMenu();
+  }, [pathname]);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        closeMenu();
+      }
+    };
+
+    if (isMenu) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isMenu]);
 
   return (
     <>
@@ -20,19 +50,32 @@ export function Header() {
           <Logo />
         </div>
 
-        <nav className={`header__nav ${isMenu ? "active" : ""}`}>
+        <nav 
+          ref={menuRef}
+          className={`header__nav ${isMenu ? "active" : ""}`}
+        >
           <Menu elementClass="header" navigations={navigations} />
           <div className="header__close">
-            <Image src={'/icons/hamburger-close.svg'} width={30} height={30} alt="закрыть меню" onClick={isToogeMenu}></Image>
+            <Image 
+              src={'/icons/hamburger-close.svg'} 
+              width={30} 
+              height={30} 
+              alt="закрыть меню" 
+              onClick={closeMenu}
+            />
           </div>
-
-
         </nav>
-        {
-          isMenu ? <div className="header__overlay"></div> : null
-        }
+        
+        {isMenu && <div className="header__overlay" onClick={closeMenu}></div>}
+        
         <div className="header__open">
-          <Image src={'/icons/hamburger-open.svg'} width={30} height={50} alt="открыть меню" onClick={isToogeMenu}></Image>
+          <Image 
+            src={'/icons/hamburger-open.svg'} 
+            width={30} 
+            height={50} 
+            alt="открыть меню" 
+            onClick={toggleMenu}
+          />
         </div>
       </header>
     </>

@@ -46,7 +46,7 @@
         width: 15%;
 
         @media (max-width: 1600px) {
-            width: 18%;
+            width: 100%;
         }
 
         @media (max-width: 1200px) {
@@ -124,8 +124,11 @@
             font-size: 15px;
             transition: all .4s ease-in-out;
             cursor: pointer;
+            background: transparent;
+            outline: none;
+            border: none;
             &:hover {
-                color: #ffffff9c;
+                color: #ffffffb8;
             }
             }
 

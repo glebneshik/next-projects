@@ -37,7 +37,7 @@ export function About() {
 
     const FetchInfo = async (): Promise<AboutData[]> => {
         try {
-            const { data } = await axios.get<AboutData[]>("https://c30b6adca3b2bfd4.mokky.dev/about-section");
+            const { data } = await axios.get<AboutData[]>("https://0275d3dd1dabf767.mokky.dev/about-section");
             return data;
         } catch (err) {
             console.log(err);

@@ -2,7 +2,7 @@
 
 import { RedButton } from "@/shared/ui/RedButton/RedButton";
 import "./booking.scss";
-import { useState } from "react";
+import { useState, useMemo } from "react";
 
 interface BookingProps {
   date: string;
@@ -17,6 +17,15 @@ interface FormData {
   participants: string;
 }
 
+interface PriceCalculation {
+  basePricePerPerson: number;
+  participantsCount: number;
+  isLateSession: boolean;
+  lateSessionFee: number;
+  totalPrice: number;
+  pricePerPerson: number;
+}
+
 export function Booking({ date, time, onClose, questPrice }: BookingProps) {
   const [formData, setFormData] = useState<FormData>({
     name: '',
@@ -26,70 +35,88 @@ export function Booking({ date, time, onClose, questPrice }: BookingProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [message, setMessage] = useState('');
 
-  // Расчет стоимости
-  const calculatePrice = () => {
-    const basePrice = questPrice;
-    const participants = parseInt(formData.participants) || 2;
+  const priceCalculation = useMemo((): PriceCalculation => {
+    const basePricePerPerson = questPrice / 2; 
+    const participantsCount = parseInt(formData.participants) || 2;
     const isLateSession = parseInt(time.split(':')[0]) >= 22;
+    const lateSessionFee = isLateSession ? 1000 : 0;
     
-    let total = basePrice * participants;
-    if (isLateSession) {
-      total += 1000;
-    }
+    const totalPrice = (basePricePerPerson * participantsCount) + lateSessionFee;
     
-    return total.toLocaleString('ru-RU');
+    const pricePerPerson = totalPrice / participantsCount;
+
+    return {
+      basePricePerPerson,
+      participantsCount,
+      isLateSession,
+      lateSessionFee,
+      totalPrice,
+      pricePerPerson
+    };
+  }, [questPrice, formData.participants, time]);
+
+  const calculatePrice = () => {
+    return priceCalculation.totalPrice.toLocaleString('ru-RU');
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
+    
+    if (name === 'participants') {
+      const numValue = parseInt(value);
+      if (numValue < 1) return;
+      if (numValue > 10) return;
+    }
+    
     setFormData(prev => ({
       ...prev,
       [name]: value
     }));
   };
 
- const handleSubmit = async (e: React.FormEvent) => {
-  e.preventDefault();
-  setIsSubmitting(true);
-  setMessage('');
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setMessage('');
 
-  try {
-    const bookingData = {
-      ...formData,
-      date,
-      time,
-      totalPrice: `${calculatePrice()} руб.`,
-      basePrice: questPrice
-    };
+    try {
+      const bookingData = {
+        ...formData,
+        date,
+        time,
+        totalPrice: `${calculatePrice()} руб.`,
+        basePrice: questPrice,
+        priceCalculation
+      };
 
-    console.log('Sending booking data:', bookingData);
+      console.log('Sending booking data:', bookingData);
 
-    const response = await fetch('/api/send-booking', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(bookingData),
-    });
+      const response = await fetch('/api/send-booking', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(bookingData),
+      });
 
-    const result = await response.json();
-    console.log('Response from API:', result);
+      const result = await response.json();
+      console.log('Response from API:', result);
 
-    if (response.ok) {
-      setMessage('Бронь успешно отправлена!');
-      setTimeout(() => {
-        onClose();
-      }, 2000);
-    } else {
-      setMessage(result.error || 'Произошла ошибка при отправке');
+      if (response.ok) {
+        setMessage('Бронь успешно отправлена!');
+        setTimeout(() => {
+          onClose();
+        }, 2000);
+      } else {
+        setMessage(result.error || 'Произошла ошибка при отправке');
+      }
+    } catch (error) {
+      console.error('Fetch error:', error);
+      setMessage('Ошибка сети при отправке формы');
+    } finally {
+      setIsSubmitting(false);
     }
-  } catch (error) {
-    console.error('Fetch error:', error);
-    setMessage('Ошибка сети при отправке формы');
-  } finally {
-    setIsSubmitting(false);
-  }
-};
+  };
 
   return (
     <div className="booking-overlay">
@@ -150,8 +177,23 @@ export function Booking({ date, time, onClose, questPrice }: BookingProps) {
 
             <div className="booking__form_count">
               <p className="booking__form_count-title">СТОИМОСТЬ: {calculatePrice()} руб.</p>
-              <p className="booking__form_count-descr">Цена от: {questPrice} руб. за 2 участников</p>
+              <p className="booking__form_count-descr">Цена от: {questPrice.toLocaleString('ru-RU')} руб. за 2 участников</p>
               <p className="booking__form_count-descr">За поздний сеанс к общей стоимости добавляется 1 000 руб.</p>
+              
+              {/* Дополнительная информация о расчете */}
+              <div className="booking__price-details">
+                <p className="booking__form_count-descr">
+                  Участников: {priceCalculation.participantsCount} чел.
+                </p>
+                <p className="booking__form_count-descr">
+                  Стоимость за человека: {Math.round(priceCalculation.pricePerPerson).toLocaleString('ru-RU')} руб.
+                </p>
+                {priceCalculation.isLateSession && (
+                  <p className="booking__form_count-descr">
+                    Доплата за поздний сеанс: +1 000 руб.
+                  </p>
+                )}
+              </div>
             </div>
 
             {message && (

@@ -5,7 +5,6 @@ import "./hero-main.scss";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-// Типы для данных из API
 interface HeroInfo {
   id: number;
   descr_section: string;
@@ -21,7 +20,7 @@ export function HeroMain() {
 
   const FetchInfo = async (): Promise<HeroInfo[]> => {
     try {
-      const { data } = await axios.get<HeroInfo[]>("https://c30b6adca3b2bfd4.mokky.dev/hero-section");
+      const { data } = await axios.get<HeroInfo[]>("https://0275d3dd1dabf767.mokky.dev/hero-section");
       return data;
     } catch (err) {
       console.log(err);

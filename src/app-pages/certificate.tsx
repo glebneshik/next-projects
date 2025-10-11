@@ -11,7 +11,6 @@ import { useRef, useState, useEffect } from "react";
 import Link from "next/link";
 import axios from "axios";
 
-// Типы для данных из API
 interface CertificateData {
     id: number;
     urlImage: string;
@@ -46,7 +45,7 @@ export function CertificatePage() {
 
     const FetchCertificates = async (): Promise<CertificateData[]> => {
         try {
-            const { data } = await axios.get<CertificateData[]>("https://c30b6adca3b2bfd4.mokky.dev/certificate-page");
+            const { data } = await axios.get<CertificateData[]>("https://0275d3dd1dabf767.mokky.dev/certificate-page");
             return data;
         } catch (err) {
             console.log(err);
@@ -74,7 +73,6 @@ export function CertificatePage() {
         }
     };
 
-    // Функции для переключения слайдов
     const handlePrevSlide = () => {
         if (swiperRef.current) {
             swiperRef.current.slidePrev();
@@ -87,7 +85,6 @@ export function CertificatePage() {
         }
     };
 
-    // Обработка клавиатуры для стрелок
     const handleKeyDown = (e: React.KeyboardEvent, direction: 'prev' | 'next') => {
         if (e.key === 'Enter' || e.key === ' ') {
             e.preventDefault();
@@ -169,7 +166,6 @@ export function CertificatePage() {
                         />
                     </div>
 
-                    {/* Блок со слайдером */}
                     <div className="certificate__wrapper_slider">
                         {!isMobile && (
                             <>

@@ -3,7 +3,7 @@ import { QuestPage } from "@/app-pages/quests";
 import { CardsState } from "@/widgets/quests/ui/quests";
 import axios from "axios";
 
-const API_BASE_URL = "https://68debd9a898434f41355def8.mockapi.io/products/items";
+const API_BASE_URL = "https://0275d3dd1dabf767.mokky.dev/card-main";
 
 interface PageProps {
   params: Promise<{ slug: string }>;

@@ -14,8 +14,8 @@
         bottom: 0;
         left: 0;
         background: linear-gradient(to bottom, #00000000, #000000);
-        pointer-events: none; // Разрешает клики сквозь элемент
-        z-index: 1; // Тень остается под контентом
+        pointer-events: none; 
+        z-index: 1; 
     }
 
     &__wrapper {
@@ -56,8 +56,8 @@
     .hero {
          &__wrapper {
              &_select {
-                width: 20%; /* Увеличиваем процент для лучшей адаптации */
-                min-width: 160px; /* Добавляем минимальную ширину */
+                width: 20%; 
+                min-width: 160px; 
                 height: 75px;
             }
         }
@@ -66,7 +66,6 @@
 
 @media (max-width: 1400px) {
     .hero {
-        // background-size: contain;
         background-position: center 0%;
         background-repeat: no-repeat;
 
@@ -123,7 +122,7 @@
             &_select {
                 display: block;
                 margin: 0 auto;
-                width: 26%; /* Увеличиваем для центрированной кнопки */
+                width: 26%; 
                 min-width: 150px;
             }
         }

@@ -44,7 +44,7 @@ export async function POST(request: NextRequest) {
 
     const info = await transporter.sendMail({
       from: `"Квесты" <${emailUser}>`,
-      to: 'glebneshik@gmail.com',
+      to: 'valak.quest@gmail.com',
       subject: `Новая бронь: ${bookingData.name}`,
       html: `
         <div style="font-family: Arial, sans-serif;">

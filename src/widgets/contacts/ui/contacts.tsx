@@ -7,7 +7,6 @@ import { SortQuest } from "@/shared/ui/sort-quest"
 import { useEffect, useState } from "react"
 import axios from "axios"
 
-// Типы для данных из API
 interface ContactInfo {
     id: number;
     "number-phone"?: string;
@@ -26,7 +25,7 @@ export function Contacts() {
 
     const FetchContacts = async (): Promise<ContactInfo[]> => {
         try {
-            const { data } = await axios.get<ContactInfo[]>("https://c30b6adca3b2bfd4.mokky.dev/contacts-section");
+            const { data } = await axios.get<ContactInfo[]>("https://0275d3dd1dabf767.mokky.dev/contacts-section");
             return data;
         } catch (err) {
             console.log(err);
@@ -41,7 +40,6 @@ export function Contacts() {
         setLoading(false);
     };
 
-    // Находим элементы по их id
     const contactInfo = contacts.find(item => item.id === 0);
     const firstLocation = contacts.find(item => item.id === 1);
     const secondLocation = contacts.find(item => item.id === 2);
@@ -56,8 +54,6 @@ export function Contacts() {
                 <div className="contacts__wrapper">
                     <div className="contacts__text">
                         <TitleSection classTitle="contacts__text_title" text="контакты" />
-
-                        {/* Контактная информация */}
                         {contactInfo && (
                             <>
                                 <h3 className="contacts__text_number">
@@ -70,7 +66,6 @@ export function Contacts() {
                         )}
 
                         <div className="contacts__text_locations">
-                            {/* Первая локация */}
                             {firstLocation && (
                                 <>
                                     <LocationBlock
@@ -86,7 +81,6 @@ export function Contacts() {
                         </div>
 
                         <div className="contacts__text_locations">
-                            {/* Вторая локация */}
                             {secondLocation && (
                                 <>
                                     <LocationBlock

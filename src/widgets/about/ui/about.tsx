@@ -8,66 +8,128 @@ import "./about.scss"
 import { TitleSection } from "@/shared/ui/title-section";
 import { ScrollTeam } from "@/shared/config/scrollTeam";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { useEffect, useState } from "react";
+import axios from "axios";
+
+
+interface SliderItem {
+    id: number;
+    urlImage: string;
+}
+
+interface AboutData {
+    id: string;
+    title_section_one?: string;
+    title_section_two?: string;
+    descr_section_one?: string;
+    descr_section_two?: string;
+    text_link?: string;
+    slider_scroll?: SliderItem[];
+}
 
 export function About() {
+    const [info, setInfo] = useState<AboutData[]>([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        GetInfo();
+    }, []);
+
+    const FetchInfo = async (): Promise<AboutData[]> => {
+        try {
+            const { data } = await axios.get<AboutData[]>("https://c30b6adca3b2bfd4.mokky.dev/about-section");
+            return data;
+        } catch (err) {
+            console.log(err);
+            return [];
+        }
+    };
+
+    const GetInfo = async (): Promise<void> => {
+        setLoading(true);
+        const data = await FetchInfo();
+        setInfo(data);
+        setLoading(false);
+    };
+
+
+    const titleData = info.find((item: AboutData) => item.id === "Title");
+    const descrData = info.find((item: AboutData) => item.id === "Descr");
+    const sliderData = info.find((item: AboutData) => item.id === "Slider");
+
+    if (loading) {
+        return <div className="about">Загрузка...</div>;
+    }
+
     return (
         <section className="about">
             <div className="container">
-                <div className="about__title">
-                    <TitleSection classTitle="about__title_one" text="ISOLATION – это то, что перенесет" />
-                    <TitleSection classTitle="about__title_two" text="вас в абсолютно новый мир" />
-                </div>
-
-                <div className="about__wrapper">
-                    <div className="about__wrapper_link">
-                        <h3 className="about__wrapper_link-descr">
-                            присоединяйтесь к нашей группе vk
-                        </h3>
-                        {/* Cсылка на ВК */}
-                        <Link href="/" className="about__wrapper_link-img">
-                            <Image src="/images/link-about-img.png" alt="Наше фото" width={55} height={80} />
-                        </Link>
+                {titleData && (
+                    <div className="about__title">
+                        <TitleSection
+                            classTitle="about__title_one"
+                            text={titleData.title_section_one || ""}
+                        />
+                        <TitleSection
+                            classTitle="about__title_two"
+                            text={titleData.title_section_two || ""}
+                        />
                     </div>
-                    <div className="about__wrapper_text">
-                        <p className="about__wrapper_text-item">
-                            Хотели бы почувствовать себя главным героем фильма? Перенестись              из современной реальности в череду захватывающих приключений                         и таинственных историй? В Isolation вы сможете почувствовать себя искателем сокровищ, бесстрашным авантюристом, харизматичным детективом или же жертвой в чьей-то зловещей игре! У нас Вы получите        те самые эмоции, которые испытываете при просмотре любимого фильма,      но уже лично примерив на себе костюмы героев!
-                        </p>
-                        <p className="about__wrapper_text-item">
-                            Мы далеко не единственные, у кого возникла идея создания квестов в реальности, но мы делаем все, чтобы вывести их на совершенно новый уровень и дарить людям те эмоции, которые они точно смогут назвать самыми яркими в своей жизни!
-                        </p>
+                )}
+
+                {descrData && (
+                    <div className="about__wrapper">
+                        <div className="about__wrapper_link">
+                            <h3 className="about__wrapper_link-descr">
+                                {descrData.text_link}
+                            </h3>
+                            <Link href="/" className="about__wrapper_link-img">
+                                <Image
+                                    src="/images/link-about-img.png"
+                                    alt="Наше фото"
+                                    width={55}
+                                    height={80}
+                                />
+                            </Link>
+                        </div>
+                        <div className="about__wrapper_text">
+                            <p className="about__wrapper_text-item">
+                                {descrData.descr_section_one}
+                            </p>
+                            <p className="about__wrapper_text-item">
+                                {descrData.descr_section_two}
+                            </p>
+                        </div>
                     </div>
-
-                </div>
-
-
+                )}
             </div>
+
             <div className="about__scroll">
                 <Swiper
                     className="about__scroll_container"
-                    modules={[Autoplay, FreeMode]} // Добавьте FreeMode модуль
+                    modules={[Autoplay, FreeMode]}
                     slidesPerView={"auto"}
-
                     loop={false}
                     freeMode={{
                         enabled: true,
-                        momentum: false, // Отключаем инерцию для плавности
+                        momentum: false,
                     }}
                     autoplay={{
                         delay: 0,
                         disableOnInteraction: false,
                         pauseOnMouseEnter: false,
                     }}
-                    speed={8000} // Увеличьте скорость для более плавного движения
+                    speed={8000}
                     grabCursor={false}
                     allowTouchMove={false}
                     resistance={false}
                     resistanceRatio={0}
                 >
-                    {ScrollTeam.map((item) => (
+                    {(sliderData?.slider_scroll || ScrollTeam).map((item: SliderItem) => (
                         <SwiperSlide
                             key={item.id}
                             style={{
-                                width: '500px', // Фиксированная ширина слайда
+                                width: '500px',
                                 flexShrink: 0
                             }}
                         >
@@ -82,6 +144,6 @@ export function About() {
                     ))}
                 </Swiper>
             </div>
-        </section >
+        </section>
     )
 }

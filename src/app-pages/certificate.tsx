@@ -6,21 +6,32 @@ import Image from "next/image";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Swiper as SwiperType } from 'swiper';
 import 'swiper/css';
-import { SliderConfig } from "@/shared/config/slider";
 import { useRef, useState, useEffect } from "react";
 
 import Link from "next/link";
+import axios from "axios";
 
-interface SlideItem {
+// Типы для данных из API
+interface CertificateData {
     id: number;
     urlImage: string;
+    price: string;
+    validity: string;
+    design_description: string;
+    delivery_options: string[];
+    description: string;
 }
 
 export function CertificatePage() {
     const swiperRef = useRef<SwiperType | null>(null);
     const [isMobile, setIsMobile] = useState(false);
+    const [certificates, setCertificates] = useState<CertificateData[]>([]);
+    const [currentCertificate, setCurrentCertificate] = useState<CertificateData | null>(null);
+    const [loading, setLoading] = useState(true);
+    const [activeIndex, setActiveIndex] = useState(0);
 
     useEffect(() => {
+        GetCertificates();
         const checkMobile = () => {
             setIsMobile(window.innerWidth <= 1024);
         };
@@ -32,6 +43,77 @@ export function CertificatePage() {
             window.removeEventListener('resize', checkMobile);
         };
     }, []);
+
+    const FetchCertificates = async (): Promise<CertificateData[]> => {
+        try {
+            const { data } = await axios.get<CertificateData[]>("https://c30b6adca3b2bfd4.mokky.dev/certificate-page");
+            return data;
+        } catch (err) {
+            console.log(err);
+            return [];
+        }
+    };
+
+    const GetCertificates = async (): Promise<void> => {
+        setLoading(true);
+        const data = await FetchCertificates();
+        setCertificates(data);
+        if (data.length > 0) {
+            setCurrentCertificate(data[0]);
+            setActiveIndex(0);
+        }
+        setLoading(false);
+    };
+
+    const handleSlideChange = (swiper: SwiperType) => {
+        const newIndex = swiper.realIndex;
+        setActiveIndex(newIndex);
+
+        if (certificates[newIndex]) {
+            setCurrentCertificate(certificates[newIndex]);
+        }
+    };
+
+    // Функции для переключения слайдов
+    const handlePrevSlide = () => {
+        if (swiperRef.current) {
+            swiperRef.current.slidePrev();
+        }
+    };
+
+    const handleNextSlide = () => {
+        if (swiperRef.current) {
+            swiperRef.current.slideNext();
+        }
+    };
+
+    // Обработка клавиатуры для стрелок
+    const handleKeyDown = (e: React.KeyboardEvent, direction: 'prev' | 'next') => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            if (direction === 'prev') {
+                handlePrevSlide();
+            } else {
+                handleNextSlide();
+            }
+        }
+    };
+
+    if (loading) {
+        return (
+            <div className="certificate">
+                <div className="container">Загрузка сертификатов...</div>
+            </div>
+        );
+    }
+
+    if (!currentCertificate || certificates.length === 0) {
+        return (
+            <div className="certificate">
+                <div className="container">Нет данных о сертификатах</div>
+            </div>
+        );
+    }
 
     return (
         <div className="certificate">
@@ -50,31 +132,35 @@ export function CertificatePage() {
                     <div className="certificate__wrapper_info">
                         <div className="certificate__wrapper_info-block">
                             <h5 className="certificate__wrapper_info-block_title">Цена:</h5>
-                            <p className="certificate__wrapper_info-block_descr">от 1000 руб</p>
+                            <p className="certificate__wrapper_info-block_descr">{currentCertificate.price}</p>
                         </div>
                         <div className="certificate__wrapper_info-block">
-                            <h5 className="certificate__wrapper_info-block_title">Уровень страха:</h5>
-                            <p className="certificate__wrapper_info-block_descr">3 месяца с момента покупки</p>
+                            <h5 className="certificate__wrapper_info-block_title">Срок действия:</h5>
+                            <p className="certificate__wrapper_info-block_descr">{currentCertificate.validity}</p>
                         </div>
                         <div className="certificate__wrapper_info-block">
                             <h5 className="certificate__wrapper_info-block_title">Дизайн:</h5>
-                            <p className="certificate__wrapper_info-block_descr">На выбор разные варианты дизайна</p>
-                            <Image className="certificate__wrapper_info-block_quesition" src={"/icons/uestion.svg"} width={30} height={30} alt="Вопрос"></Image>
+                            <p className="certificate__wrapper_info-block_descr">{currentCertificate.design_description}</p>
+                            <Image
+                                className="certificate__wrapper_info-block_quesition"
+                                src={"/icons/uestion.svg"}
+                                width={30}
+                                height={30}
+                                alt="Вопрос"
+                            />
                         </div>
 
                         <ul className="certificate__wrapper_info-list">
                             <h5 className="certificate__wrapper_info-list_title">Как получить:</h5>
-                            <li className="certificate__wrapper_info-list_item">В электронном виде</li>
-                            <li className="certificate__wrapper_info-list_item">В запечатанном конверте с фирменной печатью
-                            </li>
-                            <li className="certificate__wrapper_info-list_item">Лично в руки от любимого персонажа
-                            </li>
-                            <li className="certificate__wrapper_info-list_item">Доставка на дом
-                            </li>
+                            {currentCertificate.delivery_options.map((option, index) => (
+                                <li key={index} className="certificate__wrapper_info-list_item">
+                                    {option}
+                                </li>
+                            ))}
                         </ul>
 
                         <p className="certificate__wrapper_info-text">
-                            Думаете, как порадовать близких или коллег по работе? Сертификат от Isolation - это оригинальный подарок в виде бурных эмоций и ярких впечатлений! Такой сюрприз точно не оставит ваших друзей равнодушными.
+                            {currentCertificate.description}
                         </p>
                         <RedButton
                             altImage={"заказать сертификат"}
@@ -82,37 +168,33 @@ export function CertificatePage() {
                             textButton={"заказать сертификат"}
                         />
                     </div>
+
+                    {/* Блок со слайдером */}
                     <div className="certificate__wrapper_slider">
                         {!isMobile && (
                             <>
                                 <div
                                     className="certificate__wrapper_slider-arrow left"
-                                    onClick={() => swiperRef.current?.slidePrev()}
+                                    onClick={handlePrevSlide}
                                     role="button"
                                     tabIndex={0}
-                                    onKeyDown={(e: React.KeyboardEvent) => {
-                                        if (e.key === 'Enter' || e.key === ' ') {
-                                            swiperRef.current?.slidePrev();
-                                        }
-                                    }}
+                                    onKeyDown={(e) => handleKeyDown(e, 'prev')}
                                 >
                                     <Image src={"/icons/left-arrow.svg"} width={20} height={20} alt="стрелка влево" />
                                 </div>
                                 <div
                                     className="certificate__wrapper_slider-arrow right"
-                                    onClick={() => swiperRef.current?.slideNext()}
+                                    onClick={handleNextSlide}
                                     role="button"
                                     tabIndex={0}
-                                    onKeyDown={(e: React.KeyboardEvent) => {
-                                        if (e.key === 'Enter' || e.key === ' ') {
-                                            swiperRef.current?.slideNext();
-                                        }
-                                    }}
+                                    onKeyDown={(e) => handleKeyDown(e, 'next')}
                                 >
                                     <Image src={"/icons/right-arrow.svg"} width={20} height={20} alt="стрелка вправо" />
                                 </div>
                             </>
                         )}
+
+
                         <Swiper
                             className="certificate__wrapper_slider-scroll"
                             slidesPerView={1}
@@ -124,16 +206,20 @@ export function CertificatePage() {
                             onSwiper={(swiper: SwiperType) => {
                                 swiperRef.current = swiper;
                             }}
+                            onSlideChange={handleSlideChange}
+                            onInit={(swiper) => {
+                                setActiveIndex(swiper.realIndex);
+                            }}
                         >
-                            {SliderConfig.map((slide: SlideItem) => (
-                                <SwiperSlide key={slide.id}>
+                            {certificates.map((certificate) => (
+                                <SwiperSlide key={certificate.id}>
                                     <div className="slide-image-container">
                                         <Image
                                             width={900}
                                             height={900}
-                                            src={slide.urlImage}
-                                            alt={`Сертификат ${slide.id}`}
-                                            priority={slide.id === 1}
+                                            src={certificate.urlImage}
+                                            alt={`Сертификат ${certificate.id}`}
+                                            priority={certificate.id === 1}
                                         />
                                     </div>
                                 </SwiperSlide>

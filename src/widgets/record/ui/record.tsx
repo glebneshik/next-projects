@@ -1,59 +1,90 @@
-// widgets/record/index.tsx
 "use client";
 
 import { TitleSection } from "@/shared/ui/title-section";
 import "./record.scss";
 import { RecordList } from "@/shared/ui/record-list";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+interface TimeSlot {
+  time: string;
+  available: boolean;
+}
+
+interface UnavailableSlot {
+  date: string;
+  day_of_week: string;
+  time_slots: TimeSlot[];
+}
+
+interface ApiResponse {
+  unavailable_slots: UnavailableSlot[];
+}
 
 interface RecordProps {
-  onTimeSelect?: (date: string, time: string) => void; // Сделали опциональным для обратной совместимости
+  onTimeSelect?: (date: string, time: string) => void;
 }
 
 export function Record({ onTimeSelect }: RecordProps) {
   const [selectedTime, setSelectedTime] = useState<{ date: string; time: string } | null>(null);
+  const [unavailableSlots, setUnavailableSlots] = useState<UnavailableSlot[]>([]);
+  const [loading, setLoading] = useState(true);
 
-  const handleTimeSelect = (date: string, time: string) => {
+  useEffect(() => {
+    const fetchUnavailableSlots = async () => {
+      try {
+        const response = await fetch('https://0275d3dd1dabf767.mokky.dev/quest-time');
+        const data: ApiResponse[] = await response.json();
+        setUnavailableSlots(data[0].unavailable_slots);
+      } catch (error) {
+        console.error('Error fetching unavailable slots:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchUnavailableSlots();
+  }, []);
+
+  const handleTimeSelect = (date: string, time: string, available: boolean) => {
+    if (!available) return; 
+    
     setSelectedTime({ date, time });
-    // Вызываем переданный обработчик, если он есть
     if (onTimeSelect) {
       onTimeSelect(date, time);
     }
   };
 
-  const dates = [
-    "27 апреля, Воскресенье",
-    "28 апреля, Понедельник", 
-    "29 апреля, Вторник",
-    "30 апреля, Среда",
-    "1 мая, Четверг",
-    "2 мая, Пятница",
-    "3 мая, Суббота"
-  ];
-
-  const deadlines = [
-    ["10:00", "11:30", "13:00", "14:30", "16:00", "17:30", "19:00", "20:30", "22:00", "23:30"],
-    ["10:00", "11:30", "13:00", "14:30", "16:00", "17:30", "19:00", "20:30", "22:00", "23:30"],
-    ["10:00", "11:30", "13:00", "14:30", "16:00", "17:30", "19:00", "20:30", "22:00", "23:30", "01:00"],
-    ["10:00", "11:30", "13:00", "14:30", "16:00", "17:30", "19:00", "20:30", "22:00", "23:30", "01:00"],
-    ["10:00", "11:30", "13:00", "14:30", "16:00", "17:30", "19:00", "20:30", "22:00", "23:30", "01:00"],
-    ["10:00", "11:30", "13:00", "14:30", "16:00", "17:30", "19:00", "20:30", "22:00", "23:30"],
-    ["10:00", "11:30", "13:00", "14:30", "16:00", "17:30", "19:00", "20:30", "22:00", "23:30"]
-  ];
+  if (loading) {
+    return (
+      <section className="record">
+        <TitleSection classTitle="record__title" text="Запись" />
+        <div>Загрузка...</div>
+      </section>
+    );
+  }
 
   return (
     <section className="record">
       <TitleSection classTitle="record__title" text="Запись" />
       
-      {dates.map((date, index) => (
+      {unavailableSlots.map((slot, index) => (
         <RecordList 
           key={index}
-          deadlines={deadlines[index]} 
-          date={date}
+          timeSlots={slot.time_slots}
+          date={`${slot.date.split('-')[2]} ${getMonthName(slot.date)}, ${slot.day_of_week}`}
           onTimeSelect={handleTimeSelect}
-          selectedTime={selectedTime?.date === date ? selectedTime.time : undefined}
+          selectedTime={selectedTime}
         />
       ))}
     </section>
   );
+}
+
+function getMonthName(dateString: string): string {
+  const months = [
+    'января', 'февраля', 'марта', 'апреля', 'мая', 'июня',
+    'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'
+  ];
+  const monthIndex = parseInt(dateString.split('-')[1]) - 1;
+  return months[monthIndex];
 }

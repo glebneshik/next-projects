@@ -29,8 +29,7 @@
             transition: all 0.3s ease-in-out;
             cursor: pointer;
             flex-shrink: 0;
-
-            &:hover {
+            &:not(.record__list_item--unavailable):hover {
                 background: linear-gradient(to top, #D3101F, #D3101F);
                 transform: translateY(-2px);
                 box-shadow: 0 4px 12px rgba(211, 16, 31, 0.3);
@@ -39,6 +38,31 @@
 
             &:active {
                 transform: translateY(0);
+            }
+            &--selected {
+                background: linear-gradient(to top, #D3101F, #D3101F) !important;
+                border-color: #D3101F !important;
+                color: white !important;
+                transform: translateY(-2px) !important;
+                box-shadow: 0 4px 12px rgba(211, 16, 31, 0.4) !important;
+                
+                &:hover {
+                    background: linear-gradient(to top, #b80e1a, #b80e1a) !important;
+                    border-color: #b80e1a !important;
+                }
+            }
+
+            &--unavailable {
+                border-color: #5a5a5a;
+                color: #999;
+                opacity: 0.6;
+                transition: all 0.3s ease-in-out;
+                &:hover {
+                    background-color: #373737;
+                    transform: none !important;
+                    box-shadow: none !important;
+                    border-color: #5a5a5a !important;
+                }
             }
         }
     }
@@ -152,7 +176,16 @@
                 overflow: hidden;
                 text-overflow: ellipsis;
                 white-space: nowrap;
+                
+                &--selected {
+                    transform: translateY(-1px);
+                    box-shadow: 0 2px 8px rgba(211, 16, 31, 0.4);
+                }
+                
+                &--unavailable {
+                    opacity: 0.5;
+                }
             }
         }
-    }
+    }  
 }

@@ -4,8 +4,6 @@ import "./quests.scss";
 import { TitleSection } from "@/shared/ui/title-section";
 import { useEffect, useState } from "react";
 import axios from "axios";
-// import Link from "next/link";
-// import { useRouter } from "next/navigation";
 
 export interface CardsState {
   id: number;

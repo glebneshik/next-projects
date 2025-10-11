@@ -46,10 +46,8 @@ export function QuestPage({ quest }: QuestPageProps) {
                 <QuestImages />
             </div>
 
-            {/* Передаем обработчик выбора времени в Record */}
             <Record onTimeSelect={handleTimeSelect} />
             
-            {/* Показываем Booking только когда выбрано время */}
             {showBooking && selectedTime && (
                 <Booking 
                     date={selectedTime.date}

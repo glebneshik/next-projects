@@ -40,6 +40,13 @@ export default async function Quest({ params }: PageProps) {
       </div>
     );
   }
+  const transformedQuest = {
+    ...quest,
+    location: quest.address || quest.location,
+    price: typeof quest.price === 'object' ? quest.price.starting_from : quest.price,
+    maxPeople: quest.participants ? `${quest.participants.min}-${quest.participants.max}` : quest.maxPeople,
+    level: quest.fear_level?.value || quest.level
+  };
 
-  return <QuestPage quest={quest} />;
+  return <QuestPage quest={transformedQuest} />;
 }

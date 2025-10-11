@@ -49,11 +49,7 @@ export function Record({ onTimeSelect }: RecordProps) {
   const handleTimeSelect = (date: string, time: string, available: boolean) => {
     if (!available) return;
 
-    if (selectedTime?.date === date && selectedTime?.time === time) {
-      setSelectedTime(null);
-    } else {
-      setSelectedTime({ date, time });
-    }
+    setSelectedTime({ date, time });
 
     if (onTimeSelect) {
       onTimeSelect(date, time);
@@ -73,9 +69,6 @@ export function Record({ onTimeSelect }: RecordProps) {
     );
   }
 
-  const defaultSlot = unavailableSlots[0];
-  const defaultTimeSlot = defaultSlot?.time_slots.find(slot => slot.available);
-
   return (
     <section className="record">
       <TitleSection classTitle="record__title" text="Запись" />
@@ -91,20 +84,6 @@ export function Record({ onTimeSelect }: RecordProps) {
           onCloseBooking={handleCloseBooking}
         />
       ))}
-
-      {!selectedTime && (
-        <div className="default-booking-form">
-          <Booking
-            date={defaultSlot ?
-              `${defaultSlot.date.split('-')[2]} ${getMonthName(defaultSlot.date)}, ${defaultSlot.day_of_week}` :
-              "Дата не загружена"
-            }
-            time={defaultTimeSlot?.time || "Время не загружено"}
-            onClose={() => { }}
-            questPrice={3000}
-          />
-        </div>
-      )}
     </section>
   );
 }

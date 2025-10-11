@@ -16,13 +16,28 @@ interface RecordListProps {
   onCloseBooking: () => void;
 }
 
-export function RecordList({ timeSlots, date, onTimeSelect, selectedTime, questPrice, onCloseBooking }: RecordListProps) {
+export function RecordList({ 
+  timeSlots, 
+  date, 
+  onTimeSelect, 
+  selectedTime, 
+  questPrice, 
+  onCloseBooking 
+}: RecordListProps) {
   const isTimeSelected = (time: string) => {
     return selectedTime?.date === date && selectedTime?.time === time;
   };
 
-  const handleCloseBooking = () => {
-    onCloseBooking();
+  const handleTimeClick = (time: string, available: boolean) => {
+    if (!available) return;
+    
+    // Если кликаем на уже выбранное время - закрываем форму
+    if (isTimeSelected(time)) {
+      onCloseBooking();
+    } else {
+      // Иначе открываем форму для нового времени
+      onTimeSelect(date, time, available);
+    }
   };
 
   return (
@@ -37,7 +52,7 @@ export function RecordList({ timeSlots, date, onTimeSelect, selectedTime, questP
               ${!timeSlot.available ? 'record__list_item--unavailable' : ''}
               ${isTimeSelected(timeSlot.time) && timeSlot.available ? 'record__list_item--selected' : ''}
             `}
-            onClick={() => timeSlot.available && onTimeSelect(date, timeSlot.time, timeSlot.available)}
+            onClick={() => handleTimeClick(timeSlot.time, timeSlot.available)}
           >
             {timeSlot.time}
           </li>
@@ -49,7 +64,7 @@ export function RecordList({ timeSlots, date, onTimeSelect, selectedTime, questP
           <Booking
             date={selectedTime.date}
             time={selectedTime.time}
-            onClose={handleCloseBooking}
+            onClose={onCloseBooking}
             questPrice={questPrice}
           />
         </div>

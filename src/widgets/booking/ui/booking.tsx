@@ -179,21 +179,6 @@ export function Booking({ date, time, onClose, questPrice }: BookingProps) {
               <p className="booking__form_count-title">СТОИМОСТЬ: {calculatePrice()} руб.</p>
               <p className="booking__form_count-descr">Цена от: {questPrice.toLocaleString('ru-RU')} руб. за 2 участников</p>
               <p className="booking__form_count-descr">За поздний сеанс к общей стоимости добавляется 1 000 руб.</p>
-              
-              {/* Дополнительная информация о расчете */}
-              <div className="booking__price-details">
-                <p className="booking__form_count-descr">
-                  Участников: {priceCalculation.participantsCount} чел.
-                </p>
-                <p className="booking__form_count-descr">
-                  Стоимость за человека: {Math.round(priceCalculation.pricePerPerson).toLocaleString('ru-RU')} руб.
-                </p>
-                {priceCalculation.isLateSession && (
-                  <p className="booking__form_count-descr">
-                    Доплата за поздний сеанс: +1 000 руб.
-                  </p>
-                )}
-              </div>
             </div>
 
             {message && (

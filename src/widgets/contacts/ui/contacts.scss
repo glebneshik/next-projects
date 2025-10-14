@@ -25,7 +25,7 @@
             text-transform: uppercase;
             color: #D3101F;
             font-weight: 900;
-            font-size: 50px;
+            font-size: 40px;
             line-height: 1.2;
         }
 
@@ -35,8 +35,8 @@
             text-transform: uppercase;
             color: #ffffff;
             font-weight: 900;
-            font-size: 35px;
-            padding-top: 60px; 
+            font-size: 30px;
+            padding-top: 60px;
             line-height: 1.3;
         }
 
@@ -45,15 +45,15 @@
             font-family: "Montserrat", sans-serif;
             color: #ffffff;
             font-weight: 700;
-            font-size: 35px;
-            padding-top: 20px; 
+            font-size: 30px;
+            padding-top: 20px;
             line-height: 1.3;
         }
 
         &_locations {
             display: flex;
             flex-direction: column;
-            margin-top: 30px; 
+            margin-top: 30px;
 
             &-title {
                 display: flex;
@@ -63,31 +63,31 @@
                 &_text {
                     color: #ffffff;
                     font-weight: 600;
-                    font-size: 22px;
+                    font-size: 20px;
                     line-height: 1.3;
                 }
 
                 svg {
                     color: #D3101F;
-                    flex-shrink: 0; 
+                    flex-shrink: 0;
                 }
             }
 
             &-list {
-                padding-left: 30px; 
+                padding-left: 30px;
                 display: flex;
                 flex-direction: column;
-                row-gap: 8px; 
+                row-gap: 8px;
                 list-style-type: none;
                 margin-top: 12px;
 
                 &_item {
                     color: #ffffff;
                     font-weight: 500;
-                    font-size: 18px;
+                    font-size: 20px;
                     position: relative;
                     line-height: 1.4;
-                    padding: 4px 0; 
+                    padding: 4px 0;
 
                     &::before {
                         content: "";
@@ -97,7 +97,7 @@
                         transform: translateY(-50%);
                         position: absolute;
                         top: 50%;
-                        left: -15px; 
+                        left: -15px;
                         border-radius: 100%;
                         z-index: 2;
                     }
@@ -107,7 +107,7 @@
     }
 
     &__map {
-        width: 55%; 
+        width: 55%;
         margin-left: 5%;
 
         iframe {

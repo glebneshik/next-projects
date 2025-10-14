@@ -7,7 +7,6 @@ import "./index.scss";
 import { RedButton } from "../RedButton/RedButton";
 import { KeyDisableIcon } from "../svg/CardIcons/KeyDisableIcon";
 import Link from "next/link";
-
 export function Quest({
     id,
     nameQuest,
@@ -15,7 +14,6 @@ export function Quest({
     locationQuest,
     priceQuest,
     maxPeople,
-    // level,
     imageUrl,
     keys
 }: {
@@ -29,11 +27,6 @@ export function Quest({
     imageUrl: string;
     keys: boolean[];
 }) {
-
-
-
-
-
     return (
         <Link href={`/quest/${id}`} className="quests__item">
             <div className="quests__item_img">
@@ -42,6 +35,11 @@ export function Quest({
 
             <h4 className="quests__item_title">{nameQuest}</h4>
             <p className="quests__item_descr">{descrQuest}</p>
+            
+            {/* Добавляем контейнер для линии */}
+            <div className="quests__item_line-container">
+                <hr className="quests__item_line" />
+            </div>
 
             <div className="quests__item_settings">
                 <div className="quests__item_settings-count">

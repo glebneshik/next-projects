@@ -1,7 +1,7 @@
 .about {
     width: 100%;
     height: auto;
-    padding: 50px 0;
+    padding: 166px 0;
 
     .container {
         width: 80%;
@@ -14,7 +14,6 @@
         flex-direction: column;
         width: 100%;
         align-items: center;
-
         h2 {
             margin: 0 !important;
             font-family: "Montserrat", sans-serif;
@@ -37,7 +36,6 @@
         display: flex;
         width: 100%;
         justify-content: space-between;
-        margin-top: 100px;
 
         &_img {
             img {
@@ -47,7 +45,7 @@
 
         &_text {
             width: 50%;
-
+            margin-top: 76px;
             &-item {
                 color: #fff;
                 font-weight: 200;
@@ -62,7 +60,7 @@
         &_link {
             display: flex;
             flex-direction: column;
-
+            margin-top: 87px;
             &-descr {
                 font-size: 18px;
                 font-weight: 900;
@@ -101,7 +99,7 @@
     &__scroll {
         overflow: hidden;
         width: 100%;
-        margin-top: 100px;
+        margin-top: 80px;
 
         &_img {
             width: 100%;
@@ -168,6 +166,7 @@
 
 @media (max-width: 992px) {
     .about {
+        padding: 60px 0;
         .swiper {
             &-wrapper {
                 height: 250px;
@@ -184,6 +183,7 @@
 
 @media (max-width: 768px) {
     .about {
+        padding: 60px 0;
         &__scroll {
             margin-top: 40px;
         }
@@ -214,6 +214,21 @@
         &__title {
             h2 {
                 font-size: 24px;
+            }
+        }
+    }
+}
+
+@media (max-width: 567px) {
+     .about {
+        padding: 100px 0;
+        &__scroll {
+            margin-top: 40px;
+        }
+
+        &__wrapper {
+            &_link {
+                display: none;
             }
         }
     }

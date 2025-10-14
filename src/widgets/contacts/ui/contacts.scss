@@ -483,7 +483,7 @@
         }
 
         &__map {
-            margin-top: 15px;
+            margin-top: 50px;
 
             iframe {
                 height: 180px;
@@ -495,7 +495,7 @@
 
 @media (max-width: 359px) {
     .contacts {
-        padding: 15px 0;
+        padding: 100px 0;
 
         .container {
             padding: 0 10px;
@@ -539,10 +539,10 @@
         }
 
         &__map {
-            margin-top: 12px;
+            margin-top: 60px;
 
             iframe {
-                height: 150px;
+                height: 325px;
                 border-radius: 6px;
             }
         }

@@ -1,12 +1,12 @@
 .certificate {
     height: auto;
-    padding: 100px 0;
+    padding: 100px 75px;
 
-    .container {
-        width: 93%;
-        display: block;
-        margin: 0 auto;
-    }
+    // .container {
+    //     width: 93%;
+    //     display: block;
+    //     margin: 0 auto;
+    // }
 
     &__title {
         text-transform: uppercase;
@@ -460,7 +460,7 @@
 /* Адаптация для планшетов и маленьких ноутбуков */
 @media (max-width: 1399px) {
     .certificate {
-        padding: 120px 0;
+        // padding: 120px 0;
 
         &__title {
             font-size: 36px;
@@ -502,7 +502,7 @@
 
 @media (max-width: 1200px) {
     .certificate {
-        padding: 100px 0;
+        // padding: 100px 30px;
 
         &__title {
             font-size: 32px;
@@ -567,9 +567,17 @@
     }
 }
 
+@media (max-width: 1100px) {
+   .certificate {
+        padding: 100px 30px;
+   }
+}
+
+
+
 @media (max-width: 1024px) {
     .certificate {
-        padding: 100px 0;
+        padding: 100px 30px;
 
         &__title {
             font-size: 32px;
@@ -634,7 +642,7 @@
 /* Адаптация для мобильных устройств */
 @media (max-width: 768px) {
     .certificate {
-        padding: 80px 0;
+        padding: 80px 30px;
 
         &__title {
             font-size: 28px;
@@ -719,7 +727,7 @@
 
 @media (max-width: 576px) {
     .certificate {
-        padding: 60px 0;
+        padding: 60px 25px;
 
         &__title {
             font-size: 24px;
@@ -818,7 +826,7 @@
 
 @media (max-width: 375px) {
     .certificate {
-        padding: 40px 0;
+        padding: 40px 20px;
 
         &__title {
             font-size: 20px;

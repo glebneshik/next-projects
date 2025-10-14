@@ -3,9 +3,6 @@
     position: relative;
     height: 100vh;
     background: url("/images/HeaderBg/bg-main.png") center center / cover no-repeat;
-
-
-
     &::after {
         content: "";
         height: 200px;

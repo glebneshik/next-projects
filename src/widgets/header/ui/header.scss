@@ -7,7 +7,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 70px;
+    padding: 20px 75px;
     background: linear-gradient(to top, #00000000, #000000c5);
 
     &__logo {
@@ -102,7 +102,7 @@
 
 @media (max-width: 1400px) {
     .header {
-        padding: 20px 40px;
+        // padding: 20px 40px;
 
         &__nav {
             column-gap: 40px;

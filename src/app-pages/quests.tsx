@@ -30,7 +30,6 @@ export function QuestPage({ quest }: QuestPageProps) {
 
     return (
         <div className="quest">
-            <div className="container">
                 <QuestNavigate questName={quest.nameQuest} />
                 <div className="quest__wrapper">
                     <div className="quest__info">
@@ -57,7 +56,6 @@ export function QuestPage({ quest }: QuestPageProps) {
                         questPrice={quest.priceQuest}
                     />
                 )}
-            </div>
         </div>
     );
 }

@@ -29,7 +29,57 @@
     }
 }
 
+@media (max-width: 1200px) {
+    .adventures {
+        &__list {
+            &_item {
+                &-text {
+                    font-size: 17px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    .adventures {
+        &__list {
+            &_item {
+                &-text {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
+
 @media (max-width: 768px) {
+    .adventures {
+        &__list {
+            &_item {
+                &-text {
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 480px) {
+    .adventures {
+        &__list {
+            &_item {
+                &-text {
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 375px) {
     .adventures {
         &__list {
             &_item {
@@ -40,3 +90,4 @@
         }
     }
 }
+

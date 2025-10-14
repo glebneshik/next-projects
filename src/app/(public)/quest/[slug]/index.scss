@@ -153,7 +153,7 @@
     }
 
     @media (max-width: 1200px) {
-        padding: 80px 50px;
+        padding: 80px 0px;
 
         &__wrapper {
             flex-direction: column;
@@ -270,7 +270,7 @@
     }
 
     @media (max-width: 480px) {
-        padding: 40px 15px;
+        padding: 70px 0px;
 
         &__info {
             &_title {
@@ -333,7 +333,7 @@
     }
 
     @media (max-width: 360px) {
-        padding: 30px 10px;
+        padding: 60px 0px;
 
         &__info {
             &_block {

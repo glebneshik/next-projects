@@ -1,9 +1,9 @@
 .certificate {
     height: auto;
-    padding: 20px 0;
+    padding: 100px 0;
 
     .container {
-        width: 90%;
+        width: 93%;
         display: block;
         margin: 0 auto;
     }
@@ -19,6 +19,7 @@
     &__wrapper {
         display: flex;
         justify-content: space-between;
+        align-items: flex-start;
 
         &_info {
             width: 35%;
@@ -32,21 +33,21 @@
                 display: flex;
                 flex-direction: column;
                 font-family: "Montserrat", sans-serif;
-                
+
                 &_quesition {
                     margin-top: 16px;
                     cursor: pointer;
                 }
 
                 &_title {
-                    font-size: 18px;
+                    font-size: 20px;
                     font-weight: 400;
                     color: rgb(160, 160, 160);
                     margin: 0 !important;
                 }
 
                 &_descr {
-                    font-size: 28px;
+                    font-size: 24px;
                     color: #fff;
                     font-weight: 800;
                     margin: 0 !important;
@@ -63,7 +64,7 @@
                 border-bottom: 1px solid #242424;
 
                 &_title {
-                    font-size: 18px;
+                    font-size: 20px;
                     font-weight: 400;
                     color: rgb(160, 160, 160);
                     margin: 0 !important;
@@ -71,7 +72,7 @@
 
                 &_item {
                     position: relative;
-                    font-size: 22px;
+                    font-size: 24px;
                     color: #fff;
                     font-family: "Montserrat", sans-serif;
                     font-weight: 700;
@@ -106,7 +107,7 @@
                 height: clamp(50px, 6vw, 80px);
                 min-width: 160px;
                 max-width: 100%;
-                font-size: clamp(14px, 1.3vw, 18px);
+                font-size: 14px;
             }
         }
 
@@ -184,34 +185,12 @@
         align-items: center;
         gap: 12px;
 
-        @media (max-width: 1200px) {
-            margin-top: 20px;
-        }
-
-        @media (max-width: 768px) {
-            gap: 10px;
-            display: none;
-        }
-
-        @media (max-width: 480px) {
-            gap: 8px;
-            display: none;
-        }
-
         &-link {
             color: #FFFFFF;
             font-weight: 400;
             font-size: 18px;
             text-decoration: none;
             transition: all .4s ease-in-out;
-
-            @media (max-width: 768px) {
-                font-size: 16px;
-            }
-
-            @media (max-width: 480px) {
-                font-size: 14px;
-            }
 
             &:hover {
                 color: #d3101f;
@@ -227,16 +206,6 @@
             justify-content: center;
             line-height: 1;
             margin-top: -2px;
-
-            @media (max-width: 768px) {
-                font-size: 26px;
-                margin-top: -1px;
-            }
-
-            @media (max-width: 480px) {
-                font-size: 22px;
-                margin-top: 0;
-            }
         }
 
         &-current {
@@ -247,14 +216,6 @@
             cursor: pointer;
             transition: all .4s ease-in-out;
 
-            @media (max-width: 768px) {
-                font-size: 16px;
-            }
-
-            @media (max-width: 480px) {
-                font-size: 14px;
-            }
-
             &:hover {
                 color: rgba(255, 255, 255, 0.641);
             }
@@ -262,8 +223,189 @@
     }
 }
 
+/* Адаптация для больших экранов от 1920px */
+// @media (max-width: 1920px) {
+//     .certificate {
+//         padding: 120px 0;
+
+//         &__title {
+//             font-size: 52px;
+//             margin-bottom: 50px;
+//         }
+
+//         &__wrapper {
+//             gap: 100px;
+
+//             &_info {
+//                 width: 100%;
+//                 row-gap: 70px;
+//                 padding-top: 70px;
+
+//                 &-block {
+//                     &_title {
+//                         font-size: 22px;
+//                     }
+
+//                     &_descr {
+//                         font-size: 36px;
+//                     }
+//                 }
+
+//                 &-list {
+//                     row-gap: 18px;
+
+//                     &_title {
+//                         font-size: 22px;
+//                     }
+
+//                     &_item {
+//                         font-size: 28px;
+//                         padding-left: 40px;
+
+//                         &::before {
+//                             width: 14px;
+//                             height: 14px;
+//                         }
+//                     }
+//                 }
+
+//                 &-text {
+//                     font-size: 24px;
+//                 }
+
+//                 &-btn {
+//                     width: clamp(240px, 61%, 360px);
+//                     height: clamp(70px, 7.5vw, 100px);
+//                     font-size: clamp(16px, 1.5vw, 20px);
+//                 }
+//             }
+
+//             &_slider {
+//                 width: 55%;
+//                 margin-top: -50px;
+
+//                 &-arrow {
+//                     width: 30px;
+//                     height: 30px;
+//                 }
+
+//                 .left {
+//                     left: -80px;
+//                 }
+
+//                 .right {
+//                     right: -80px;
+//                 }
+
+//                 .swiper-slide-active {
+//                     transform: scale(1.1);
+//                 }
+
+//                 img {
+//                     max-width: 918px;
+//                     border-radius: 20px;
+//                     box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+//                 }
+//             }
+//         }
+//     }
+// }
+
+/* Адаптация для больших экранов от 1500px */
+// @media (max-width: 1500px) {
+//     .certificate {
+//         padding: 130px 0;
+
+//         &__title {
+//             font-size: 48px;
+//             margin-bottom: 40px;
+//         }
+
+//         &__wrapper {
+//             justify-content: space-around;
+//             gap: 80px;
+
+//             &_info {
+//                 width: 100%;
+//                 row-gap: 60px;
+//                 padding-top: 60px;
+
+//                 &-block {
+//                     &_title {
+//                         font-size: 20px;
+//                     }
+
+//                     &_descr {
+//                         font-size: 32px;
+//                         padding-top: 15px;
+//                     }
+//                 }
+
+//                 &-list {
+//                     row-gap: 15px;
+//                     padding-bottom: 60px;
+
+//                     &_title {
+//                         font-size: 20px;
+//                     }
+
+//                     &_item {
+//                         font-size: 26px;
+//                         margin-top: 20px;
+//                         padding-left: 35px;
+
+//                         &::before {
+//                             width: 12px;
+//                             height: 12px;
+//                         }
+//                     }
+//                 }
+
+//                 &-text {
+//                     font-size: 22px;
+//                     line-height: 200%;
+//                 }
+
+//                 &-btn {
+//                     width: clamp(220px, 58%, 340px);
+//                     height: clamp(60px, 7vw, 90px);
+//                     font-size: clamp(15px, 1.4vw, 18px);
+//                 }
+//             }
+
+//             &_slider {
+//                 width: 50%;
+//                 margin-top: -40px;
+
+//                 &-arrow {
+//                     width: 25px;
+//                     height: 25px;
+//                 }
+
+//                 .left {
+//                     left: -60px;
+//                 }
+
+//                 .right {
+//                     right: -60px;
+//                 }
+
+//                 .swiper-slide-active {
+//                     transform: scale(1.08);
+//                 }
+
+//                 img {
+//                     max-width: 704px;
+//                     border-radius: 15px;
+//                     box-shadow: 0 6px 30px rgba(0, 0, 0, 0.4);
+//                 }
+//             }
+//         }
+//     }
+// }
+
 /* Адаптация для больших экранов от 1400px */
-@media (min-width: 1400px) {
+@media (max-width: 1400px) {
     .certificate {
         &__title {
             font-size: 42px;
@@ -278,7 +420,7 @@
                 width: 38%;
                 row-gap: 55px;
                 padding-top: 55px;
-                
+
                 &-btn {
                     width: clamp(200px, 61%, 320px);
                     height: clamp(55px, 6.5vw, 85px);
@@ -315,188 +457,8 @@
     }
 }
 
-/* Адаптация для больших экранов от 1500px */
-@media (min-width: 1500px) {
-    .certificate {
-        padding: 130px 0;
-
-        &__title {
-            font-size: 48px;
-            margin-bottom: 40px;
-        }
-
-        &__wrapper {
-            justify-content: space-around;
-            gap: 80px;
-
-            &_info {
-                width: 100%;
-                row-gap: 60px;
-                padding-top: 60px;
-
-                &-block {
-                    &_title {
-                        font-size: 20px;
-                    }
-
-                    &_descr {
-                        font-size: 32px;
-                        padding-top: 15px;
-                    }
-                }
-
-                &-list {
-                    row-gap: 15px;
-                    padding-bottom: 60px;
-
-                    &_title {
-                        font-size: 20px;
-                    }
-
-                    &_item {
-                        font-size: 26px;
-                        margin-top: 20px;
-                        padding-left: 35px;
-
-                        &::before {
-                            width: 12px;
-                            height: 12px;
-                        }
-                    }
-                }
-
-                &-text {
-                    font-size: 22px;
-                    line-height: 200%;
-                }
-
-                &-btn {
-                    width: clamp(220px, 58%, 340px);
-                    height: clamp(60px, 7vw, 90px);
-                    font-size: clamp(15px, 1.4vw, 18px);
-                }
-            }
-
-            &_slider {
-                width: 50%;
-                margin-top: -40px;
-
-                &-arrow {
-                    width: 25px;
-                    height: 25px;
-                }
-
-                .left {
-                    left: -60px;
-                }
-
-                .right {
-                    right: -60px;
-                }
-
-                .swiper-slide-active {
-                    transform: scale(1.08);
-                }
-
-                img {
-                    max-width: 704px;
-                    border-radius: 15px;
-                    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.4);
-                }
-            }
-        }
-    }
-}
-
-@media (min-width: 1920px) {
-    .certificate {
-        padding: 200px 0;
-
-        &__title {
-            font-size: 52px;
-            margin-bottom: 50px;
-        }
-
-        &__wrapper {
-            gap: 100px;
-
-            &_info {
-                width: 100%;
-                row-gap: 70px;
-                padding-top: 70px;
-
-                &-block {
-                    &_title {
-                        font-size: 22px;
-                    }
-
-                    &_descr {
-                        font-size: 36px;
-                    }
-                }
-
-                &-list {
-                    row-gap: 18px;
-
-                    &_title {
-                        font-size: 22px;
-                    }
-
-                    &_item {
-                        font-size: 28px;
-                        padding-left: 40px;
-
-                        &::before {
-                            width: 14px;
-                            height: 14px;
-                        }
-                    }
-                }
-
-                &-text {
-                    font-size: 24px;
-                }
-
-                &-btn {
-                    width: clamp(240px, 61%, 360px);
-                    height: clamp(70px, 7.5vw, 100px);
-                    font-size: clamp(16px, 1.5vw, 20px);
-                }
-            }
-
-            &_slider {
-                width: 55%;
-                margin-top: -50px;
-
-                &-arrow {
-                    width: 30px;
-                    height: 30px;
-                }
-
-                .left {
-                    left: -80px;
-                }
-
-                .right {
-                    right: -80px;
-                }
-
-                .swiper-slide-active {
-                    transform: scale(1.1);
-                }
-
-                img {
-                    max-width: 918px;
-                    border-radius: 20px;
-                    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
-                }
-            }
-        }
-    }
-}
-
 /* Адаптация для планшетов и маленьких ноутбуков */
-@media (max-width: 1399px) and (min-width: 1025px) {
+@media (max-width: 1399px) {
     .certificate {
         padding: 120px 0;
 
@@ -544,7 +506,6 @@
 
         &__title {
             font-size: 32px;
-            text-align: center;
         }
 
         &__wrapper {
@@ -552,6 +513,7 @@
             gap: 60px;
             justify-content: center;
             align-items: center;
+
             &_info {
                 width: 100%;
                 row-gap: 40px;
@@ -579,6 +541,28 @@
                     align-self: center;
                 }
             }
+
+            &_slider {
+                width: 100%;
+                max-width: 700px;
+                margin: 0 auto;
+
+                &-arrow {
+                    display: none;
+                }
+
+                .swiper-slide-active {
+                    transform: scale(1.03);
+                }
+
+                img {
+                    max-width: 600px;
+                }
+            }
+        }
+
+        &__navigation {
+            margin-top: 20px;
         }
     }
 }
@@ -589,7 +573,6 @@
 
         &__title {
             font-size: 32px;
-            text-align: center;
         }
 
         &__wrapper {
@@ -713,6 +696,24 @@
                 }
             }
         }
+
+        &__navigation {
+            gap: 10px;
+            display: none;
+
+            &-link {
+                font-size: 16px;
+            }
+
+            &-separator {
+                font-size: 26px;
+                margin-top: -1px;
+            }
+
+            &-current {
+                font-size: 16px;
+            }
+        }
     }
 }
 
@@ -793,6 +794,28 @@
     }
 }
 
+@media (max-width: 480px) {
+    .certificate {
+        &__navigation {
+            gap: 8px;
+            display: none;
+
+            &-link {
+                font-size: 14px;
+            }
+
+            &-separator {
+                font-size: 22px;
+                margin-top: 0;
+            }
+
+            &-current {
+                font-size: 14px;
+            }
+        }
+    }
+}
+
 @media (max-width: 375px) {
     .certificate {
         padding: 40px 0;
@@ -849,6 +872,7 @@
                     font-size: 10px;
                 }
             }
+
             &_slider {
                 img {
                     max-width: 280px;

@@ -70,11 +70,9 @@ export function Quests() {
 
   return (
     <section className="quests" id="quests">
-      <div className="container">
         <TitleSection classTitle="quests__title" text="Наши квесты" />
         <div className="quests__wrapper">
           {contentCard}
-        </div>
       </div>
     </section>
   );

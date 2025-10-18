@@ -1,13 +1,7 @@
 .contacts {
+    padding: 0 75px 120px;
     width: 100%;
     height: auto;
-    padding: 50px 0;
-
-    .container {
-        width: 90%;
-        display: block;
-        margin: 0 auto;
-    }
 
     &__wrapper {
         display: flex;
@@ -435,8 +429,7 @@
 
 @media (max-width: 479px) {
     .contacts {
-        padding: 20px 0;
-
+        margin-top: 100px;
         .container {
             padding: 0 12px;
         }
@@ -483,7 +476,8 @@
         }
 
         &__map {
-            margin-top: 50px;
+            padding: 0 20px;
+            margin-top: 60px;
 
             iframe {
                 height: 180px;

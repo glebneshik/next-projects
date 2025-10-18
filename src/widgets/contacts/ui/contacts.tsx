@@ -50,7 +50,6 @@ export function Contacts() {
 
     return (
         <section className="contacts" id="contacts">
-            <div className="container">
                 <div className="contacts__wrapper">
                     <div className="contacts__text">
                         <TitleSection classTitle="contacts__text_title" text="контакты" />
@@ -105,7 +104,6 @@ export function Contacts() {
                         ></iframe>
                     </div>
                 </div>
-            </div>
         </section>
     )
 }

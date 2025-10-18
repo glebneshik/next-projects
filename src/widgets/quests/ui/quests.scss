@@ -1,7 +1,7 @@
 .quests {
     width: 100%;
     height: auto;
-    padding: 100px 0;
+    padding: 160px 75px 160px;
 
     .container {
         width: 95%;
@@ -16,7 +16,9 @@
         color: #D3101F;
         font-weight: 700;
         font-size: 50px;
-        text-align: center;
+        text-align: center !important; // Добавляем !important
+        width: 100%; // Добавляем ширину 100%
+        display: block; // Убеждаемся, что это блочный элемент
     }
 
     &__wrapper {
@@ -26,34 +28,11 @@
         gap: 15px;
         margin-top: 50px;
     }
-
 }
 
-@media (min-width: 2000px) {
+@media (max-width: 1100px) {
     .quests {
-        &__item {
-            width: 24%;
-
-            &_title {
-                padding: 10px 20px;
-            }
-
-            &_descr {
-                padding: 0 20px;
-            }
-
-            &_settings {
-                padding: 0 20px;
-            }
-
-            &_locate {
-                padding: 0 20px;
-            }
-
-            &_price {
-                padding: 20px 20px;
-            }
-        }
+        padding: 100px 20px;
     }
 }
 
@@ -61,9 +40,8 @@
     .quests {
         &__title {
             font-size: 40px;
+            text-align: center !important; // Добавляем везде
         }
-
-        &__wrapper {}
     }
 }
 
@@ -75,38 +53,52 @@
 
         &__title {
             font-size: 36px;
+            text-align: center !important;
         }
     }
 }
 
 @media (max-width: 768px) {
     .quests {
-        .container {
-            width: 85%;
+        &__title {
+            text-align: center !important;
+            font-size: 20px;
         }
-
+        
+        &__wrapper {
+            &__item {
+                margin-top: 50px;
+            }   
+        }
     }
 }
 
 @media (max-width: 567px) {
     .quests {
-        padding: 50px 0;
-
         .container {
             width: 95%;
         }
 
         &__title {
-            font-size: 36px;
+            font-size: 36px; // ← ВНИМАНИЕ: этот размер конфликтует с 768px!
+            text-align: center !important;
         }
     }
 }
 
 @media (max-width: 400px) {
     .quests {
-
+        padding: 0px 20px;
+        
         &__title {
-            font-size: 24px;
+            text-align: center !important;
+            font-size: 20px;
+        }
+        
+        &__wrapper {
+            &__item {
+                margin-top: 50px;
+            } 
         }
     }
 }

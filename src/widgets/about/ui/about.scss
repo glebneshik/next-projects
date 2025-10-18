@@ -1,13 +1,7 @@
 .about {
     width: 100%;
     height: auto;
-    padding: 166px 0;
-
-    .container {
-        width: 80%;
-        display: block;
-        margin: 0 auto;
-    }
+    padding: 166px 75px 80px;
 
     &__title {
         display: flex;
@@ -53,8 +47,6 @@
                 font-family: "Montserrat", sans-serif;
                 line-height: 200%;
             }
-
-
         }
 
         &_link {
@@ -80,12 +72,29 @@
             }
         }
     }
+}
+
+// Стили для отдельной секции слайдера
+.about-slider {
+    width: 100%;
+    padding: 0 !important;
+    margin: 0 !important;
+    
+    &__container {
+        overflow: hidden;
+        width: 100%;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
 
     .swiper {
+        width: 100%;
+        margin: 0 !important;
+        padding: 0 !important;
+        
         &-wrapper {
             display: flex;
             transition-timing-function: linear !important;
-            display: flex;
             align-items: center;
             column-gap: 30px;
         }
@@ -93,29 +102,29 @@
         &-slide {
             margin: 0 !important;
             padding: 0 !important;
+            width: auto !important;
         }
     }
 
-    &__scroll {
-        overflow: hidden;
+    &__image {
         width: 100%;
-        margin-top: 80px;
+        height: auto;
+        object-fit: cover;
+    }
 
-        &_img {
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-        }
-
-        &::-webkit-scrollbar {
-            width: 0px;
-        }
+    &::-webkit-scrollbar {
+        width: 0px;
     }
 }
 
 @media (max-width: 1400px) {
     .about {
+        padding: 100px 20px;
+    }
+}
 
+@media (max-width: 1400px) {
+    .about {
         &__title {
             align-items: flex-start;
 
@@ -136,13 +145,7 @@
 
 @media (max-width: 1200px) {
     .about {
-        .container {
-            width: 95%;
-            padding: 0 10px;
-        }
-
         &__title {
-
             h2 {
                 font-size: 30px;
             }
@@ -166,13 +169,6 @@
 
 @media (max-width: 992px) {
     .about {
-        padding: 60px 0;
-        .swiper {
-            &-wrapper {
-                height: 250px;
-            }
-        }
-
         &__title {
             h2 {
                 font-size: 30px;
@@ -183,17 +179,6 @@
 
 @media (max-width: 768px) {
     .about {
-        padding: 60px 0;
-        &__scroll {
-            margin-top: 40px;
-        }
-
-        .swiper {
-            &-wrapper {
-                height: 200px;
-            }
-        }
-
         &__wrapper {
             &_link {
                 &-descr {
@@ -221,11 +206,6 @@
 
 @media (max-width: 567px) {
      .about {
-        padding: 100px 0;
-        &__scroll {
-            margin-top: 40px;
-        }
-
         &__wrapper {
             &_link {
                 display: none;

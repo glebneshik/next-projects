@@ -2,15 +2,13 @@
 
 import Image from "next/image"
 import Link from "next/link";
-import { Autoplay, FreeMode } from 'swiper/modules';
 
 import "./about.scss"
 import { TitleSection } from "@/shared/ui/title-section";
 import { ScrollTeam } from "@/shared/config/scrollTeam";
-import { Swiper, SwiperSlide } from "swiper/react";
 import { useEffect, useState } from "react";
 import axios from "axios";
-
+import { AboutSlider } from "@/widgets/aboutSlider/about-slider";
 
 interface SliderItem {
     id: number;
@@ -52,7 +50,6 @@ export function About() {
         setLoading(false);
     };
 
-
     const titleData = info.find((item: AboutData) => item.id === "Title");
     const descrData = info.find((item: AboutData) => item.id === "Descr");
     const sliderData = info.find((item: AboutData) => item.id === "Slider");
@@ -62,8 +59,8 @@ export function About() {
     }
 
     return (
-        <section className="about">
-            <div className="container">
+        <>
+            <section className="about">
                 {titleData && (
                     <div className="about__title">
                         <TitleSection
@@ -102,48 +99,10 @@ export function About() {
                         </div>
                     </div>
                 )}
-            </div>
+            </section>
 
-            <div className="about__scroll">
-                <Swiper
-                    className="about__scroll_container"
-                    modules={[Autoplay, FreeMode]}
-                    slidesPerView={"auto"}
-                    loop={false}
-                    freeMode={{
-                        enabled: true,
-                        momentum: false,
-                    }}
-                    autoplay={{
-                        delay: 0,
-                        disableOnInteraction: false,
-                        pauseOnMouseEnter: false,
-                    }}
-                    speed={8000}
-                    grabCursor={false}
-                    allowTouchMove={false}
-                    resistance={false}
-                    resistanceRatio={0}
-                >
-                    {(sliderData?.slider_scroll || ScrollTeam).map((item: SliderItem) => (
-                        <SwiperSlide
-                            key={item.id}
-                            style={{
-                                width: '500px',
-                                flexShrink: 0
-                            }}
-                        >
-                            <Image
-                                className="about__scroll_img"
-                                width={500}
-                                height={350}
-                                src={item.urlImage}
-                                alt="наши команды"
-                            />
-                        </SwiperSlide>
-                    ))}
-                </Swiper>
-            </div>
-        </section>
+            {/* Отдельная секция слайдера без паддингов */}
+            <AboutSlider sliderData={sliderData} fallbackData={ScrollTeam} />
+        </>
     )
 }

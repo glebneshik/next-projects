@@ -7,6 +7,7 @@ import "./index.scss";
 import { RedButton } from "../RedButton/RedButton";
 import { KeyDisableIcon } from "../svg/CardIcons/KeyDisableIcon";
 import Link from "next/link";
+import { ScullDisableIcon } from "../svg/CardIcons/ScullDisableIcon";
 
 export function Quest({
     id,
@@ -27,16 +28,25 @@ export function Quest({
     maxPeople: string;
     complexity: number; // Обязательное поле сложности
     imageUrl: string;
-    keys: boolean[];
+    keys: number;
 }) {
-    
+
     // Функция для рендеринга черепков в зависимости от сложности
     const renderScullIcons = () => {
         return Array.from({ length: 5 }, (_, index) => (
-            <ScullIcon 
-                key={index} 
-                className={index < complexity ? "quests__item_scull-active" : "quests__item_scull-inactive"}
-            />
+            <>
+                {index < complexity ? <ScullIcon /> : <ScullDisableIcon />}
+
+            </>
+
+        ));
+    };
+    const renderKeyIcons = () => {
+        return Array.from({ length: 5 }, (_, index) => (
+            <>
+                {index < keys ? <KeyIcon /> : <KeyDisableIcon />}
+
+            </>
         ));
     };
 
@@ -48,7 +58,7 @@ export function Quest({
 
             <h4 className="quests__item_title">{nameQuest}</h4>
             <p className="quests__item_descr">{descrQuest}</p>
-            
+
             <div className="quests__item_line-container">
                 <hr className="quests__item_line" />
             </div>
@@ -64,14 +74,10 @@ export function Quest({
                 </div>
 
                 <div className="quests__item_settings-keys">
-                    {keys.map((item, i) => (
-                        <div key={i}>
-                            {item ? <KeyIcon /> : <KeyDisableIcon />}
-                        </div>
-                    ))}
+                    {renderKeyIcons()}
                 </div>
             </div>
-            
+
             <div className="quests__item_locate">
                 <DubnaIcon />
                 <p className="quests__item_locate-text">{locationQuest}</p>

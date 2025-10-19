@@ -16,6 +16,7 @@ export interface CardsState {
   imageUrl: string;
   keys: boolean[];
   slug?: string;
+  complexity: number; // Добавляем поле сложности
 }
 
 export function Quests() {
@@ -29,6 +30,7 @@ export function Quests() {
   const FetchCards = async () => {
     try {
       const { data } = await axios.get("https://0275d3dd1dabf767.mokky.dev/card-main");
+      
       return data;
     } catch (err) {
       console.log(err);
@@ -36,13 +38,13 @@ export function Quests() {
     }
   };
 
-  const GetCards = async () => {
-    setLoading(true);
-    const data = await FetchCards();
-    setCards(data);
-    setLoading(false);
-  };
-
+ const GetCards = async () => {
+  setLoading(true);
+  const data = await FetchCards();
+  console.log('Data from server:', data); 
+  setCards(data);
+  setLoading(false);
+};
 
   if (loading) {
     return <div>loading...</div>;
@@ -64,6 +66,7 @@ export function Quests() {
         maxPeople={item.maxPeople}
         imageUrl={item.imageUrl}
         keys={item.keys}
+        complexity={item.complexity} // Передаем сложность
       />
     );
   });

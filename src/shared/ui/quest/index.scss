@@ -654,3 +654,14 @@
         }
     }
 }
+
+
+.quests__item_scull-active {
+    fill: #ff0000; // Цвет для активных черепов
+    opacity: 1;
+}
+
+.quests__item_scull-inactive {
+    fill: #cccccc; // Цвет для неактивных черепов
+    opacity: 0.3;
+}

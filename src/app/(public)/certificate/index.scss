@@ -2,12 +2,6 @@
     height: auto;
     padding: 100px 75px;
 
-    // .container {
-    //     width: 93%;
-    //     display: block;
-    //     margin: 0 auto;
-    // }
-
     &__title {
         text-transform: uppercase;
         text-align: left;
@@ -133,11 +127,11 @@
             }
 
             .left {
-                left: -40px;
+                left: 60px;
             }
 
             .right {
-                right: -40px;
+                right: 60px;
             }
 
             .swiper {
@@ -165,7 +159,7 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                width: 100%;
+                width: 76%;
             }
 
             img {
@@ -184,6 +178,7 @@
         display: flex;
         align-items: center;
         gap: 12px;
+        margin-top: 14px;
 
         &-link {
             color: #FFFFFF;
@@ -658,6 +653,7 @@
 
                 &-block {
                     &_title {
+                        margin-top: 40px;
                         font-size: 16px;
                     }
 

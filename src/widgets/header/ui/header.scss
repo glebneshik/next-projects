@@ -7,7 +7,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 50px 0 75px;
+    padding: 20px 66px;
     background: linear-gradient(to top, #00000000, #000000c5);
 
     &__logo {
@@ -174,7 +174,7 @@
         &__list {
             flex-direction: column;
             column-gap: 0;
-            row-gap: 30px;
+            row-gap: 24px;
             width: 100%;
 
             &_item {

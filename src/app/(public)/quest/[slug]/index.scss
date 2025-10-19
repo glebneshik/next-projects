@@ -18,7 +18,7 @@
     &__info {
         display: flex;
         flex-direction: column;
-        width: 45%;
+        width: 55%;
 
         &_title {
             font-size: 40px;
@@ -34,6 +34,8 @@
             padding-top: 40px;
 
             &-descr {
+                width: 90%;
+                color: #D5D5D5;
                 font-size: 20px;
                 padding-top: 20px;
                 line-height: 160%;
@@ -80,7 +82,7 @@
     &__images {
         max-height: 1500px;
         overflow-y: auto;
-        width: 57%;
+        width: 41%;
         display: flex;
         flex-direction: column;
         row-gap: 20px;

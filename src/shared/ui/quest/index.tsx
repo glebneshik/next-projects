@@ -7,6 +7,7 @@ import "./index.scss";
 import { RedButton } from "../RedButton/RedButton";
 import { KeyDisableIcon } from "../svg/CardIcons/KeyDisableIcon";
 import Link from "next/link";
+
 export function Quest({
     id,
     nameQuest,
@@ -15,7 +16,8 @@ export function Quest({
     priceQuest,
     maxPeople,
     imageUrl,
-    keys
+    keys,
+    complexity // Получаем сложность
 }: {
     id: number
     nameQuest: string;
@@ -23,20 +25,30 @@ export function Quest({
     locationQuest: string;
     priceQuest: number;
     maxPeople: string;
-    level?: number;
+    complexity: number; // Обязательное поле сложности
     imageUrl: string;
     keys: boolean[];
 }) {
+    
+    // Функция для рендеринга черепков в зависимости от сложности
+    const renderScullIcons = () => {
+        return Array.from({ length: 5 }, (_, index) => (
+            <ScullIcon 
+                key={index} 
+                className={index < complexity ? "quests__item_scull-active" : "quests__item_scull-inactive"}
+            />
+        ));
+    };
+
     return (
         <Link href={`/quest/${id}`} className="quests__item">
             <div className="quests__item_img">
-                <Image width={300} height={300} src={imageUrl} alt="ужасы заброшенного приюта" />
+                <Image width={300} height={300} src={imageUrl} alt={nameQuest} />
             </div>
 
             <h4 className="quests__item_title">{nameQuest}</h4>
             <p className="quests__item_descr">{descrQuest}</p>
             
-            {/* Добавляем контейнер для линии */}
             <div className="quests__item_line-container">
                 <hr className="quests__item_line" />
             </div>
@@ -48,25 +60,18 @@ export function Quest({
                 </div>
 
                 <div className="quests__item_settings-complexity">
-                    <ScullIcon />
-                    <ScullIcon />
-                    <ScullIcon />
-                    <ScullIcon />
-                    <ScullIcon />
+                    {renderScullIcons()}
                 </div>
 
                 <div className="quests__item_settings-keys">
-                    {
-                        keys.map((item, i) => {
-                            return (
-                                <>
-                                    {item === true ? <KeyIcon key={i} /> : <KeyDisableIcon key={i} />}
-                                </>
-                            )
-                        })
-                    }
+                    {keys.map((item, i) => (
+                        <div key={i}>
+                            {item ? <KeyIcon /> : <KeyDisableIcon />}
+                        </div>
+                    ))}
                 </div>
             </div>
+            
             <div className="quests__item_locate">
                 <DubnaIcon />
                 <p className="quests__item_locate-text">{locationQuest}</p>

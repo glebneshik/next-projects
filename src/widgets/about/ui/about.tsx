@@ -58,19 +58,44 @@ export function About() {
         return <div className="about">Загрузка...</div>;
     }
 
+    const formatTitleWithBreaks = (titleOne, titleTwo) => {
+        const words = titleOne.split(' ');
+        const breakWords = ['что', 'вас', 'абсолютно'];
+
+        return (
+            <>
+                {words.map((word, index) => {
+                    const cleanWord = word.replace(/[.,!?;:]$/, '');
+                    const punctuation = word.replace(cleanWord, '');
+
+                    if (cleanWord.toLowerCase() === 'isolation') {
+                        return <span key={index} className="about__title_one-span">{word}</span>;
+                    }
+
+                    if (breakWords.includes(cleanWord.toLowerCase())) {
+                        return <span key={index}>{word}<br /></span>;
+                    }
+
+                    return index === 0 ? word : ` ${word}`;
+                })}
+                {titleTwo && ` ${titleTwo}`}
+            </>
+        );
+    };
+
     return (
         <>
             <section className="about">
                 {titleData && (
                     <div className="about__title">
-                        <TitleSection
-                            classTitle="about__title_one"
-                            text={titleData.title_section_one || ""}
-                        />
-                        <TitleSection
-                            classTitle="about__title_two"
-                            text={titleData.title_section_two || ""}
-                        />
+                        <h2 className="about__title_one">{titleData.title_section_one.split(' ').map((word, index) =>
+                            word.toLowerCase() === 'isolation' ?
+                                <span key={index} className="about__title_one-span">{word}<br /></span> :
+                                index === 0 ? word : ` ${word}`
+                        )}</h2>
+                        <h2 className="about__title_two">{titleData.title_section_two || ""}</h2>
+
+
                     </div>
                 )}
 

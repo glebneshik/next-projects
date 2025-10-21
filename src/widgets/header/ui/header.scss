@@ -12,7 +12,12 @@
 
     &__logo {
         z-index: 5;
+
+        &-mobile {
+            display: none;
+        }
     }
+
 
     &__nav {
         display: flex;
@@ -48,7 +53,7 @@
             &-text {
                 text-decoration: none;
                 text-transform: uppercase;
-                font-size: 18px;
+                font-size: 16px;
                 color: #fff;
                 transition: 0.4s ease-in-out;
                 display: flex;
@@ -132,6 +137,14 @@
 
 @media (max-width: 992px) {
     .header {
+        &__logo {
+            display: none;
+
+            &-mobile {
+                display: block;
+            }
+        }
+
         &__open {
             display: block;
         }

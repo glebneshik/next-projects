@@ -17,6 +17,7 @@
         font-weight: 700;
         font-size: 50px;
         text-align: center;
+        width: 100%;
     }
 
     &__wrapper {
@@ -87,14 +88,15 @@
 
 @media (max-width: 768px) {
     .quests {
-       &__wrapper {
-              &__title {
+        &__wrapper {
+            &__title {
                 text-align: center;
                 font-size: 20px;
             }
-        &__item {
-            margin-top: 50px;
-        }   
+
+            &__item {
+                margin-top: 50px;
+            }
         }
     }
 }
@@ -115,14 +117,16 @@
 @media (max-width: 400px) {
     .quests {
         padding: 0px 20px;
+
         &__wrapper {
-              &__title {
+            &__title {
                 text-align: center;
                 font-size: 20px;
-            }   
+            }
+
             &__item {
                 margin-top: 50px;
-            } 
+            }
         }
     }
 }

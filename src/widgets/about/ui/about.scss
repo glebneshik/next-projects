@@ -8,6 +8,7 @@
         flex-direction: column;
         width: 100%;
         align-items: center;
+
         h2 {
             margin: 0 !important;
             font-family: "Montserrat", sans-serif;
@@ -17,8 +18,16 @@
             font-size: 50px;
         }
 
+
+
         &_one {
             padding-left: 200px;
+
+            &-span {
+                br {
+                    display: none;
+                }
+            }
         }
 
         &_two {
@@ -40,6 +49,7 @@
         &_text {
             width: 50%;
             margin-top: 76px;
+
             &-item {
                 color: #fff;
                 font-weight: 200;
@@ -53,6 +63,7 @@
             display: flex;
             flex-direction: column;
             margin-top: 87px;
+
             &-descr {
                 font-size: 18px;
                 font-weight: 900;
@@ -79,7 +90,7 @@
     width: 100%;
     padding: 0 !important;
     margin: 0 !important;
-    
+
     &__container {
         overflow: hidden;
         width: 100%;
@@ -91,7 +102,7 @@
         width: 100%;
         margin: 0 !important;
         padding: 0 !important;
-        
+
         &-wrapper {
             display: flex;
             transition-timing-function: linear !important;
@@ -180,7 +191,11 @@
 @media (max-width: 768px) {
     .about {
         &__wrapper {
+            margin-top: 0;
+
             &_link {
+                display: none;
+
                 &-descr {
                     width: 60%;
                 }
@@ -192,11 +207,38 @@
             }
 
             &_text {
-                margin-top: 40px;
+                margin-top: 25px;
+
+                &-item {
+                    &:nth-child(1) {
+                        text-indent: 100px;
+                    }
+                }
             }
         }
 
         &__title {
+            padding-right: 40px;
+
+
+            &_one {
+                // text-align: right;
+
+                &-span {
+                    text-align: left;
+
+                    br {
+                        display: block;
+                    }
+
+                }
+            }
+
+            &_two {
+                text-align: right;
+                padding: 0;
+            }
+
             h2 {
                 font-size: 24px;
             }
@@ -205,7 +247,15 @@
 }
 
 @media (max-width: 567px) {
-     .about {
+    .about {
+        &__title {
+            &_one {
+                &-span {
+                    color: #ffffff;
+                }
+            }
+        }
+
         &__wrapper {
             &_link {
                 display: none;

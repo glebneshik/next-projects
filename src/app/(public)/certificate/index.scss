@@ -504,7 +504,7 @@
         }
 
         &__wrapper {
-            flex-direction: column;
+            flex-direction: column-reverse;
             gap: 60px;
             justify-content: center;
             align-items: center;
@@ -563,9 +563,9 @@
 }
 
 @media (max-width: 1100px) {
-   .certificate {
+    .certificate {
         padding: 100px 30px;
-   }
+    }
 }
 
 
@@ -579,7 +579,6 @@
         }
 
         &__wrapper {
-            flex-direction: column;
             gap: 60px;
             justify-content: center;
             align-items: center;

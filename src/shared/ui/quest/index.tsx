@@ -57,7 +57,7 @@ export function Quest({
             </div>
 
             <h4 className="quests__item_title">{nameQuest}</h4>
-            <p className="quests__item_descr">{descrQuest}</p>
+            <p className="quests__item_descr">{descrQuest.length > 40 ? `${descrQuest.slice(0, 140).trim()}...` : descrQuest}</p>
 
             <div className="quests__item_line-container">
                 <hr className="quests__item_line" />

@@ -105,6 +105,14 @@
         }
     }
 
+    &-images {
+        display: none;
+
+        &__mobile {
+            width: 100%;
+        }
+    }
+
     &__navigation {
         display: flex;
         align-items: center;
@@ -182,6 +190,12 @@
             max-height: none;
             overflow-y: visible;
             padding: 0;
+            display: none;
+        }
+
+
+        &-images {
+            display: flex;
         }
 
         &__navigation {
@@ -202,7 +216,14 @@
 
         &__images {
             width: 100%;
+            display: none;
         }
+
+        &-images {
+            display: flex;
+        }
+
+
     }
 
     @media (max-width: 768px) {
@@ -318,6 +339,7 @@
                 min-height: 200px;
             }
         }
+
 
         &__navigation {
             gap: 8px;

@@ -9,6 +9,7 @@ import { Booking } from "@/widgets/booking";
 import { Record } from "@/widgets/record";
 import { CardsState } from "@/widgets/quests/ui/quests";
 import { useState } from "react";
+import { MobileSliderQuest } from "@/shared/ui/mobile-slider-quest";
 
 interface QuestPageProps {
     quest: CardsState;
@@ -45,6 +46,7 @@ export function QuestPage({ quest }: QuestPageProps) {
                 </div>
 
                 <QuestImages />
+                <MobileSliderQuest />
             </div>
 
             <Record onTimeSelect={handleTimeSelect} />

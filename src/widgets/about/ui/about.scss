@@ -130,14 +130,14 @@
 
 @media (max-width: 1400px) {
     .about {
-        padding: 100px 20px;
+        padding: 100px 75px;
     }
 }
 
 @media (max-width: 1400px) {
     .about {
         &__title {
-            align-items: flex-start;
+            align-items: center;
 
             h2 {
                 font-size: 40px;

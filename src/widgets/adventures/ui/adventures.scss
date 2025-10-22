@@ -13,15 +13,26 @@
     }
 }
 
-// Планшеты (ландшафт)
+
 @media (max-width: 1600px) {
     .adventures {
         &__list {
-            grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(359px, 1fr));
             gap: 32px;
         }
     }
 }
+
+
+@media (max-width: 1500px) {
+    .adventures {
+        &__list {
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 32px;
+        }
+    }
+}
+
 
 // Планшеты (портрет)
 @media (max-width: 1200px) {
@@ -29,7 +40,7 @@
         padding: 36px 0;
         
         &__list {
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
             gap: 28px;
         }
     }
@@ -41,7 +52,7 @@
         padding: 30px 0;
         
         &__list {
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(205px, 1fr));
             gap: 24px;
         }
     }
@@ -53,7 +64,7 @@
         padding: 24px 0;
         
         &__list {
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
             gap: 20px;  
         }
     }
@@ -65,7 +76,7 @@
         padding: 20px 0;
         
         &__list {
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
             gap: 16px;
         }
     }

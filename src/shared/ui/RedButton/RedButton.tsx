@@ -1,4 +1,5 @@
 import Image from "next/image"
+import Link from "next/link";
 import "./RedButton.scss";
 
 export function RedButton(
@@ -14,8 +15,8 @@ export function RedButton(
         }
 ) {
     return (
-        <button className={`button-red ${classButton}`}>
+        <Link href={'#quests'} className={`button-red ${classButton}`}>
             <p className="button-red_text">{textButton}</p>
-        </button>
+        </Link>
     )
 }

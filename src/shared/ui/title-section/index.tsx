@@ -8,12 +8,6 @@ export function TitleSection(
     }
 ) {
     return (
-        <h2 className={classTitle}>
-            {text.split(' ').map((word, index) =>
-                word.toLowerCase() === 'isolation' ?
-                    <span key={index} className={classTitle + "-span"}>{word}</span> :
-                    index === 0 ? word : ` ${word}`
-            )}
-        </h2>
-    );
+        <h2 className={classTitle}>{text}</h2>
+    )
 }

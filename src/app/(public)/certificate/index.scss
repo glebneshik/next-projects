@@ -218,6 +218,27 @@
     }
 }
 
+@media (max-width: 1800px) {
+    .certificate {
+        &__wrapper {
+            &_slider {
+                .left {
+                    left: 80px;
+                }
+
+                .right {
+                    right: 80px;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
 /* Адаптация для больших экранов от 1920px */
 // @media (max-width: 1920px) {
 //     .certificate {
@@ -432,11 +453,11 @@
                 }
 
                 .left {
-                    left: -45px;
+                    left: 70px;
                 }
 
                 .right {
-                    right: -45px;
+                    right: 70px;
                 }
 
                 .swiper-slide-active {

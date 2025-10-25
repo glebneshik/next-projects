@@ -82,7 +82,7 @@
     &__images {
         max-height: 1500px;
         overflow-y: auto;
-        width: 47%;
+        width: 61%;
         display: flex;
         flex-direction: column;
         row-gap: 20px;
@@ -156,9 +156,21 @@
     }
 
     // Адаптив
+
+    @media (max-width: 1600px) {
+        &__images {
+            width: 58%;
+        }
+    }
     @media (max-width: 1500px) {
         &__images {
-            width: 50%;
+            width: 58%;
+        }
+    }
+
+    @media (max-width: 1540px) {
+        &__images {
+            width: 55%;
         }
     }
 

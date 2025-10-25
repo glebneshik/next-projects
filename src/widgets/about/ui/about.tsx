@@ -80,7 +80,7 @@ export function About() {
                             <h3 className="about__wrapper_link-descr">
                                 {descrData.text_link}
                             </h3>
-                            <Link href="/" className="about__wrapper_link-img">
+                            <Link href="https://vk.com/dubna_isolation" className="about__wrapper_link-img">
                                 <Image
                                     src="/images/link-about-img.png"
                                     alt="Наше фото"

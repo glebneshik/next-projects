@@ -15,16 +15,15 @@
                 display: flex;
                 align-items: center;
                 column-gap: 10px;
-
                 svg {
-                    color: #D3101F;
                     width: 19px;
                     height: 24px;
+                    &:hover {
+                       fill: #ff0000;
+                    }
                 }
 
-                &:hover {
-                    color: red;
-                }
+              
             }
         }
     }

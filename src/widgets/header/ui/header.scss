@@ -7,7 +7,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 51px 0 73px;
+    padding: 20px 86px 0 70px;
     background: linear-gradient(to top, #00000000, #000000c5);
 
     &__logo {
@@ -40,7 +40,7 @@
 
     &__list {
         display: flex;
-        column-gap: 92px;
+        column-gap: 110px;
         list-style-type: none;
         margin: 0;
         padding: 0;
@@ -104,6 +104,15 @@
         cursor: pointer;
     }
 }
+
+@media (max-width: 1600px) {
+   .header {
+     &__list {
+        column-gap: 52px;
+    }
+   }
+}
+
 
 @media (max-width: 1400px) {
     .header {

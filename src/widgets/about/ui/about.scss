@@ -1,7 +1,7 @@
 .about {
     width: 100%;
     height: auto;
-    padding: 166px 75px 80px;
+    padding: 166px 211px 80px 75px;
 
     &__title {
         display: flex;
@@ -38,7 +38,7 @@
         }
 
         &_text {
-            width: 45%;
+            width: 47%;
             margin-top: 76px;
             &-item {
                 color: #fff;
@@ -107,7 +107,7 @@
     }
 
     &__image {
-        width: 100%;
+        width: 90%;
         height: auto;
         object-fit: cover;
     }
@@ -115,6 +115,29 @@
     &::-webkit-scrollbar {
         width: 0px;
     }
+}
+
+
+
+@media (max-width: 1600px) {
+    .about {
+        &__wrapper {
+            &_text {
+                width: 46%;
+            }
+        }
+    }
+}
+
+@media (max-width: 1540px) {
+  .about {
+    padding: 166px 222px 80px 75px;
+      &__wrapper {
+        &_text {
+            width: 42%;
+        }
+    }
+  } 
 }
 
 @media (max-width: 1400px) {

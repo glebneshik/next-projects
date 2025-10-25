@@ -114,7 +114,6 @@ export function CertificatePage() {
 
     return (
         <div className="certificate">
-            <div className="container">
                 <div className="certificate__navigation">
                     <Link href="/" className="certificate__navigation-link">
                         Главная
@@ -224,6 +223,5 @@ export function CertificatePage() {
                     </div>
                 </div>
             </div>
-        </div>
     );
 }

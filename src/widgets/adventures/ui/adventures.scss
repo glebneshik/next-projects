@@ -1,7 +1,7 @@
 .adventures {
     width: 100%;
     height: auto;
-    padding: 42px 32px;
+    padding: 42px 20px;
 
     &__list {
         display: grid;
@@ -13,6 +13,23 @@
     }
 }
 
+@media (max-width: 1800px) {
+    .adventures {
+        width: 100%;
+        height: auto;
+        padding: 42px 19px;
+    }
+
+}
+
+@media (max-width: 1700px) {
+    .adventures {
+        width: 100%;
+        height: auto;
+        padding: 42px 30px;
+    }
+
+}
 
 @media (max-width: 1600px) {
     .adventures {

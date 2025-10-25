@@ -26,12 +26,11 @@ export function Quest({
     locationQuest: string;
     priceQuest: number;
     maxPeople: string;
-    complexity: number; // Обязательное поле сложности
+    complexity: number; 
     imageUrl: string;
     keys: number;
 }) {
 
-    // Функция для рендеринга черепков в зависимости от сложности
     const renderScullIcons = () => {
         return Array.from({ length: 5 }, (_, index) => (
             <>
@@ -57,7 +56,7 @@ export function Quest({
             </div>
 
             <h4 className="quests__item_title">{nameQuest}</h4>
-            <p className="quests__item_descr">{descrQuest.length > 40 ? `${descrQuest.slice(0, 140).trim()}...` : descrQuest}</p>
+            <p className="quests__item_descr">{descrQuest.length > 40 ? `${descrQuest.slice(0, 75).trim()}...` : descrQuest}</p>
 
             <div className="quests__item_line-container">
                 <hr className="quests__item_line" />

@@ -1,4 +1,4 @@
-
+import { AnchorHandler } from "@/components/AnchorHandler";
 import "./globals.scss"
 
 export default function RootLayout({
@@ -12,7 +12,7 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-title" content="Квесты в реальности" />
       </head>
       <body>
-
+        <AnchorHandler /> 
         {children}
 
       </body>

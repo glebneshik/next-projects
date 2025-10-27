@@ -158,7 +158,10 @@
     .quests {
         &__item {
             &_title {
-                font-size: 16px;
+                font-size: 19px;
+            }
+            &_descr {
+                font-size: 17px;
             }
         }
     }
@@ -579,11 +582,11 @@
 
             &_title {
                 padding: 10px 10px;
-                font-size: 18px;
+                font-size: 15px;
             }
 
             &_descr {
-                font-size: 14px;
+                font-size: 13px;
                 padding: 0px 10px;
                 line-height: 150%;
             }
@@ -651,9 +654,17 @@
 @media (max-width: 350px) {
     .quests {
         &__item {
+              &_title {
+                padding: 3px 10px;
+                font-size: 14px;
+            }
+
+            &_descr {
+                font-size: 12px;
+            }
             &_price {
                 &-buy {
-                    width: 58%;
+                    width: 54%;
                     height: 46px;
                     background-size: cover;
                     background-position: center;
@@ -664,6 +675,33 @@
     }
 }
 
+@media (max-width: 320px) {
+    .quests {
+        &__item {
+            &_price {
+                &-buy {
+                    width: 50%;
+                    height: 41px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 300px) {
+    .quests {
+        &__item {
+            &_price {
+                &-buy {
+                    width: 51%;
+                    height: 35px;
+                }
+            }
+        }
+    }
+}
+
+
 
 .quests__item_scull-active {
     fill: #ff0000; // Цвет для активных черепов
@@ -671,6 +709,6 @@
 }
 
 .quests__item_scull-inactive {
-    fill: #cccccc; // Цвет для неактивных черепов
+    fill: #cccccc; 
     opacity: 0.3;
 }

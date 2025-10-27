@@ -27,4 +27,29 @@
             color: #fff;
         }
     }
+
+}
+
+@media (max-width: 350px) {
+    .button-red {
+        &_text {
+            font-size: 12px;
+        }
+    }    
+}
+
+@media (max-width: 320px) {
+    .button-red {
+        &_text {
+            font-size: 10px;
+        }
+    }    
+}
+
+@media (max-width: 300px) {
+    .button-red {
+        &_text {
+            font-size: 9px;
+        }
+    }    
 }

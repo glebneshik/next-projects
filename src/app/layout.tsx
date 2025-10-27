@@ -1,3 +1,4 @@
+import { Suspense } from 'react'
 import { AnchorHandler } from "@/components/AnchorHandler";
 import "./globals.scss"
 
@@ -12,7 +13,9 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-title" content="Квесты в реальности" />
       </head>
       <body>
-        <AnchorHandler /> 
+        <Suspense fallback={null}>
+          <AnchorHandler />
+        </Suspense>
         {children}
 
       </body>

@@ -4,25 +4,14 @@
     padding: 166px 211px 80px 75px;
 
     &__title {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        align-items: center;
+        text-align: center;
         h2 {
             margin: 0 !important;
             font-family: "Montserrat", sans-serif;
             text-transform: uppercase;
             color: #D3101F;
             font-weight: 700;
-            font-size: 50px;
-        }
-
-        &_one {
-            padding-left: 200px;
-        }
-
-        &_two {
-            padding-right: 200px;
+            font-size: 65px;
         }
     }
 
@@ -172,13 +161,13 @@
     .about {
         &__title {
             h2 {
-                font-size: 30px;
+                font-size: 34px;
             }
         }
 
         &__wrapper {
             flex-direction: column;
-            margin-top: 20px;
+            margin-top: 10px;
 
             &_text {
                 width: 100%;
@@ -221,13 +210,13 @@
             }
 
             &_text {
-                margin-top: 20px;
+                margin-top: 15px;
             }
         }
 
         &__title {
             h2 {
-                font-size: 19px;
+                font-size: 24px;
             }
         }
     }
@@ -237,6 +226,7 @@
 @media (max-width: 480px) {
      .about {
         &__wrapper {
+            margin-top: -5px;
             &_link {
                 display: none;
             }
@@ -244,7 +234,36 @@
 
           &__title {
             h2 {
+                font-size: 19px;
+                span {
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 440px) {
+    .about {
+         &__title {
+            h2 {
+                font-size: 17px;
+                span {
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .about {
+         &__title {
+            h2 {
                 font-size: 15px;
+                span {
+                    color: #fff;
+                }
             }
         }
     }
@@ -253,6 +272,7 @@
 @media (max-width: 360px) {
      .about {
         &__wrapper {
+            margin-top: -5px;
             &_link {
                 display: none;
             }
@@ -260,7 +280,8 @@
 
           &__title {
             h2 {
-                font-size: 15px;
+                font-size: 18px;
+                text-align: left;
             }
         }
     }

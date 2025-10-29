@@ -462,6 +462,9 @@
                     width: clamp(180px, 70%, 280px);
                     height: clamp(42px, 10.8vw, 70px);
                     align-self: center;
+                    p {
+                        font-size: 16px;
+                    }
                 }
             }
 
@@ -629,6 +632,9 @@
                     width: clamp(140px, 80%, 220px);
                     height: clamp(38px, 15.5vw, 55px);
                     font-size: clamp(12px, 1vw, 14px);
+                    p {
+                        font-size: 14px;
+                    }
                 }
             }
 
@@ -707,6 +713,9 @@
                     width: clamp(120px, 100%, 200px);
                     height: clamp(35px, 15.8vw, 50px);
                     font-size: clamp(11px, 0.9vw, 13px);
+                    p {
+                        font-size: 12px;
+                    }
                 }
             }
 

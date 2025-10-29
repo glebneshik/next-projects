@@ -1,9 +1,12 @@
-"use client"
+"use client";
 
-import { useState } from "react";
+import { useRef, useEffect } from "react";
 import Image from "next/image";
 import { Autoplay, FreeMode } from 'swiper/modules';
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper as SwiperType } from 'swiper';
+import 'swiper/css';
+import 'swiper/css/autoplay';
 
 interface SliderItem {
     id: number;
@@ -21,8 +24,7 @@ interface AboutSliderProps {
 }
 
 export function AboutSlider({ sliderData, fallbackData }: AboutSliderProps) {
-    const [isHovered, setIsHovered] = useState(false);
-
+    const swiperRef = useRef<SwiperType>();
     const sliderItems = sliderData?.slider_scroll || fallbackData;
 
     return (
@@ -48,21 +50,14 @@ export function AboutSlider({ sliderData, fallbackData }: AboutSliderProps) {
                     speed={8000}
                     grabCursor={true}
                     allowTouchMove={true}
-                    resistance={true}
-                    resistanceRatio={0.5}
-                    touchRatio={1}
-                    touchAngle={45}
-                    shortSwipes={true}
-                    longSwipes={true}
-                    longSwipesRatio={0.1}
-                    longSwipesMs={300}
-                    followFinger={true}
-                    threshold={5}
-                    onTouchStart={() => setIsHovered(true)}
-                    onTouchEnd={() => setIsHovered(false)}
-                    onSlideChangeTransitionEnd={() => setIsHovered(false)}
-                    onAutoplay={() => {
-                        // Автоплей логика
+                    onSwiper={(swiper) => {
+                        swiperRef.current = swiper;
+                        setTimeout(() => {
+                            swiper.autoplay.start();
+                        }, 100);
+                    }}
+                    onInit={(swiper) => {
+                        swiper.autoplay.start();
                     }}
                 >
                     {sliderItems.map((item: SliderItem) => (
@@ -74,12 +69,6 @@ export function AboutSlider({ sliderData, fallbackData }: AboutSliderProps) {
                                 flexShrink: 0,
                                 cursor: 'grab'
                             }}
-                            onMouseDown={(e) => {
-                                e.preventDefault();
-                                setIsHovered(true);
-                            }}
-                            onMouseUp={() => setIsHovered(false)}
-                            onMouseLeave={() => setIsHovered(false)}
                         >
                             <Image
                                 className="about-slider__image"
@@ -87,9 +76,6 @@ export function AboutSlider({ sliderData, fallbackData }: AboutSliderProps) {
                                 height={350}
                                 src={item.urlImage}
                                 alt="наши команды"
-                                style={{
-                                    pointerEvents: 'none' 
-                                }}
                             />
                         </SwiperSlide>
                     ))}

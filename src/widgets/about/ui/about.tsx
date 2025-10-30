@@ -63,14 +63,7 @@ export function About() {
             <section className="about">
                 {titleData && (
                     <div className="about__title">
-                        <TitleSection
-                            classTitle="about__title_one"
-                            text={titleData.title_section_one || ""}
-                        />
-                        <TitleSection
-                            classTitle="about__title_two"
-                            text={titleData.title_section_two || ""}
-                        />
+                        <h2 className="about__title_one"> <span>ISOLATION</span> – это то, что перенесет вас в абсолютно новый мир</h2>
                     </div>
                 )}
 
@@ -80,7 +73,7 @@ export function About() {
                             <h3 className="about__wrapper_link-descr">
                                 {descrData.text_link}
                             </h3>
-                            <Link href="/" className="about__wrapper_link-img">
+                            <Link href="https://vk.com/dubna_isolation" className="about__wrapper_link-img">
                                 <Image
                                     src="/images/link-about-img.png"
                                     alt="Наше фото"
@@ -100,8 +93,6 @@ export function About() {
                     </div>
                 )}
             </section>
-
-            {/* Отдельная секция слайдера без паддингов */}
             <AboutSlider sliderData={sliderData} fallbackData={ScrollTeam} />
         </>
     )

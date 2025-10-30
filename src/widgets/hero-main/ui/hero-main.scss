@@ -190,12 +190,12 @@
 
 @media (max-width: 567px) {
     .hero {
+        height: 85vh;
         padding: 0 5px;
 
         &__wrapper {
             padding: 0 5px;
             padding-bottom: 30px;
-
             &_about {
                 font-size: 14px;
                 line-height: 140%;
@@ -232,6 +232,7 @@
 
 @media (max-width: 480px) {
     .hero {
+        height: 70vh;
         background: url("/images/HeaderBg/mobile-bg3.png");
         background-position: center 0;
         background-repeat: no-repeat;

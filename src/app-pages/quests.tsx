@@ -9,6 +9,7 @@ import { Booking } from "@/widgets/booking";
 import { Record } from "@/widgets/record";
 import { CardsState } from "@/widgets/quests/ui/quests";
 import { useState } from "react";
+import { MobileSliderQuest } from "@/shared/ui/mobile-slider-quest";
 
 interface QuestPageProps {
     quest: CardsState;
@@ -30,33 +31,34 @@ export function QuestPage({ quest }: QuestPageProps) {
 
     return (
         <div className="quest">
-                <QuestNavigate questName={quest.nameQuest} />
-                <div className="quest__wrapper">
-                    <div className="quest__info">
-                        <QuestTitle title={quest.nameQuest} />
-                        <QuestBlock
-                            location={quest.locationQuest}
-                            price={quest.priceQuest}
-                            maxPeople={quest.maxPeople}
-                            level={quest.level}
-                        />
-                        <QuestText description={quest.descrQuest} />
-                        <QuestText description={quest.descrQuestToo} />
-                    </div>
-
-                    <QuestImages />
+            <QuestNavigate questName={quest.nameQuest} />
+            <div className="quest__wrapper">
+                <div className="quest__info">
+                    <QuestTitle title={quest.nameQuest} />
+                    <QuestBlock
+                        location={quest.locationQuest}
+                        price={quest.priceQuest}
+                        maxPeople={quest.maxPeople}
+                        level={quest.level}
+                    />
+                    <QuestText description={quest.descrQuest} />
+                    <QuestText description={quest.descrQuestToo} />
                 </div>
 
-                <Record onTimeSelect={handleTimeSelect} />
+                <QuestImages />
+                <MobileSliderQuest />
+            </div>
 
-                {showBooking && selectedTime && (
-                    <Booking
-                        date={selectedTime.date}
-                        time={selectedTime.time}
-                        onClose={handleCloseBooking}
-                        questPrice={quest.priceQuest}
-                    />
-                )}
+            <Record onTimeSelect={handleTimeSelect} />
+
+            {showBooking && selectedTime && (
+                <Booking
+                    date={selectedTime.date}
+                    time={selectedTime.time}
+                    onClose={handleCloseBooking}
+                    questPrice={quest.priceQuest}
+                />
+            )}
         </div>
     );
 }

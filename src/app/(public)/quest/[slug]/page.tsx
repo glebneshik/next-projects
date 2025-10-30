@@ -27,12 +27,10 @@ async function fetchQuest(slug: string): Promise<CardsState | null> {
     const allQuests = response.data;
 
     const foundQuest = allQuests.find((quest: QuestData) => {
-      // Проверка по ID (число или строка)
       if (quest.id === parseInt(slug) || quest.id.toString() === slug) {
         return true;
       }
 
-      // Проверка по названию (с нормализацией)
       if (quest.nameQuest) {
         const normalizedSlug = slug.toLowerCase().replace(/\s+/g, '-');
         const normalizedQuestName = quest.nameQuest.toLowerCase().replace(/\s+/g, '-');
@@ -72,8 +70,7 @@ export default async function Quest({ params }: PageProps) {
       </div>
     );
   }
-
-  // Трансформация данных для унификации
+  
   const transformedQuest: CardsState = {
     ...quest,
     location: quest.address || quest.location || '',

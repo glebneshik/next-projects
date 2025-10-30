@@ -17,29 +17,20 @@ export function Menu({
     const router = useRouter();
 
     const handleNavigation = (id: string, href: string) => {
-        if (href.startsWith('#') && !href.startsWith('/#')) {
-            const element = document.getElementById(href.substring(1));
-            if (element) {
-                element.scrollIntoView({ 
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        } 
-        else if (href.includes('#') && href !== '#') {
-            const [path, anchor] = href.split('#');
-            if (path === '/' || path === '') {
-                const element = document.getElementById(anchor);
+        if (href.startsWith('#')) {
+            const currentPath = window.location.pathname;
+            if (currentPath !== '/') {
+                router.push(`/${href}`);
+            } else {
+                const element = document.getElementById(href.substring(1));
                 if (element) {
                     element.scrollIntoView({ 
                         behavior: 'smooth',
                         block: 'start'
                     });
                 }
-            } else {
-                router.push(href);
             }
-        }
+        } 
         else {
             router.push(href);
         }
@@ -47,7 +38,7 @@ export function Menu({
     };
 
     const isAnchorLink = (href: string) => {
-        return href.startsWith('#') || href.includes('#');
+        return href.startsWith('#');
     };
 
     return (
@@ -75,7 +66,7 @@ export function Menu({
                     >
                         {isAnchorLink(href) ? (
                             <a 
-                                href={href}
+                                href={href === "#quests" ? "/#quests" : href}
                                 onClick={(e) => e.preventDefault()}
                                 className={`${elementClass}__link`}
                             >

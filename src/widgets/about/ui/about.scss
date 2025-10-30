@@ -280,10 +280,16 @@
 }
 
 @media (max-width: 440px) {
+    .about-slider {
+         &__image {
+            width: 55%;
+        }
+    }
     .about {
          &__title {
             h2 {
-                font-size: 17px;
+                font-size: 20px;
+                text-align: left;
                 span {
                     color: #fff;
                 }

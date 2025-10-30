@@ -190,12 +190,12 @@
 
 @media (max-width: 567px) {
     .hero {
-        height: 85vh;
         padding: 0 5px;
 
         &__wrapper {
             padding: 0 5px;
             padding-bottom: 30px;
+
             &_about {
                 font-size: 14px;
                 line-height: 140%;
@@ -232,24 +232,22 @@
 
 @media (max-width: 480px) {
     .hero {
-        height: 70vh;
         background: url("/images/HeaderBg/mobile-bg3.png");
         background-position: center 0;
         background-repeat: no-repeat;
         background-size: contain;
-        &__wrapper {
-            height: 95vh;
-            &_select {
-                width: auto;
-                min-width: 120px;
-                height: 53px;
-                padding: 0 12px;
-                padding: 0 35px;
 
-                .button-red_text {
+        &__wrapper {
+           &_select {
+                width: auto;
+                min-width: 230px;
+                height: 60px;
+                padding: 0 12px;
+                 .button-red_text {
                     font-size: 14px;
                 }
             }
         }
     }
 }
+  

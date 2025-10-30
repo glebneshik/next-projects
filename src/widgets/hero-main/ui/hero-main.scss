@@ -4,7 +4,7 @@
     height: 100vh;
     padding: 0 75px;
     background: url("/images/HeaderBg/bg-main.png") center center / cover no-repeat;
-    
+
     &::after {
         content: "";
         height: 200px;
@@ -13,8 +13,8 @@
         bottom: 0;
         left: 0;
         background: linear-gradient(to bottom, #00000000, #000000);
-        pointer-events: none; 
-        z-index: 1; 
+        pointer-events: none;
+        z-index: 1;
     }
 
     &__wrapper {
@@ -25,7 +25,7 @@
         height: 100vh;
         justify-content: flex-end;
         padding-bottom: 50px;
-        
+
         &_about {
             color: #fff;
             font-size: 22px;
@@ -35,18 +35,18 @@
         &_select {
             margin-top: 20px;
             width: auto;
-            min-width: 200px; 
+            min-width: 200px;
             max-width: 276px;
-            height: 80px;
+            height: 70px;
             z-index: 4;
-            display: inline-flex; 
+            display: inline-flex;
             align-items: center;
             justify-content: center;
-            padding: 0 20px; 
+            padding: 0 20px;
             align-self: flex-start;
 
             p {
-                font-size: 18px;
+                font-size: 16px;
                 white-space: nowrap;
             }
 
@@ -61,9 +61,9 @@
     .hero {
         &__wrapper {
             &_select {
-                width: auto; 
-                min-width: 180px;
-                height: 75px;
+                width: auto;
+                min-width: 200px;
+                height: 60px;
                 padding: 0 13px;
             }
         }
@@ -101,7 +101,7 @@
     .hero {
         &__wrapper {
             &_select {
-                width: auto; 
+                width: auto;
                 min-width: 160px;
             }
         }
@@ -126,7 +126,7 @@
                 display: inline-flex;
                 margin: 20px 0 0 0;
                 margin: 20px auto 0;
-                width: auto; 
+                width: auto;
                 min-width: 150px;
                 padding: 0 25px;
             }
@@ -175,10 +175,11 @@
                 display: inline-flex;
                 margin: 20px auto 0;
                 height: 70px;
-                width: auto; 
+                width: auto;
                 min-width: 160px;
                 padding: 0 20px;
                 align-self: flex-start;
+
                 .button-red_text {
                     font-size: 16px;
                 }
@@ -193,10 +194,10 @@
 
         &__wrapper {
             padding: 0 5px;
-            padding-bottom: 100px;
+            padding-bottom: 30px;
 
             &_about {
-                font-size: 18px;
+                font-size: 14px;
                 line-height: 140%;
             }
 
@@ -204,12 +205,12 @@
                 display: inline-flex;
                 margin: 20px auto 0;
                 height: 70px;
-                width: auto; 
+                width: auto;
                 min-width: 150px;
                 padding: 0 15px;
 
                 .button-red_text {
-                    font-size: 16px;
+                    font-size: 12px;
                 }
             }
         }
@@ -220,8 +221,8 @@
     .hero {
         &__wrapper {
             &_select {
-                height: 75px;
-                width: auto; 
+                height: 60px;
+                width: auto;
                 min-width: 140px;
                 padding: 0 20px;
             }
@@ -232,18 +233,22 @@
 @media (max-width: 480px) {
     .hero {
         background: url("/images/HeaderBg/mobile-bg3.png");
-        background-position: center 0%;
+        background-position: center 0;
         background-repeat: no-repeat;
         background-size: contain;
-
         &__wrapper {
+            height: 95vh;
             &_select {
                 width: auto;
                 min-width: 120px;
-                height: 60px;
+                height: 53px;
                 padding: 0 12px;
+                padding: 0 35px;
+
+                .button-red_text {
+                    font-size: 14px;
+                }
             }
         }
     }
 }
-

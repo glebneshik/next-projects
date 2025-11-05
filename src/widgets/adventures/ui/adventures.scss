@@ -102,7 +102,7 @@
 // Маленькие мобильные устройства
 @media (max-width: 480px) {
     .adventures {
-        padding: 16px 0;
+        padding: 0;
         
         &__list {
             grid-template-columns: 1fr;
@@ -116,7 +116,7 @@
 // Очень маленькие устройства
 @media (max-width: 360px) {
     .adventures {
-        padding: 12px 0;
+        padding: 0;
         
         &__list {
             gap: 12px;

@@ -103,13 +103,12 @@
 
 @media (max-width: 567px) {
     .quests {
-
         .container {
             width: 95%;
         }
 
         &__title {
-            padding-top: 50px;
+            padding-top: 130px;
             font-size: 36px;
         }
     }
@@ -137,7 +136,7 @@
     .quests {
         &__title {
             font-size: 30px;
-            padding-top: 100px;
+            padding-top: 130px;
         }
     }
 }

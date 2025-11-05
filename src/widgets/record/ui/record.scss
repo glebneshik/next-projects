@@ -8,11 +8,12 @@
     }
 
     @media (max-width: 768px) {
-        padding: 40px 0;
+        padding: 40px;
     }
 
     @media (max-width: 480px) {
-        padding: 30px 0;
+        margin-top: 65px;
+        padding: 30px 10px;
     }
 
     &__title {

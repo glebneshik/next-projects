@@ -260,6 +260,12 @@
 
 
 @media (max-width: 480px) {
+    .about-slider {
+         &__image {
+            width: 100%;
+            max-width: 500px;
+        }
+    }
      .about {
         &__wrapper {
             margin-top: -5px;
@@ -282,7 +288,8 @@
 @media (max-width: 440px) {
     .about-slider {
          &__image {
-            width: 55%;
+            width: 100%;
+            max-width: 400px;
         }
     }
     .about {
@@ -323,7 +330,7 @@
 
           &__title {
             h2 {
-                font-size: 18px;
+                font-size: 23px;
                 text-align: left;
             }
         }

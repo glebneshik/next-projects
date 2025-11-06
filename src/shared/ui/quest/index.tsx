@@ -18,7 +18,7 @@ export function Quest({
     maxPeople,
     imageUrl,
     keys,
-    complexity // Получаем сложность
+    complexity 
 }: {
     id: number
     nameQuest: string;
@@ -84,7 +84,7 @@ export function Quest({
 
             <div className="quests__item_price">
                 <p className="quests__item_price-value">от {priceQuest} ₽</p>
-                <RedButton classButton="quests__item_price-buy" textButton="забронировать" altImage="забронировать" />
+                <RedButton href={`/quest/${id}`} classButton="quests__item_price-buy" textButton="забронировать" altImage="забронировать" />
             </div>
         </Link>
     )

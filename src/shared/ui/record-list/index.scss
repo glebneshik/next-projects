@@ -119,14 +119,12 @@
 
 @media (max-width: 768px) {
     .record {
+        padding: 40px 0px;
         &__list {
             display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
+            justify-content: left;
+            gap: 16px;
             margin-top: 30px;
-            // justify-content: flex-start;
-
             &_date {
                 font-size: 16px;
                 margin-right: 0;
@@ -137,9 +135,9 @@
 
             &_item {
                 font-size: 16px;
-                padding: 10px 20px;
+                padding: 15px 20px;
                 border-radius: 6px;
-                width: 80px;
+                width: 90px;
             }
         }
     }
@@ -149,9 +147,9 @@
     .record {
         &__list {
             display: flex;
-            justify-content: center;
+            justify-content: left;
             align-items: center;
-            gap: 5px;
+            gap: 16px;
             margin-top: 18px;
 
             &_date {
@@ -164,9 +162,41 @@
                 font-size: 14px;
                 padding: 8px 16px;
                 border-radius: 5px;
-                width: 70px;
+                width: 80px;
             }
         }
+    }
+}
+
+@media (max-width: 410px) {
+    .record {
+         &__list {
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            gap: 20px;
+            margin-top: 18px;
+            &_item {
+                width: 95px;
+            }
+         }
+    }
+}
+
+
+
+@media (max-width: 380px) {
+    .record {
+         &__list {
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            gap: 20px;
+            margin-top: 18px;
+            &_item {
+                width: 80px;
+            }
+         }
     }
 }
 

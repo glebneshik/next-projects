@@ -66,7 +66,7 @@ export function Quests() {
         maxPeople={item.maxPeople}
         imageUrl={item.imageUrl}
         keys={item.keys}
-        complexity={item.complexity} // Передаем сложность
+        complexity={item.complexity} 
       />
     );
   });

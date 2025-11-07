@@ -33,19 +33,17 @@ export function Quest({
 
     const renderScullIcons = () => {
         return Array.from({ length: 5 }, (_, index) => (
-            <>
+            <div key={`scull-${index}`}>
                 {index < complexity ? <ScullIcon /> : <ScullDisableIcon />}
-
-            </>
-
+            </div>
         ));
     };
+
     const renderKeyIcons = () => {
         return Array.from({ length: 5 }, (_, index) => (
-            <>
+            <div key={`key-${index}`}>
                 {index < keys ? <KeyIcon /> : <KeyDisableIcon />}
-
-            </>
+            </div>
         ));
     };
 
@@ -84,7 +82,7 @@ export function Quest({
 
             <div className="quests__item_price">
                 <p className="quests__item_price-value">от {priceQuest} ₽</p>
-                <RedButton href={`/quest/${id}`} classButton="quests__item_price-buy" textButton="забронировать" altImage="забронировать" />
+                <RedButton classButton="quests__item_price-buy" textButton="забронировать" altImage="забронировать" />
             </div>
         </Link>
     )

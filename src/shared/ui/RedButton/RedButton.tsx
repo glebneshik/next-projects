@@ -1,4 +1,4 @@
-import Image from "next/image"
+// RedButton.tsx
 import Link from "next/link";
 import "./RedButton.scss";
 
@@ -16,7 +16,6 @@ export function RedButton(
             href?: string
         }
 ) {
-    // Если href не передан, рендерим обычную кнопку
     if (!href) {
         return (
             <button className={`button-red ${classButton}`}>
@@ -25,7 +24,16 @@ export function RedButton(
         )
     }
 
-    // Если href передан, рендерим ссылку
+    // Если href начинается с #, это якорь - используем обычный <a>
+    if (href.startsWith('#')) {
+        return (
+            <a href={href} className={`button-red ${classButton}`}>
+                <p className="button-red_text">{textButton}</p>
+            </a>
+        )
+    }
+
+    // Для обычных путей используем Link
     return (
         <Link href={href} className={`button-red ${classButton}`}>
             <p className="button-red_text">{textButton}</p>

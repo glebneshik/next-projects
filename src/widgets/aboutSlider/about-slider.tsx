@@ -53,11 +53,11 @@ export function AboutSlider({ sliderData, fallbackData }: AboutSliderProps) {
                     onSwiper={(swiper) => {
                         swiperRef.current = swiper;
                         setTimeout(() => {
-                            swiper.autoplay.start();
+                            swiper.autoplay?.start(); 
                         }, 100);
                     }}
                     onInit={(swiper) => {
-                        swiper.autoplay.start();
+                        swiper.autoplay?.start(); 
                     }}
                 >
                     {sliderItems.map((item: SliderItem) => (

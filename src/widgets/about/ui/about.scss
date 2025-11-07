@@ -262,7 +262,7 @@
 @media (max-width: 480px) {
     .about-slider {
          &__image {
-           max-width: 250px;
+           max-width: 300px;
         }
         .swiper {
         &-wrapper {
@@ -293,13 +293,13 @@
 @media (max-width: 440px) {
     .about-slider {
          &__image {
-            max-width: 240px;
+            max-width: 300px;
         }
     }
     .about {
          &__title {
             h2 {
-                font-size: 23px;
+                font-size: 24px;
                 text-align: left;
                 span {
                     color: #fff;

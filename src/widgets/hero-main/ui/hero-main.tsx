@@ -40,7 +40,7 @@ export function HeroMain() {
       <section className="hero">
         <div className="hero__wrapper">
           <p className="hero__wrapper_about">Загрузка...</p>
-          <RedButton classButton="hero__wrapper_select" textButton="выбрать квест" altImage="выбрать квест" />
+          <RedButton classButton="hero__wrapper_select" textButton="выбрать квест" altImage="выбрать квест" href="#quests"/>
         </div>
       </section>
     );
@@ -52,7 +52,8 @@ export function HeroMain() {
         {info.map((item) => (
           <p key={item.id} className="hero__wrapper_about">{item.descr_section}</p>
         ))}
-        <RedButton classButton="hero__wrapper_select" textButton="выбрать квест" altImage="выбрать квест" />
+        {/* Добавьте href здесь тоже */}
+        <RedButton classButton="hero__wrapper_select" textButton="выбрать квест" altImage="выбрать квест" href="#quests"/>
       </div>
     </section>
   );

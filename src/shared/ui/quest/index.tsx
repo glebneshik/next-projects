@@ -18,7 +18,7 @@ export function Quest({
     maxPeople,
     imageUrl,
     keys,
-    complexity 
+    complexity
 }: {
     id: number
     nameQuest: string;
@@ -26,7 +26,7 @@ export function Quest({
     locationQuest: string;
     priceQuest: number;
     maxPeople: string;
-    complexity: number; 
+    complexity: number;
     imageUrl: string;
     keys: number;
 }) {
@@ -48,7 +48,7 @@ export function Quest({
     };
 
     return (
-        <Link href={`/quest/${id}`} className="quests__item">
+        <Link href={`/quest/${id}`} className="quests__item" id={id === 1 ? "quests" : null}>
             <div className="quests__item_img">
                 <Image width={300} height={300} src={imageUrl} alt={nameQuest} />
             </div>

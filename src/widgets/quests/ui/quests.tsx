@@ -73,7 +73,7 @@ export function Quests() {
 
   return (
     <section className="quests">
-      <TitleSection classTitle="quests__title" text="Наши квесты" />
+      <TitleSection id={"quests"} classTitle="quests__title" text="Наши квесты" />
       <div className="quests__wrapper">
         {contentCard}
       </div>

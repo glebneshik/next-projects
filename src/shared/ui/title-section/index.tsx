@@ -1,13 +1,15 @@
 export function TitleSection(
     {
         classTitle,
-        text
+        text,
+        id
     }: {
         classTitle: string,
-        text: string
+        text: string,
+        id?: string
     }
 ) {
     return (
-        <h2 className={classTitle}>{text}</h2>
+        <h2 className={classTitle} id={id}>{text}</h2>
     )
 }

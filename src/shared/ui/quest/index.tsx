@@ -48,7 +48,7 @@ export function Quest({
     };
 
     return (
-        <Link href={`/quest/${id}`} className="quests__item" id={id === 1 ? "quests" : null}>
+        <Link href={`/quest/${id}`} className="quests__item" >
             <div className="quests__item_img">
                 <Image width={300} height={300} src={imageUrl} alt={nameQuest} />
             </div>

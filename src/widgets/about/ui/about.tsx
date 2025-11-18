@@ -9,6 +9,7 @@ import { ScrollTeam } from "@/shared/config/scrollTeam";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { AboutSlider } from "@/widgets/aboutSlider/about-slider";
+import { useAbout } from "@/store";
 
 interface SliderItem {
     id: number;
@@ -26,35 +27,26 @@ interface AboutData {
 }
 
 export function About() {
-    const [info, setInfo] = useState<AboutData[]>([]);
-    const [loading, setLoading] = useState(true);
+    const {
+        info,
+        load,
+        error,
+        fetchInfo,
+        getTitle,
+        getDescription,
+        getSlider
+    } = useAbout();
 
     useEffect(() => {
-        GetInfo();
-    }, []);
+        fetchInfo();
+    }, [fetchInfo]);
 
-    const FetchInfo = async (): Promise<AboutData[]> => {
-        try {
-            const { data } = await axios.get<AboutData[]>("https://0275d3dd1dabf767.mokky.dev/about-section");
-            return data;
-        } catch (err) {
-            console.log(err);
-            return [];
-        }
-    };
+    // Используем геттеры
+    const titleData = getTitle();
+    const descrData = getDescription();
+    const sliderData = getSlider();
 
-    const GetInfo = async (): Promise<void> => {
-        setLoading(true);
-        const data = await FetchInfo();
-        setInfo(data);
-        setLoading(false);
-    };
-
-    const titleData = info.find((item: AboutData) => item.id === "Title");
-    const descrData = info.find((item: AboutData) => item.id === "Descr");
-    const sliderData = info.find((item: AboutData) => item.id === "Slider");
-
-    if (loading) {
+    if (load) {
         return <div className="about">Загрузка...</div>;
     }
 

@@ -19,7 +19,8 @@
     "react-dom": "19.1.0",
     "resend": "^6.1.2",
     "sass": "^1.91.0",
-    "swiper": "^11.2.10"
+    "swiper": "^11.2.10",
+    "zustand": "^5.0.8"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

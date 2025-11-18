@@ -4,6 +4,7 @@ import { RedButton } from "@/shared/ui/RedButton/RedButton";
 import "./hero-main.scss";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { useAbout } from "@/store";
 
 interface HeroInfo {
   id: number;
@@ -13,6 +14,8 @@ interface HeroInfo {
 export function HeroMain() {
   const [info, setInfo] = useState<HeroInfo[]>([]);
   const [loading, setLoading] = useState(true);
+
+  const { load } = useAbout();
 
   useEffect(() => {
     GetInfo();
@@ -40,7 +43,7 @@ export function HeroMain() {
       <section className="hero">
         <div className="hero__wrapper">
           <p className="hero__wrapper_about">Загрузка...</p>
-          <RedButton classButton="hero__wrapper_select" textButton="выбрать квест" altImage="выбрать квест" href="#quests"/>
+          <RedButton classButton="hero__wrapper_select" textButton="выбрать квест" altImage="выбрать квест" href={load ? "#" : "#quests"} />
         </div>
       </section>
     );
@@ -53,7 +56,7 @@ export function HeroMain() {
           <p key={item.id} className="hero__wrapper_about">{item.descr_section}</p>
         ))}
         {/* Добавьте href здесь тоже */}
-        <RedButton classButton="hero__wrapper_select" textButton="выбрать квест" altImage="выбрать квест" href="#quests"/>
+        <RedButton classButton="hero__wrapper_select" textButton="выбрать квест" altImage="выбрать квест" href="#quests" />
       </div>
     </section>
   );

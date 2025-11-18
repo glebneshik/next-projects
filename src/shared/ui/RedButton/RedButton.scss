@@ -7,9 +7,9 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     &_text {
         color: #000000;
@@ -19,7 +19,7 @@
         margin: 0 !important;
         white-space: nowrap;
         transition: 0.3s ease-in-out;
-        padding: 0 10px; 
+        padding: 0 10px;
     }
 
     &:hover {
@@ -35,7 +35,7 @@
         &_text {
             font-size: 12px;
         }
-    }    
+    }
 }
 
 
@@ -44,7 +44,7 @@
         &_text {
             font-size: 10px;
         }
-    }    
+    }
 }
 
 @media (max-width: 300px) {
@@ -52,5 +52,5 @@
         &_text {
             font-size: 9px;
         }
-    }    
+    }
 }

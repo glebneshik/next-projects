@@ -2,13 +2,22 @@ import { Suspense } from 'react'
 import { AnchorHandler } from "@/components/AnchorHandler";
 import "./globals.scss"
 
+import { Manrope } from 'next/font/google'
+
+const manrope = Manrope({
+  subsets: ['cyrillic', 'latin'],
+  display: 'swap',
+  weight: ['200', '300', '400', '500', '600', '700', '800'],
+  variable: '--font-manrope',
+})
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ru">
+    <html lang="ru" className={manrope.variable}>
       <head>
         <meta name="apple-mobile-web-app-title" content="Квесты в реальности" />
         <script type="text/javascript" dangerouslySetInnerHTML={{
@@ -24,14 +33,14 @@ export default function RootLayout({
           `
         }} />
       </head>
-      <body>
+      <body className={manrope.className}>
         <Suspense fallback={null}>
           <AnchorHandler />
         </Suspense>
         {children}
         <noscript>
           <div>
-            <img src="https://mc.yandex.ru/watch/104891842" style={{position: 'absolute', left: '-9999px'}} alt="" />
+            <img src="https://mc.yandex.ru/watch/104891842" style={{ position: 'absolute', left: '-9999px' }} alt="" />
           </div>
         </noscript>
       </body>

@@ -1,5 +1,6 @@
 
 import type { Metadata } from "next";
+
 // import { Footer } from "@/widgets/footer";
 // import { Background } from "@/shared/ui/background";
 

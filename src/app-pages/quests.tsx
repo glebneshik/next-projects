@@ -50,15 +50,6 @@ export function QuestPage({ quest }: QuestPageProps) {
             </div>
 
             <Record onTimeSelect={handleTimeSelect} />
-
-            {showBooking && selectedTime && (
-                <Booking
-                    date={selectedTime.date}
-                    time={selectedTime.time}
-                    onClose={handleCloseBooking}
-                    questPrice={quest.priceQuest}
-                />
-            )}
         </div>
     );
 }

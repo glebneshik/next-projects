@@ -231,7 +231,7 @@
 @media (max-width: 480px) {
     .record {
         &__list {
-            grid-template-columns: repeat(7, 1fr);
+            grid-template-columns: repeat(5, 1fr);
             gap: 10px;
             margin-top: 20px;
 

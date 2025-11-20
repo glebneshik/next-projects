@@ -74,6 +74,7 @@
     width: 100%;
     padding: 0 !important;
     margin: 0 !important;
+    height: 390px !important;
 
     &__container {
         overflow: hidden;
@@ -269,6 +270,8 @@
 
 @media (max-width: 480px) {
     .about-slider {
+        height: 220px !important;
+
         &__image {
             max-width: 300px;
         }

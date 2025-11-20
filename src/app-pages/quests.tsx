@@ -42,7 +42,7 @@ export function QuestPage({ quest }: QuestPageProps) {
                         level={quest.level}
                     />
                     <QuestText description={quest.descrQuest} />
-                    <QuestText description={quest.descrQuestToo} />
+                    <QuestText description={quest.descrQuest} />
                 </div>
 
                 <QuestImages />

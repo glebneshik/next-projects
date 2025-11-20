@@ -11,14 +11,13 @@
 
     &__title {
         margin: 0 !important;
-        font-family: "Montserrat", sans-serif;
         text-transform: uppercase;
         color: #D3101F;
         font-weight: 700;
         font-size: 50px;
         text-align: center;
         width: 100%;
-        padding-top: 100px;
+        padding-top: 40px;
     }
 
     &__wrapper {
@@ -70,8 +69,6 @@
         &__title {
             font-size: 40px;
         }
-
-        &__wrapper {}
     }
 }
 
@@ -93,6 +90,7 @@
             &__title {
                 text-align: center;
                 font-size: 20px;
+                padding-top: 50px;
             }
 
             &__item {
@@ -121,7 +119,7 @@
 
         &__title {
             text-align: center;
-            padding-top: 90px;
+            padding-top: 40px;
         }
 
         &__wrapper {
@@ -140,7 +138,7 @@
 
         &__title {
             font-size: 30px;
-            padding-top: 140px;
+            // padding-top: 30px;
         }
     }
 }

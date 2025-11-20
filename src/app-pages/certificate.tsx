@@ -194,17 +194,7 @@ export function CertificatePage() {
                         className="certificate__wrapper_slider-scroll"
                         slidesPerView={1}
                         spaceBetween={20}
-                        centeredSlides={true}
-                        allowTouchMove={true}
-                        simulateTouch={true}
                         loop={true}
-                        onSwiper={(swiper: SwiperType) => {
-                            swiperRef.current = swiper;
-                        }}
-                        onSlideChange={handleSlideChange}
-                        onInit={(swiper) => {
-                            setActiveIndex(swiper.realIndex);
-                        }}
                     >
                         {certificates.map((certificate) => (
                             <SwiperSlide key={certificate.id}>

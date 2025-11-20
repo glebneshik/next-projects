@@ -5,9 +5,9 @@
 
     &__title {
         text-align: center;
+
         h2 {
             margin: 0 !important;
-            font-family: "Montserrat", sans-serif;
             text-transform: uppercase;
             color: #D3101F;
             font-weight: 700;
@@ -29,11 +29,11 @@
         &_text {
             width: 47%;
             margin-top: 76px;
+
             &-item {
                 color: #fff;
                 font-weight: 200;
                 font-size: 18px;
-                font-family: "Montserrat", sans-serif;
                 line-height: 200%;
             }
         }
@@ -42,6 +42,7 @@
             display: flex;
             flex-direction: column;
             margin-top: 87px;
+
             &-descr {
                 font-size: 18px;
                 font-weight: 900;
@@ -59,6 +60,7 @@
                 justify-content: center;
                 border: 1px solid #242424;
                 transition: all .3s ease-in-out;
+
                 &:hover {
                     box-shadow: 0 15px 70px rgba(211, 16, 31, .25), 0 5px 15px rgba(211, 16, 31, .15), 0 0 0 1px rgba(211, 16, 31, .1);
                 }
@@ -72,7 +74,7 @@
     width: 100%;
     padding: 0 !important;
     margin: 0 !important;
-    
+
     &__container {
         overflow: hidden;
         width: 100%;
@@ -84,7 +86,7 @@
         width: 100%;
         margin: 0 !important;
         padding: 0 !important;
-        
+
         &-wrapper {
             display: flex;
             transition-timing-function: linear !important;
@@ -129,7 +131,7 @@
             }
         }
 
-         &__title {
+        &__title {
             h2 {
                 font-size: 53px;
             }
@@ -138,14 +140,15 @@
 }
 
 @media (max-width: 1540px) {
-  .about {
-    padding: 166px 222px 80px 75px;
-      &__wrapper {
-        &_text {
-            width: 55%;
+    .about {
+        padding: 166px 222px 80px 75px;
+
+        &__wrapper {
+            &_text {
+                width: 55%;
+            }
         }
     }
-  } 
 }
 
 @media (max-width: 1400px) {
@@ -187,6 +190,7 @@
             &_text {
                 width: 100%;
                 margin-top: 30px;
+
                 &-item {
                     line-height: 160%;
                     font-size: 16px;
@@ -216,9 +220,11 @@
 @media (max-width: 768px) {
     .about {
         padding: 60px 20px;
+
         &__wrapper {
             &_link {
                 display: none;
+
                 &-img {
                     width: 80px;
                     height: 80px;
@@ -250,6 +256,8 @@
 
 @media (max-width: 760px) {
     .about {
+        padding-bottom: 0;
+
         &__title {
             h2 {
                 font-size: 23px;
@@ -261,27 +269,31 @@
 
 @media (max-width: 480px) {
     .about-slider {
-         &__image {
-           max-width: 300px;
+        &__image {
+            max-width: 300px;
         }
+
         .swiper {
-        &-wrapper {
-            column-gap: 0px;
+            &-wrapper {
+                column-gap: 0px;
+            }
         }
-    }
 
     }
-     .about {
+
+    .about {
         &__wrapper {
             margin-top: -5px;
+
             &_link {
                 display: none;
             }
         }
 
-          &__title {
+        &__title {
             h2 {
                 font-size: 19px;
+
                 span {
                     color: #fff;
                 }
@@ -292,15 +304,17 @@
 
 @media (max-width: 440px) {
     .about-slider {
-         &__image {
+        &__image {
             max-width: 300px;
         }
     }
+
     .about {
-         &__title {
+        &__title {
             h2 {
                 font-size: 24px;
                 text-align: left;
+
                 span {
                     color: #fff;
                 }
@@ -311,10 +325,11 @@
 
 @media (max-width: 400px) {
     .about {
-         &__title {
+        &__title {
             h2 {
                 text-align: left;
                 font-size: 22px;
+
                 span {
                     color: #fff;
                 }
@@ -324,15 +339,16 @@
 }
 
 @media (max-width: 360px) {
-     .about {
+    .about {
         &__wrapper {
             margin-top: -5px;
+
             &_link {
                 display: none;
             }
         }
 
-          &__title {
+        &__title {
             h2 {
                 font-size: 21px;
                 text-align: left;

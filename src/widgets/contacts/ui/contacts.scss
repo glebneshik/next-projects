@@ -15,7 +15,6 @@
 
         &_title {
             margin: 0 !important;
-            font-family: "Montserrat", sans-serif;
             text-transform: uppercase;
             color: #D3101F;
             font-weight: 900;
@@ -25,7 +24,6 @@
 
         &_number {
             margin: 0 !important;
-            font-family: "Montserrat", sans-serif;
             text-transform: uppercase;
             color: #ffffff;
             font-weight: 900;
@@ -36,7 +34,6 @@
 
         &_email {
             margin: 0 !important;
-            font-family: "Montserrat", sans-serif;
             color: #ffffff;
             font-weight: 700;
             font-size: 30px;
@@ -119,7 +116,7 @@
         &__map {
             width: 46%;
         }
-        
+
         &__text {
             &_title {
                 font-size: 45px;

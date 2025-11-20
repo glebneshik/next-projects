@@ -24,7 +24,7 @@ interface AboutSliderProps {
 }
 
 export function AboutSlider({ sliderData, fallbackData }: AboutSliderProps) {
-    const swiperRef = useRef<SwiperType>();
+    const swiperRef = useRef<SwiperType>(null);
     const sliderItems = sliderData?.slider_scroll || fallbackData;
 
     return (
@@ -53,11 +53,11 @@ export function AboutSlider({ sliderData, fallbackData }: AboutSliderProps) {
                     onSwiper={(swiper) => {
                         swiperRef.current = swiper;
                         setTimeout(() => {
-                            swiper.autoplay?.start(); 
+                            swiper.autoplay?.start();
                         }, 100);
                     }}
                     onInit={(swiper) => {
-                        swiper.autoplay?.start(); 
+                        swiper.autoplay?.start();
                     }}
                 >
                     {sliderItems.map((item: SliderItem) => (

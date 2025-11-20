@@ -49,9 +49,12 @@ export function Quest({
 
     return (
         <Link href={`/quest/${id}`} className="quests__item" >
+
             <div className="quests__item_img">
                 <Image width={300} height={300} src={imageUrl} alt={nameQuest} />
             </div>
+
+
 
             <h4 className="quests__item_title">{nameQuest}</h4>
             <p className="quests__item_descr">{descrQuest.length > 40 ? `${descrQuest.slice(0, 75).trim()}...` : descrQuest}</p>

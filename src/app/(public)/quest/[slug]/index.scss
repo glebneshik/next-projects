@@ -26,7 +26,6 @@
             text-transform: uppercase;
             color: red;
             font-weight: 900;
-            font-family: "Montserrat", sans-serif;
             margin: 0 !important;
         }
 
@@ -54,7 +53,6 @@
             border-top: 1px solid gray;
 
             &-item {
-                font-family: "Montserrat", sans-serif;
                 width: 45%;
 
                 &_title {
@@ -162,6 +160,7 @@
             width: 58%;
         }
     }
+
     @media (max-width: 1500px) {
         &__images {
             width: 58%;
